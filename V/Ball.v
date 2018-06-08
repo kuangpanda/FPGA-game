@@ -6,6 +6,8 @@ module Ball (	//	Read Out Side
     oBall_y
 );
 
+`include "Setting.v"
+
 input iVGA_CLK;
 
 //	Control Signals
@@ -34,13 +36,13 @@ assign down = iCrash[0];
 reg x_orient;
 always @(posedge iVGA_CLK or negedge iRST_n) begin
 	if (!iRST_n) begin
-	    x_orient <= 0;
+	    x_orient <= BALL_TOWARD_RIGHT;
     end
     else if (!x_orient && right) begin // right
-	    x_orient <= 1;
+	    x_orient <= BALL_TOWARD_LEFT;
     end
     else if (x_orient && left) begin
-	    x_orient <= 0;
+	    x_orient <= BALL_TOWARD_RIGHT;
     end
     else begin
 	    x_orient <= x_orient;
@@ -49,7 +51,7 @@ end
 
 always @(posedge iVGA_CLK or negedge iRST_n) begin
 	if (!iRST_n) begin
-		ball_x <= 100;
+		ball_x <= BALL_X_INIT_LOCATION;
 	end
 	else if (!x_orient) begin // right
 		ball_x  <= ball_x  + 1;
@@ -66,13 +68,13 @@ end
 reg y_orient;
 always@(posedge iVGA_CLK or negedge iRST_n) begin
 	if (!iRST_n) begin
-	    y_orient <= 0;
+	    y_orient <= BALL_TOWARD_DOWN;
     end
     else if (!y_orient && down) begin
-	    y_orient <= 1;
+	    y_orient <= BALL_TOWARD_UP;
     end
     else if (y_orient && up) begin
-	    y_orient <= 0;
+	    y_orient <= BALL_TOWARD_DOWN;
     end
     else begin
 	    y_orient <= y_orient;
@@ -81,7 +83,7 @@ end
 
 always@(posedge iVGA_CLK or negedge iRST_n) begin
 	if (!iRST_n) begin
-		ball_y  <= 150;
+		ball_y  <= BALL_Y_INIT_LOCATION;
 	end
 	else if (!y_orient) begin
 		ball_y  <= ball_y  + 1;

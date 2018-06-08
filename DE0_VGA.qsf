@@ -551,7 +551,7 @@ set_global_assignment -name TIMEQUEST_MULTICORNER_ANALYSIS ON
 set_global_assignment -name TIMEQUEST_DO_CCPP_REMOVAL ON
 set_global_assignment -name MISC_FILE "E:/DE0/DE0_VGA/DE0_VGA.dpf"
 set_global_assignment -name MISC_FILE "D:/TERASIC_TEST/DE0/DE0_VGA/DE0_VGA.dpf"
-set_global_assignment -name VERILOG_FILE V/setting.v
+set_global_assignment -name VERILOG_FILE V/KeyBoard.v
 set_global_assignment -name VERILOG_FILE V/Crash.v
 set_global_assignment -name VERILOG_FILE V/Ball.v
 set_global_assignment -name VERILOG_FILE V/Slider.v

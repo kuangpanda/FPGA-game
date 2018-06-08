@@ -11,7 +11,7 @@ module Slider (	//	Read Out Side
     oSlider_y
 );
 
-`include "setting.v"
+`include "Setting.v"
 
 input iSlider_go;
 input iSlider_back;

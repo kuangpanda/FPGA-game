@@ -252,6 +252,7 @@ wire [9:0] ball_y;
 wire [4:0] control; // keybord control signal
 // crash = [left, right, up, down]
 wire [3:0] crash;
+wire [39:0] state_flag;
 ////////////////////////	VGA			////////////////////////////
 
 VGA_CLK		u1
@@ -297,7 +298,7 @@ VGA_Pattern	u3
 			.iBall_y(ball_y)
 		);
 
-KeyBoard u3 (    
+KeyBoard u4 (    
 	.clk(CLOCK_50),
     .rst_n(BUTTON[0]),
     .data_in(PS2_KBDAT),
@@ -305,7 +306,7 @@ KeyBoard u3 (
     .oControl(control)           
 );
 
-Slider u4 (	//	Read Out Side
+Slider u5 (	//	Read Out Side
 	.iVGA_CLK(VGA_VS),
     .iRST_n(BUTTON[0]),
     
@@ -319,7 +320,7 @@ Slider u4 (	//	Read Out Side
 	//	Control Signals
 );
 
-Ball u5 (
+Ball u6 (
 	.iVGA_CLK(VGA_VS),
 	.iRST_n(BUTTON[0]),
 	.iCrash(crash),
@@ -327,16 +328,17 @@ Ball u5 (
     .oBall_y(ball_y)
 );
 
-Crash u6 (
-	//.iVGA_CLK(VGA_HS),
-	//.iRST_n(BUTTON[0]),
+Crash u7 (
+	.clk(VGA_HS),
+	.rst(BUTTON[0]),
 
 	.iSlider_x(slider_x),
 	.iSlider_y(slider_y),
 	.iBall_x(ball_x),
 	.iBall_y(ball_y),
 
-	.oCrash(crash)
+	.oCrash(crash),
+	.oState_flag(state_flag)
 );
 
 endmodule
