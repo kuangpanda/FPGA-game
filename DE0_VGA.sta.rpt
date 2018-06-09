@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for DE0_VGA
-Fri Jun 08 16:39:09 2018
+Sat Jun 09 22:25:23 2018
 Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
 
 
@@ -123,10 +123,9 @@ applicable agreement for further details.
 +------------+-----------------+------------------------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                                     ; Note ;
 +------------+-----------------+------------------------------------------------+------+
-; 124.13 MHz ; 124.13 MHz      ; u1|altpll_component|auto_generated|pll1|clk[0] ;      ;
-; 170.59 MHz ; 170.59 MHz      ; VGA_Ctrl:u2|oVGA_VS                            ;      ;
-; 226.19 MHz ; 226.19 MHz      ; CLOCK_50                                       ;      ;
-; 380.37 MHz ; 380.37 MHz      ; VGA_Ctrl:u2|oVGA_HS                            ;      ;
+; 88.53 MHz  ; 88.53 MHz       ; u1|altpll_component|auto_generated|pll1|clk[0] ;      ;
+; 115.93 MHz ; 115.93 MHz      ; VGA_Ctrl:u2|oVGA_VS                            ;      ;
+; 412.03 MHz ; 412.03 MHz      ; VGA_Ctrl:u2|oVGA_HS                            ;      ;
 +------------+-----------------+------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -136,10 +135,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------------------------------------------+--------+---------------+
 ; Clock                                          ; Slack  ; End Point TNS ;
 +------------------------------------------------+--------+---------------+
-; u1|altpll_component|auto_generated|pll1|clk[0] ; -8.510 ; -16.508       ;
-; VGA_Ctrl:u2|oVGA_VS                            ; -4.862 ; -126.076      ;
-; VGA_Ctrl:u2|oVGA_HS                            ; -1.781 ; -17.710       ;
-; CLOCK_50                                       ; 15.579 ; 0.000         ;
+; u1|altpll_component|auto_generated|pll1|clk[0] ; -9.789 ; -151.742      ;
+; VGA_Ctrl:u2|oVGA_VS                            ; -7.626 ; -375.329      ;
+; VGA_Ctrl:u2|oVGA_HS                            ; -1.427 ; -16.865       ;
 +------------------------------------------------+--------+---------------+
 
 
@@ -148,9 +146,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------------------------------------------+--------+---------------+
 ; Clock                                          ; Slack  ; End Point TNS ;
 +------------------------------------------------+--------+---------------+
-; VGA_Ctrl:u2|oVGA_HS                            ; -2.485 ; -2.485        ;
-; u1|altpll_component|auto_generated|pll1|clk[0] ; -0.029 ; -0.029        ;
-; CLOCK_50                                       ; 0.358  ; 0.000         ;
+; VGA_Ctrl:u2|oVGA_HS                            ; -2.811 ; -2.811        ;
+; u1|altpll_component|auto_generated|pll1|clk[0] ; -0.019 ; -0.019        ;
 ; VGA_Ctrl:u2|oVGA_VS                            ; 0.358  ; 0.000         ;
 +------------------------------------------------+--------+---------------+
 
@@ -167,132 +164,138 @@ No paths to report.
 No paths to report.
 
 
-+--------------------------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 85C Model Minimum Pulse Width                                                                                      ;
-+--------+--------------+----------------+-------+------------------+---------------------+------------+-------------------------+
-; Slack  ; Actual Width ; Required Width ; CCPP  ; Type             ; Clock               ; Clock Edge ; Target                  ;
-+--------+--------------+----------------+-------+------------------+---------------------+------------+-------------------------+
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[0]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[1]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[2]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[3]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[4]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[5]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[6]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[7]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[8]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[9]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[1]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[2]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[3]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[4]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[5]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[6]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[7]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[8]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[9]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|x_orient        ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|y_orient        ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; Crash:u7|oState_flag[0] ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[0]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[1]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[2]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[3]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[4]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[5]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[6]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[7]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[8]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[9]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[0]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[1]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[2]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[3]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[4]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[5]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[6]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[7]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[8]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[9]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[0]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[10]  ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[1]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[2]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[3]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[4]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[5]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[6]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[7]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[8]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[9]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|oVGA_VS     ;
-; 0.223  ; 0.312        ; 0.216          ; 0.127 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[0]   ;
-; 0.223  ; 0.312        ; 0.216          ; 0.127 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[10]  ;
-; 0.223  ; 0.312        ; 0.216          ; 0.127 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[1]   ;
-; 0.223  ; 0.312        ; 0.216          ; 0.127 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[2]   ;
-; 0.223  ; 0.312        ; 0.216          ; 0.127 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[3]   ;
-; 0.223  ; 0.312        ; 0.216          ; 0.127 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[4]   ;
-; 0.223  ; 0.312        ; 0.216          ; 0.127 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[5]   ;
-; 0.223  ; 0.312        ; 0.216          ; 0.127 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[6]   ;
-; 0.223  ; 0.312        ; 0.216          ; 0.127 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[7]   ;
-; 0.223  ; 0.312        ; 0.216          ; 0.127 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[8]   ;
-; 0.223  ; 0.312        ; 0.216          ; 0.127 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[9]   ;
-; 0.223  ; 0.312        ; 0.216          ; 0.127 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|oVGA_VS     ;
-; 0.224  ; 0.313        ; 0.216          ; 0.127 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; Crash:u7|oState_flag[0] ;
-; 0.241  ; 0.319        ; 0.216          ; 0.138 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[1]       ;
-; 0.241  ; 0.319        ; 0.216          ; 0.138 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[2]       ;
-; 0.241  ; 0.319        ; 0.216          ; 0.138 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[3]       ;
-; 0.241  ; 0.319        ; 0.216          ; 0.138 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[4]       ;
-; 0.241  ; 0.319        ; 0.216          ; 0.138 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[5]       ;
-; 0.241  ; 0.319        ; 0.216          ; 0.138 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[6]       ;
-; 0.241  ; 0.319        ; 0.216          ; 0.138 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[7]       ;
-; 0.241  ; 0.319        ; 0.216          ; 0.138 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[8]       ;
-; 0.241  ; 0.319        ; 0.216          ; 0.138 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[9]       ;
-; 0.241  ; 0.318        ; 0.216          ; 0.139 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[8]   ;
-; 0.242  ; 0.319        ; 0.216          ; 0.139 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[0]       ;
-; 0.242  ; 0.319        ; 0.216          ; 0.139 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[1]       ;
-; 0.242  ; 0.319        ; 0.216          ; 0.139 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[2]       ;
-; 0.242  ; 0.319        ; 0.216          ; 0.139 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[3]       ;
-; 0.242  ; 0.319        ; 0.216          ; 0.139 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[4]       ;
-; 0.242  ; 0.319        ; 0.216          ; 0.139 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[5]       ;
-; 0.242  ; 0.319        ; 0.216          ; 0.139 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[6]       ;
-; 0.242  ; 0.319        ; 0.216          ; 0.139 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[7]       ;
-; 0.242  ; 0.319        ; 0.216          ; 0.139 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[8]       ;
-; 0.242  ; 0.319        ; 0.216          ; 0.139 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[9]       ;
-; 0.242  ; 0.319        ; 0.216          ; 0.139 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|y_orient        ;
-; 0.244  ; 0.322        ; 0.216          ; 0.138 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|x_orient        ;
-; 0.244  ; 0.322        ; 0.216          ; 0.138 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[0]   ;
-; 0.244  ; 0.322        ; 0.216          ; 0.138 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[1]   ;
-; 0.244  ; 0.322        ; 0.216          ; 0.138 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[6]   ;
-; 0.244  ; 0.322        ; 0.216          ; 0.138 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[7]   ;
-; 0.244  ; 0.322        ; 0.216          ; 0.138 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[9]   ;
-; 0.246  ; 0.324        ; 0.216          ; 0.138 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[0]   ;
-; 0.246  ; 0.325        ; 0.216          ; 0.137 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[1]   ;
-; 0.246  ; 0.324        ; 0.216          ; 0.138 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[2]   ;
-; 0.246  ; 0.324        ; 0.216          ; 0.138 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[3]   ;
-; 0.246  ; 0.325        ; 0.216          ; 0.137 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[4]   ;
-; 0.246  ; 0.324        ; 0.216          ; 0.138 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[5]   ;
-+--------+--------------+----------------+-------+------------------+---------------------+------------+-------------------------+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width                                                                                       ;
++--------+--------------+----------------+-------+------------------+---------------------+------------+--------------------------+
+; Slack  ; Actual Width ; Required Width ; CCPP  ; Type             ; Clock               ; Clock Edge ; Target                   ;
++--------+--------------+----------------+-------+------------------+---------------------+------------+--------------------------+
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[1]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[2]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[3]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[4]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[5]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[6]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[7]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[8]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[9]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[2]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[3]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[4]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[5]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[6]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[7]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[8]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[9]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|x_orient         ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|y_orient         ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[0]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[10] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[11] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[12] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[13] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[14] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[15] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[16] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[17] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[18] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[19] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[1]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[20] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[21] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[22] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[23] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[24] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[25] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[26] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[27] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[28] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[29] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[2]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[30] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[31] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[32] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[33] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[34] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[35] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[36] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[37] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[38] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[39] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[3]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[4]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[5]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[6]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[7]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[8]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[9]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[1]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[2]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[3]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[4]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[5]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[6]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[7]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[8]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[9]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[1]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[2]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[3]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[4]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[5]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[6]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[7]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[8]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[9]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[0]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[10]   ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[1]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[2]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[3]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[4]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[5]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[6]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[7]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[8]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[9]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|oVGA_VS      ;
+; 0.208  ; 0.285        ; 0.216          ; 0.139 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[0]    ;
+; 0.208  ; 0.285        ; 0.216          ; 0.139 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[10]   ;
+; 0.208  ; 0.285        ; 0.216          ; 0.139 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[1]    ;
+; 0.208  ; 0.285        ; 0.216          ; 0.139 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[2]    ;
+; 0.208  ; 0.285        ; 0.216          ; 0.139 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[3]    ;
+; 0.208  ; 0.285        ; 0.216          ; 0.139 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[4]    ;
+; 0.208  ; 0.285        ; 0.216          ; 0.139 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[5]    ;
+; 0.208  ; 0.285        ; 0.216          ; 0.139 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[6]    ;
+; 0.208  ; 0.285        ; 0.216          ; 0.139 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[7]    ;
+; 0.208  ; 0.285        ; 0.216          ; 0.139 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[8]    ;
+; 0.208  ; 0.285        ; 0.216          ; 0.139 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[9]    ;
++--------+--------------+----------------+-------+------------------+---------------------+------------+--------------------------+
 
 
-+-----------------------------------------------------------------------+
-; Setup Times                                                           ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; PS2_KBCLK ; CLOCK_50   ; 1.840 ; 2.391 ; Rise       ; CLOCK_50        ;
-; PS2_KBDAT ; CLOCK_50   ; 1.746 ; 2.273 ; Rise       ; CLOCK_50        ;
-+-----------+------------+-------+-------+------------+-----------------+
++------------------------------------------------------------------------------------+
+; Setup Times                                                                        ;
++-----------+---------------------+-------+-------+------------+---------------------+
+; Data Port ; Clock Port          ; Rise  ; Fall  ; Clock Edge ; Clock Reference     ;
++-----------+---------------------+-------+-------+------------+---------------------+
+; SW[*]     ; VGA_Ctrl:u2|oVGA_VS ; 3.795 ; 4.125 ; Fall       ; VGA_Ctrl:u2|oVGA_VS ;
+;  SW[1]    ; VGA_Ctrl:u2|oVGA_VS ; 3.795 ; 4.125 ; Fall       ; VGA_Ctrl:u2|oVGA_VS ;
+;  SW[2]    ; VGA_Ctrl:u2|oVGA_VS ; 3.207 ; 3.730 ; Fall       ; VGA_Ctrl:u2|oVGA_VS ;
+;  SW[3]    ; VGA_Ctrl:u2|oVGA_VS ; 2.623 ; 3.166 ; Fall       ; VGA_Ctrl:u2|oVGA_VS ;
+;  SW[4]    ; VGA_Ctrl:u2|oVGA_VS ; 3.249 ; 3.965 ; Fall       ; VGA_Ctrl:u2|oVGA_VS ;
++-----------+---------------------+-------+-------+------------+---------------------+
 
 
-+-------------------------------------------------------------------------+
-; Hold Times                                                              ;
-+-----------+------------+--------+--------+------------+-----------------+
-; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
-+-----------+------------+--------+--------+------------+-----------------+
-; PS2_KBCLK ; CLOCK_50   ; -1.471 ; -2.009 ; Rise       ; CLOCK_50        ;
-; PS2_KBDAT ; CLOCK_50   ; -1.229 ; -1.727 ; Rise       ; CLOCK_50        ;
-+-----------+------------+--------+--------+------------+-----------------+
++--------------------------------------------------------------------------------------+
+; Hold Times                                                                           ;
++-----------+---------------------+--------+--------+------------+---------------------+
+; Data Port ; Clock Port          ; Rise   ; Fall   ; Clock Edge ; Clock Reference     ;
++-----------+---------------------+--------+--------+------------+---------------------+
+; SW[*]     ; VGA_Ctrl:u2|oVGA_VS ; -1.963 ; -2.521 ; Fall       ; VGA_Ctrl:u2|oVGA_VS ;
+;  SW[1]    ; VGA_Ctrl:u2|oVGA_VS ; -2.281 ; -2.762 ; Fall       ; VGA_Ctrl:u2|oVGA_VS ;
+;  SW[2]    ; VGA_Ctrl:u2|oVGA_VS ; -2.767 ; -3.267 ; Fall       ; VGA_Ctrl:u2|oVGA_VS ;
+;  SW[3]    ; VGA_Ctrl:u2|oVGA_VS ; -2.257 ; -2.785 ; Fall       ; VGA_Ctrl:u2|oVGA_VS ;
+;  SW[4]    ; VGA_Ctrl:u2|oVGA_VS ; -1.963 ; -2.521 ; Fall       ; VGA_Ctrl:u2|oVGA_VS ;
++-----------+---------------------+--------+--------+------------+---------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------+
@@ -300,17 +303,23 @@ No paths to report.
 +-----------+---------------------+-------+-------+------------+------------------------------------------------+
 ; Data Port ; Clock Port          ; Rise  ; Fall  ; Clock Edge ; Clock Reference                                ;
 +-----------+---------------------+-------+-------+------------+------------------------------------------------+
-; VGA_HS    ; VGA_Ctrl:u2|oVGA_HS ;       ; 3.478 ; Rise       ; VGA_Ctrl:u2|oVGA_HS                            ;
-; VGA_HS    ; VGA_Ctrl:u2|oVGA_HS ; 3.421 ;       ; Fall       ; VGA_Ctrl:u2|oVGA_HS                            ;
-; VGA_VS    ; VGA_Ctrl:u2|oVGA_VS ;       ; 3.516 ; Rise       ; VGA_Ctrl:u2|oVGA_VS                            ;
-; VGA_VS    ; VGA_Ctrl:u2|oVGA_VS ; 3.419 ;       ; Fall       ; VGA_Ctrl:u2|oVGA_VS                            ;
-; VGA_B[*]  ; CLOCK_50            ; 8.937 ; 8.778 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_B[3] ; CLOCK_50            ; 8.937 ; 8.778 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
-; VGA_G[*]  ; CLOCK_50            ; 9.314 ; 9.139 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_G[2] ; CLOCK_50            ; 8.909 ; 8.745 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_G[3] ; CLOCK_50            ; 9.314 ; 9.139 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
-; VGA_R[*]  ; CLOCK_50            ; 8.957 ; 8.798 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_R[3] ; CLOCK_50            ; 8.957 ; 8.798 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+; VGA_HS    ; VGA_Ctrl:u2|oVGA_HS ;       ; 3.472 ; Rise       ; VGA_Ctrl:u2|oVGA_HS                            ;
+; VGA_HS    ; VGA_Ctrl:u2|oVGA_HS ; 3.418 ;       ; Fall       ; VGA_Ctrl:u2|oVGA_HS                            ;
+; VGA_VS    ; VGA_Ctrl:u2|oVGA_VS ;       ; 3.476 ; Rise       ; VGA_Ctrl:u2|oVGA_VS                            ;
+; VGA_VS    ; VGA_Ctrl:u2|oVGA_VS ; 3.405 ;       ; Fall       ; VGA_Ctrl:u2|oVGA_VS                            ;
+; VGA_B[*]  ; CLOCK_50            ; 8.737 ; 8.690 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[0] ; CLOCK_50            ; 8.320 ; 8.312 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[1] ; CLOCK_50            ; 8.737 ; 8.690 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[2] ; CLOCK_50            ; 8.705 ; 8.628 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[3] ; CLOCK_50            ; 8.667 ; 8.605 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+; VGA_G[*]  ; CLOCK_50            ; 8.564 ; 8.534 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_G[2] ; CLOCK_50            ; 8.491 ; 8.476 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_G[3] ; CLOCK_50            ; 8.564 ; 8.534 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+; VGA_R[*]  ; CLOCK_50            ; 9.292 ; 9.271 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[0] ; CLOCK_50            ; 8.584 ; 8.576 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[1] ; CLOCK_50            ; 9.292 ; 9.271 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[2] ; CLOCK_50            ; 9.155 ; 9.098 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[3] ; CLOCK_50            ; 8.667 ; 8.622 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
 +-----------+---------------------+-------+-------+------------+------------------------------------------------+
 
 
@@ -319,30 +328,35 @@ No paths to report.
 +-----------+---------------------+-------+-------+------------+------------------------------------------------+
 ; Data Port ; Clock Port          ; Rise  ; Fall  ; Clock Edge ; Clock Reference                                ;
 +-----------+---------------------+-------+-------+------------+------------------------------------------------+
-; VGA_HS    ; VGA_Ctrl:u2|oVGA_HS ;       ; 3.430 ; Rise       ; VGA_Ctrl:u2|oVGA_HS                            ;
-; VGA_HS    ; VGA_Ctrl:u2|oVGA_HS ; 3.370 ;       ; Fall       ; VGA_Ctrl:u2|oVGA_HS                            ;
-; VGA_VS    ; VGA_Ctrl:u2|oVGA_VS ;       ; 3.466 ; Rise       ; VGA_Ctrl:u2|oVGA_VS                            ;
-; VGA_VS    ; VGA_Ctrl:u2|oVGA_VS ; 3.367 ;       ; Fall       ; VGA_Ctrl:u2|oVGA_VS                            ;
-; VGA_B[*]  ; CLOCK_50            ; 4.945 ; 4.936 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_B[3] ; CLOCK_50            ; 4.945 ; 4.936 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
-; VGA_G[*]  ; CLOCK_50            ; 4.919 ; 4.903 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_G[2] ; CLOCK_50            ; 4.919 ; 4.903 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_G[3] ; CLOCK_50            ; 5.308 ; 5.284 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
-; VGA_R[*]  ; CLOCK_50            ; 4.965 ; 4.956 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_R[3] ; CLOCK_50            ; 4.965 ; 4.956 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+; VGA_HS    ; VGA_Ctrl:u2|oVGA_HS ;       ; 3.424 ; Rise       ; VGA_Ctrl:u2|oVGA_HS                            ;
+; VGA_HS    ; VGA_Ctrl:u2|oVGA_HS ; 3.366 ;       ; Fall       ; VGA_Ctrl:u2|oVGA_HS                            ;
+; VGA_VS    ; VGA_Ctrl:u2|oVGA_VS ;       ; 3.428 ; Rise       ; VGA_Ctrl:u2|oVGA_VS                            ;
+; VGA_VS    ; VGA_Ctrl:u2|oVGA_VS ; 3.354 ;       ; Fall       ; VGA_Ctrl:u2|oVGA_VS                            ;
+; VGA_B[*]  ; CLOCK_50            ; 4.485 ; 4.383 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[0] ; CLOCK_50            ; 4.485 ; 4.383 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[1] ; CLOCK_50            ; 4.762 ; 4.703 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[2] ; CLOCK_50            ; 4.857 ; 4.691 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[3] ; CLOCK_50            ; 4.932 ; 4.800 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+; VGA_G[*]  ; CLOCK_50            ; 4.179 ; 4.140 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_G[2] ; CLOCK_50            ; 4.764 ; 4.675 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_G[3] ; CLOCK_50            ; 4.179 ; 4.140 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+; VGA_R[*]  ; CLOCK_50            ; 4.646 ; 4.574 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[0] ; CLOCK_50            ; 4.738 ; 4.637 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[1] ; CLOCK_50            ; 5.295 ; 5.259 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[2] ; CLOCK_50            ; 5.288 ; 5.142 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[3] ; CLOCK_50            ; 4.646 ; 4.574 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
 +-----------+---------------------+-------+-------+------------+------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 0C Model Fmax Summary                                                                                                             ;
-+------------+-----------------+------------------------------------------------+---------------------------------------------------------------+
-; Fmax       ; Restricted Fmax ; Clock Name                                     ; Note                                                          ;
-+------------+-----------------+------------------------------------------------+---------------------------------------------------------------+
-; 137.53 MHz ; 137.53 MHz      ; u1|altpll_component|auto_generated|pll1|clk[0] ;                                                               ;
-; 190.22 MHz ; 190.22 MHz      ; VGA_Ctrl:u2|oVGA_VS                            ;                                                               ;
-; 251.7 MHz  ; 250.0 MHz       ; CLOCK_50                                       ; limit due to minimum period restriction (max I/O toggle rate) ;
-; 420.17 MHz ; 420.17 MHz      ; VGA_Ctrl:u2|oVGA_HS                            ;                                                               ;
-+------------+-----------------+------------------------------------------------+---------------------------------------------------------------+
++--------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                                                    ;
++------------+-----------------+------------------------------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name                                     ; Note ;
++------------+-----------------+------------------------------------------------+------+
+; 98.0 MHz   ; 98.0 MHz        ; u1|altpll_component|auto_generated|pll1|clk[0] ;      ;
+; 128.32 MHz ; 128.32 MHz      ; VGA_Ctrl:u2|oVGA_VS                            ;      ;
+; 451.88 MHz ; 451.88 MHz      ; VGA_Ctrl:u2|oVGA_HS                            ;      ;
++------------+-----------------+------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -351,10 +365,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------------------------------------------+--------+---------------+
 ; Clock                                          ; Slack  ; End Point TNS ;
 +------------------------------------------------+--------+---------------+
-; u1|altpll_component|auto_generated|pll1|clk[0] ; -7.444 ; -14.361       ;
-; VGA_Ctrl:u2|oVGA_VS                            ; -4.257 ; -108.757      ;
-; VGA_Ctrl:u2|oVGA_HS                            ; -1.476 ; -14.648       ;
-; CLOCK_50                                       ; 16.027 ; 0.000         ;
+; u1|altpll_component|auto_generated|pll1|clk[0] ; -8.573 ; -132.355      ;
+; VGA_Ctrl:u2|oVGA_VS                            ; -6.793 ; -327.750      ;
+; VGA_Ctrl:u2|oVGA_HS                            ; -1.213 ; -14.280       ;
 +------------------------------------------------+--------+---------------+
 
 
@@ -363,10 +376,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------------------------------------------+--------+---------------+
 ; Clock                                          ; Slack  ; End Point TNS ;
 +------------------------------------------------+--------+---------------+
-; VGA_Ctrl:u2|oVGA_HS                            ; -2.209 ; -2.209        ;
-; u1|altpll_component|auto_generated|pll1|clk[0] ; -0.154 ; -0.154        ;
-; CLOCK_50                                       ; 0.312  ; 0.000         ;
-; VGA_Ctrl:u2|oVGA_VS                            ; 0.313  ; 0.000         ;
+; VGA_Ctrl:u2|oVGA_HS                            ; -2.518 ; -2.518        ;
+; u1|altpll_component|auto_generated|pll1|clk[0] ; -0.142 ; -0.142        ;
+; VGA_Ctrl:u2|oVGA_VS                            ; 0.312  ; 0.000         ;
 +------------------------------------------------+--------+---------------+
 
 
@@ -382,132 +394,138 @@ No paths to report.
 No paths to report.
 
 
-+--------------------------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 0C Model Minimum Pulse Width                                                                                       ;
-+--------+--------------+----------------+-------+------------------+---------------------+------------+-------------------------+
-; Slack  ; Actual Width ; Required Width ; CCPP  ; Type             ; Clock               ; Clock Edge ; Target                  ;
-+--------+--------------+----------------+-------+------------------+---------------------+------------+-------------------------+
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[0]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[1]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[2]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[3]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[4]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[5]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[6]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[7]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[8]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[9]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[1]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[2]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[3]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[4]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[5]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[6]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[7]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[8]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[9]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|x_orient        ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|y_orient        ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; Crash:u7|oState_flag[0] ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[0]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[1]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[2]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[3]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[4]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[5]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[6]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[7]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[8]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[9]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[0]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[1]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[2]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[3]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[4]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[5]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[6]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[7]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[8]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[9]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[0]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[10]  ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[1]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[2]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[3]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[4]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[5]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[6]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[7]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[8]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[9]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|oVGA_VS     ;
-; 0.272  ; 0.377        ; 0.216          ; 0.111 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[0]   ;
-; 0.272  ; 0.377        ; 0.216          ; 0.111 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[10]  ;
-; 0.272  ; 0.377        ; 0.216          ; 0.111 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[1]   ;
-; 0.272  ; 0.377        ; 0.216          ; 0.111 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[2]   ;
-; 0.272  ; 0.377        ; 0.216          ; 0.111 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[3]   ;
-; 0.272  ; 0.377        ; 0.216          ; 0.111 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[4]   ;
-; 0.272  ; 0.377        ; 0.216          ; 0.111 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[5]   ;
-; 0.272  ; 0.377        ; 0.216          ; 0.111 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[6]   ;
-; 0.272  ; 0.377        ; 0.216          ; 0.111 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[7]   ;
-; 0.272  ; 0.377        ; 0.216          ; 0.111 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[8]   ;
-; 0.272  ; 0.377        ; 0.216          ; 0.111 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[9]   ;
-; 0.272  ; 0.377        ; 0.216          ; 0.111 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|oVGA_VS     ;
-; 0.273  ; 0.378        ; 0.216          ; 0.111 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; Crash:u7|oState_flag[0] ;
-; 0.294  ; 0.356        ; 0.184          ; 0.122 ; Low Pulse Width  ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[2]   ;
-; 0.294  ; 0.356        ; 0.184          ; 0.122 ; Low Pulse Width  ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[3]   ;
-; 0.294  ; 0.355        ; 0.184          ; 0.123 ; Low Pulse Width  ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[4]   ;
-; 0.294  ; 0.356        ; 0.184          ; 0.122 ; Low Pulse Width  ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[5]   ;
-; 0.295  ; 0.356        ; 0.184          ; 0.123 ; Low Pulse Width  ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[0]       ;
-; 0.295  ; 0.356        ; 0.184          ; 0.123 ; Low Pulse Width  ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[1]       ;
-; 0.295  ; 0.356        ; 0.184          ; 0.123 ; Low Pulse Width  ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[2]       ;
-; 0.295  ; 0.356        ; 0.184          ; 0.123 ; Low Pulse Width  ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[3]       ;
-; 0.295  ; 0.356        ; 0.184          ; 0.123 ; Low Pulse Width  ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[4]       ;
-; 0.295  ; 0.356        ; 0.184          ; 0.123 ; Low Pulse Width  ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[5]       ;
-; 0.295  ; 0.356        ; 0.184          ; 0.123 ; Low Pulse Width  ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[6]       ;
-; 0.295  ; 0.356        ; 0.184          ; 0.123 ; Low Pulse Width  ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[7]       ;
-; 0.295  ; 0.356        ; 0.184          ; 0.123 ; Low Pulse Width  ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[8]       ;
-; 0.295  ; 0.356        ; 0.184          ; 0.123 ; Low Pulse Width  ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[9]       ;
-; 0.295  ; 0.356        ; 0.184          ; 0.123 ; Low Pulse Width  ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[1]       ;
-; 0.295  ; 0.356        ; 0.184          ; 0.123 ; Low Pulse Width  ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[2]       ;
-; 0.295  ; 0.356        ; 0.184          ; 0.123 ; Low Pulse Width  ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[3]       ;
-; 0.295  ; 0.356        ; 0.184          ; 0.123 ; Low Pulse Width  ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[4]       ;
-; 0.295  ; 0.356        ; 0.184          ; 0.123 ; Low Pulse Width  ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[5]       ;
-; 0.295  ; 0.356        ; 0.184          ; 0.123 ; Low Pulse Width  ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[6]       ;
-; 0.295  ; 0.356        ; 0.184          ; 0.123 ; Low Pulse Width  ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[7]       ;
-; 0.295  ; 0.356        ; 0.184          ; 0.123 ; Low Pulse Width  ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[8]       ;
-; 0.295  ; 0.356        ; 0.184          ; 0.123 ; Low Pulse Width  ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[9]       ;
-; 0.295  ; 0.357        ; 0.184          ; 0.122 ; Low Pulse Width  ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|x_orient        ;
-; 0.295  ; 0.356        ; 0.184          ; 0.123 ; Low Pulse Width  ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|y_orient        ;
-; 0.295  ; 0.356        ; 0.184          ; 0.123 ; Low Pulse Width  ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[0]   ;
-; 0.295  ; 0.356        ; 0.184          ; 0.123 ; Low Pulse Width  ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[1]   ;
-; 0.295  ; 0.356        ; 0.184          ; 0.123 ; Low Pulse Width  ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[6]   ;
-; 0.295  ; 0.356        ; 0.184          ; 0.123 ; Low Pulse Width  ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[7]   ;
-; 0.295  ; 0.356        ; 0.184          ; 0.123 ; Low Pulse Width  ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[8]   ;
-; 0.295  ; 0.356        ; 0.184          ; 0.123 ; Low Pulse Width  ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[9]   ;
-; 0.295  ; 0.358        ; 0.184          ; 0.121 ; Low Pulse Width  ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[0]   ;
-; 0.295  ; 0.358        ; 0.184          ; 0.121 ; Low Pulse Width  ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[1]   ;
-+--------+--------------+----------------+-------+------------------+---------------------+------------+-------------------------+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width                                                                                        ;
++--------+--------------+----------------+-------+------------------+---------------------+------------+--------------------------+
+; Slack  ; Actual Width ; Required Width ; CCPP  ; Type             ; Clock               ; Clock Edge ; Target                   ;
++--------+--------------+----------------+-------+------------------+---------------------+------------+--------------------------+
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[1]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[2]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[3]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[4]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[5]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[6]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[7]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[8]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[9]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[2]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[3]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[4]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[5]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[6]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[7]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[8]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[9]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|x_orient         ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|y_orient         ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[0]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[10] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[11] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[12] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[13] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[14] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[15] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[16] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[17] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[18] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[19] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[1]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[20] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[21] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[22] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[23] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[24] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[25] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[26] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[27] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[28] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[29] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[2]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[30] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[31] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[32] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[33] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[34] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[35] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[36] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[37] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[38] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[39] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[3]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[4]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[5]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[6]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[7]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[8]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[9]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[1]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[2]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[3]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[4]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[5]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[6]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[7]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[8]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[9]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[1]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[2]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[3]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[4]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[5]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[6]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[7]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[8]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[9]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[0]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[10]   ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[1]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[2]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[3]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[4]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[5]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[6]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[7]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[8]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[9]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|oVGA_VS      ;
+; 0.253  ; 0.346        ; 0.216          ; 0.123 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[0]    ;
+; 0.253  ; 0.346        ; 0.216          ; 0.123 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[10]   ;
+; 0.253  ; 0.346        ; 0.216          ; 0.123 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[1]    ;
+; 0.253  ; 0.346        ; 0.216          ; 0.123 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[2]    ;
+; 0.253  ; 0.346        ; 0.216          ; 0.123 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[3]    ;
+; 0.253  ; 0.346        ; 0.216          ; 0.123 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[4]    ;
+; 0.253  ; 0.346        ; 0.216          ; 0.123 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[5]    ;
+; 0.253  ; 0.346        ; 0.216          ; 0.123 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[6]    ;
+; 0.253  ; 0.346        ; 0.216          ; 0.123 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[7]    ;
+; 0.253  ; 0.346        ; 0.216          ; 0.123 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[8]    ;
+; 0.253  ; 0.346        ; 0.216          ; 0.123 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[9]    ;
++--------+--------------+----------------+-------+------------------+---------------------+------------+--------------------------+
 
 
-+-----------------------------------------------------------------------+
-; Setup Times                                                           ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; PS2_KBCLK ; CLOCK_50   ; 1.579 ; 2.044 ; Rise       ; CLOCK_50        ;
-; PS2_KBDAT ; CLOCK_50   ; 1.492 ; 1.937 ; Rise       ; CLOCK_50        ;
-+-----------+------------+-------+-------+------------+-----------------+
++------------------------------------------------------------------------------------+
+; Setup Times                                                                        ;
++-----------+---------------------+-------+-------+------------+---------------------+
+; Data Port ; Clock Port          ; Rise  ; Fall  ; Clock Edge ; Clock Reference     ;
++-----------+---------------------+-------+-------+------------+---------------------+
+; SW[*]     ; VGA_Ctrl:u2|oVGA_VS ; 3.388 ; 3.680 ; Fall       ; VGA_Ctrl:u2|oVGA_VS ;
+;  SW[1]    ; VGA_Ctrl:u2|oVGA_VS ; 3.388 ; 3.680 ; Fall       ; VGA_Ctrl:u2|oVGA_VS ;
+;  SW[2]    ; VGA_Ctrl:u2|oVGA_VS ; 2.894 ; 3.363 ; Fall       ; VGA_Ctrl:u2|oVGA_VS ;
+;  SW[3]    ; VGA_Ctrl:u2|oVGA_VS ; 2.399 ; 2.826 ; Fall       ; VGA_Ctrl:u2|oVGA_VS ;
+;  SW[4]    ; VGA_Ctrl:u2|oVGA_VS ; 2.893 ; 3.505 ; Fall       ; VGA_Ctrl:u2|oVGA_VS ;
++-----------+---------------------+-------+-------+------------+---------------------+
 
 
-+-------------------------------------------------------------------------+
-; Hold Times                                                              ;
-+-----------+------------+--------+--------+------------+-----------------+
-; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
-+-----------+------------+--------+--------+------------+-----------------+
-; PS2_KBCLK ; CLOCK_50   ; -1.253 ; -1.708 ; Rise       ; CLOCK_50        ;
-; PS2_KBDAT ; CLOCK_50   ; -1.029 ; -1.451 ; Rise       ; CLOCK_50        ;
-+-----------+------------+--------+--------+------------+-----------------+
++--------------------------------------------------------------------------------------+
+; Hold Times                                                                           ;
++-----------+---------------------+--------+--------+------------+---------------------+
+; Data Port ; Clock Port          ; Rise   ; Fall   ; Clock Edge ; Clock Reference     ;
++-----------+---------------------+--------+--------+------------+---------------------+
+; SW[*]     ; VGA_Ctrl:u2|oVGA_VS ; -1.765 ; -2.236 ; Fall       ; VGA_Ctrl:u2|oVGA_VS ;
+;  SW[1]    ; VGA_Ctrl:u2|oVGA_VS ; -2.054 ; -2.478 ; Fall       ; VGA_Ctrl:u2|oVGA_VS ;
+;  SW[2]    ; VGA_Ctrl:u2|oVGA_VS ; -2.504 ; -2.955 ; Fall       ; VGA_Ctrl:u2|oVGA_VS ;
+;  SW[3]    ; VGA_Ctrl:u2|oVGA_VS ; -2.072 ; -2.490 ; Fall       ; VGA_Ctrl:u2|oVGA_VS ;
+;  SW[4]    ; VGA_Ctrl:u2|oVGA_VS ; -1.765 ; -2.236 ; Fall       ; VGA_Ctrl:u2|oVGA_VS ;
++-----------+---------------------+--------+--------+------------+---------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------+
@@ -515,17 +533,23 @@ No paths to report.
 +-----------+---------------------+-------+-------+------------+------------------------------------------------+
 ; Data Port ; Clock Port          ; Rise  ; Fall  ; Clock Edge ; Clock Reference                                ;
 +-----------+---------------------+-------+-------+------------+------------------------------------------------+
-; VGA_HS    ; VGA_Ctrl:u2|oVGA_HS ;       ; 3.390 ; Rise       ; VGA_Ctrl:u2|oVGA_HS                            ;
-; VGA_HS    ; VGA_Ctrl:u2|oVGA_HS ; 3.274 ;       ; Fall       ; VGA_Ctrl:u2|oVGA_HS                            ;
-; VGA_VS    ; VGA_Ctrl:u2|oVGA_VS ;       ; 3.423 ; Rise       ; VGA_Ctrl:u2|oVGA_VS                            ;
+; VGA_HS    ; VGA_Ctrl:u2|oVGA_HS ;       ; 3.382 ; Rise       ; VGA_Ctrl:u2|oVGA_HS                            ;
+; VGA_HS    ; VGA_Ctrl:u2|oVGA_HS ; 3.275 ;       ; Fall       ; VGA_Ctrl:u2|oVGA_HS                            ;
+; VGA_VS    ; VGA_Ctrl:u2|oVGA_VS ;       ; 3.388 ; Rise       ; VGA_Ctrl:u2|oVGA_VS                            ;
 ; VGA_VS    ; VGA_Ctrl:u2|oVGA_VS ; 3.273 ;       ; Fall       ; VGA_Ctrl:u2|oVGA_VS                            ;
-; VGA_B[*]  ; CLOCK_50            ; 8.431 ; 8.297 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_B[3] ; CLOCK_50            ; 8.431 ; 8.297 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
-; VGA_G[*]  ; CLOCK_50            ; 8.783 ; 8.619 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_G[2] ; CLOCK_50            ; 8.405 ; 8.262 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_G[3] ; CLOCK_50            ; 8.783 ; 8.619 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
-; VGA_R[*]  ; CLOCK_50            ; 8.451 ; 8.317 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_R[3] ; CLOCK_50            ; 8.451 ; 8.317 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+; VGA_B[*]  ; CLOCK_50            ; 8.293 ; 8.113 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[0] ; CLOCK_50            ; 7.907 ; 7.767 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[1] ; CLOCK_50            ; 8.293 ; 8.113 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[2] ; CLOCK_50            ; 8.267 ; 8.065 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[3] ; CLOCK_50            ; 8.234 ; 8.038 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+; VGA_G[*]  ; CLOCK_50            ; 8.131 ; 7.970 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_G[2] ; CLOCK_50            ; 8.064 ; 7.896 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_G[3] ; CLOCK_50            ; 8.131 ; 7.970 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+; VGA_R[*]  ; CLOCK_50            ; 8.803 ; 8.642 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[0] ; CLOCK_50            ; 8.153 ; 8.001 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[1] ; CLOCK_50            ; 8.803 ; 8.642 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[2] ; CLOCK_50            ; 8.682 ; 8.483 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[3] ; CLOCK_50            ; 8.234 ; 8.046 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
 +-----------+---------------------+-------+-------+------------+------------------------------------------------+
 
 
@@ -534,17 +558,23 @@ No paths to report.
 +-----------+---------------------+-------+-------+------------+------------------------------------------------+
 ; Data Port ; Clock Port          ; Rise  ; Fall  ; Clock Edge ; Clock Reference                                ;
 +-----------+---------------------+-------+-------+------------+------------------------------------------------+
-; VGA_HS    ; VGA_Ctrl:u2|oVGA_HS ;       ; 3.345 ; Rise       ; VGA_Ctrl:u2|oVGA_HS                            ;
+; VGA_HS    ; VGA_Ctrl:u2|oVGA_HS ;       ; 3.337 ; Rise       ; VGA_Ctrl:u2|oVGA_HS                            ;
 ; VGA_HS    ; VGA_Ctrl:u2|oVGA_HS ; 3.229 ;       ; Fall       ; VGA_Ctrl:u2|oVGA_HS                            ;
-; VGA_VS    ; VGA_Ctrl:u2|oVGA_VS ;       ; 3.376 ; Rise       ; VGA_Ctrl:u2|oVGA_VS                            ;
+; VGA_VS    ; VGA_Ctrl:u2|oVGA_VS ;       ; 3.344 ; Rise       ; VGA_Ctrl:u2|oVGA_VS                            ;
 ; VGA_VS    ; VGA_Ctrl:u2|oVGA_VS ; 3.228 ;       ; Fall       ; VGA_Ctrl:u2|oVGA_VS                            ;
-; VGA_B[*]  ; CLOCK_50            ; 4.850 ; 4.782 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_B[3] ; CLOCK_50            ; 4.850 ; 4.782 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
-; VGA_G[*]  ; CLOCK_50            ; 4.824 ; 4.747 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_G[2] ; CLOCK_50            ; 4.824 ; 4.747 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_G[3] ; CLOCK_50            ; 5.188 ; 5.092 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
-; VGA_R[*]  ; CLOCK_50            ; 4.870 ; 4.802 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_R[3] ; CLOCK_50            ; 4.870 ; 4.802 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+; VGA_B[*]  ; CLOCK_50            ; 4.431 ; 4.275 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[0] ; CLOCK_50            ; 4.431 ; 4.275 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[1] ; CLOCK_50            ; 4.695 ; 4.546 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[2] ; CLOCK_50            ; 4.773 ; 4.566 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[3] ; CLOCK_50            ; 4.844 ; 4.647 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+; VGA_G[*]  ; CLOCK_50            ; 4.146 ; 4.046 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_G[2] ; CLOCK_50            ; 4.687 ; 4.513 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_G[3] ; CLOCK_50            ; 4.146 ; 4.046 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+; VGA_R[*]  ; CLOCK_50            ; 4.597 ; 4.432 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[0] ; CLOCK_50            ; 4.667 ; 4.499 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[1] ; CLOCK_50            ; 5.184 ; 5.053 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[2] ; CLOCK_50            ; 5.171 ; 4.967 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[3] ; CLOCK_50            ; 4.597 ; 4.432 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
 +-----------+---------------------+-------+-------+------------+------------------------------------------------+
 
 
@@ -553,10 +583,9 @@ No paths to report.
 +------------------------------------------------+--------+---------------+
 ; Clock                                          ; Slack  ; End Point TNS ;
 +------------------------------------------------+--------+---------------+
-; u1|altpll_component|auto_generated|pll1|clk[0] ; -4.735 ; -9.151        ;
-; VGA_Ctrl:u2|oVGA_VS                            ; -2.352 ; -55.745       ;
-; VGA_Ctrl:u2|oVGA_HS                            ; -0.581 ; -3.775        ;
-; CLOCK_50                                       ; 17.509 ; 0.000         ;
+; u1|altpll_component|auto_generated|pll1|clk[0] ; -5.610 ; -86.530       ;
+; VGA_Ctrl:u2|oVGA_VS                            ; -3.867 ; -179.582      ;
+; VGA_Ctrl:u2|oVGA_HS                            ; -0.345 ; -3.987        ;
 +------------------------------------------------+--------+---------------+
 
 
@@ -565,10 +594,9 @@ No paths to report.
 +------------------------------------------------+--------+---------------+
 ; Clock                                          ; Slack  ; End Point TNS ;
 +------------------------------------------------+--------+---------------+
-; VGA_Ctrl:u2|oVGA_HS                            ; -1.494 ; -1.494        ;
-; u1|altpll_component|auto_generated|pll1|clk[0] ; 0.046  ; 0.000         ;
+; VGA_Ctrl:u2|oVGA_HS                            ; -1.716 ; -1.716        ;
+; u1|altpll_component|auto_generated|pll1|clk[0] ; 0.054  ; 0.000         ;
 ; VGA_Ctrl:u2|oVGA_VS                            ; 0.185  ; 0.000         ;
-; CLOCK_50                                       ; 0.187  ; 0.000         ;
 +------------------------------------------------+--------+---------------+
 
 
@@ -584,132 +612,138 @@ No paths to report.
 No paths to report.
 
 
-+--------------------------------------------------------------------------------------------------------------------------------+
-; Fast 1200mV 0C Model Minimum Pulse Width                                                                                       ;
-+--------+--------------+----------------+-------+------------------+---------------------+------------+-------------------------+
-; Slack  ; Actual Width ; Required Width ; CCPP  ; Type             ; Clock               ; Clock Edge ; Target                  ;
-+--------+--------------+----------------+-------+------------------+---------------------+------------+-------------------------+
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[0]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[1]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[2]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[3]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[4]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[5]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[6]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[7]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[8]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[9]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[1]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[2]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[3]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[4]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[5]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[6]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[7]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[8]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[9]       ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|x_orient        ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|y_orient        ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; Crash:u7|oState_flag[0] ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[0]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[1]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[2]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[3]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[4]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[5]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[6]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[7]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[8]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[9]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[0]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[1]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[2]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[3]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[4]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[5]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[6]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[7]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[8]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[9]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[0]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[10]  ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[1]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[2]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[3]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[4]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[5]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[6]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[7]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[8]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[9]   ;
-; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|oVGA_VS     ;
-; 0.185  ; 0.320        ; 0.216          ; 0.081 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[1]       ;
-; 0.185  ; 0.320        ; 0.216          ; 0.081 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[2]       ;
-; 0.185  ; 0.320        ; 0.216          ; 0.081 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[3]       ;
-; 0.185  ; 0.320        ; 0.216          ; 0.081 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[4]       ;
-; 0.185  ; 0.320        ; 0.216          ; 0.081 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[5]       ;
-; 0.185  ; 0.320        ; 0.216          ; 0.081 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[6]       ;
-; 0.185  ; 0.320        ; 0.216          ; 0.081 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[7]       ;
-; 0.185  ; 0.320        ; 0.216          ; 0.081 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[8]       ;
-; 0.185  ; 0.320        ; 0.216          ; 0.081 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[9]       ;
-; 0.185  ; 0.321        ; 0.216          ; 0.080 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|x_orient        ;
-; 0.185  ; 0.320        ; 0.216          ; 0.081 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|y_orient        ;
-; 0.185  ; 0.320        ; 0.216          ; 0.081 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[0]   ;
-; 0.185  ; 0.320        ; 0.216          ; 0.081 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[1]   ;
-; 0.185  ; 0.320        ; 0.216          ; 0.081 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[7]   ;
-; 0.185  ; 0.320        ; 0.216          ; 0.081 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[8]   ;
-; 0.186  ; 0.321        ; 0.216          ; 0.081 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[0]       ;
-; 0.186  ; 0.321        ; 0.216          ; 0.081 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[1]       ;
-; 0.186  ; 0.321        ; 0.216          ; 0.081 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[2]       ;
-; 0.186  ; 0.321        ; 0.216          ; 0.081 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[3]       ;
-; 0.186  ; 0.321        ; 0.216          ; 0.081 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[4]       ;
-; 0.186  ; 0.321        ; 0.216          ; 0.081 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[5]       ;
-; 0.186  ; 0.321        ; 0.216          ; 0.081 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[6]       ;
-; 0.186  ; 0.321        ; 0.216          ; 0.081 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[7]       ;
-; 0.186  ; 0.321        ; 0.216          ; 0.081 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[8]       ;
-; 0.186  ; 0.321        ; 0.216          ; 0.081 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[9]       ;
-; 0.186  ; 0.321        ; 0.216          ; 0.081 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[6]   ;
-; 0.186  ; 0.321        ; 0.216          ; 0.081 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[9]   ;
-; 0.188  ; 0.324        ; 0.216          ; 0.080 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[2]   ;
-; 0.188  ; 0.324        ; 0.216          ; 0.080 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[3]   ;
-; 0.188  ; 0.323        ; 0.216          ; 0.081 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[4]   ;
-; 0.188  ; 0.324        ; 0.216          ; 0.080 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[5]   ;
-; 0.188  ; 0.324        ; 0.216          ; 0.080 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[0]   ;
-; 0.188  ; 0.324        ; 0.216          ; 0.080 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[1]   ;
-; 0.188  ; 0.324        ; 0.216          ; 0.080 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[3]   ;
-; 0.188  ; 0.323        ; 0.216          ; 0.081 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[4]   ;
-; 0.188  ; 0.324        ; 0.216          ; 0.080 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[5]   ;
-; 0.188  ; 0.324        ; 0.216          ; 0.080 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[7]   ;
-; 0.188  ; 0.324        ; 0.216          ; 0.080 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[9]   ;
-; 0.189  ; 0.325        ; 0.216          ; 0.080 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[2]   ;
-; 0.189  ; 0.324        ; 0.216          ; 0.081 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[6]   ;
-; 0.189  ; 0.324        ; 0.216          ; 0.081 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[8]   ;
-; 0.193  ; 0.336        ; 0.216          ; 0.073 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; Crash:u7|oState_flag[0] ;
-; 0.193  ; 0.336        ; 0.216          ; 0.073 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[0]   ;
-; 0.193  ; 0.336        ; 0.216          ; 0.073 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[10]  ;
-; 0.193  ; 0.336        ; 0.216          ; 0.073 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[1]   ;
-; 0.193  ; 0.336        ; 0.216          ; 0.073 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[2]   ;
-+--------+--------------+----------------+-------+------------------+---------------------+------------+-------------------------+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width                                                                                        ;
++--------+--------------+----------------+-------+------------------+---------------------+------------+--------------------------+
+; Slack  ; Actual Width ; Required Width ; CCPP  ; Type             ; Clock               ; Clock Edge ; Target                   ;
++--------+--------------+----------------+-------+------------------+---------------------+------------+--------------------------+
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[1]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[2]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[3]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[4]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[5]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[6]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[7]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[8]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_x[9]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[2]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[3]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[4]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[5]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[6]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[7]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[8]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|ball_y[9]        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|x_orient         ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Ball:u6|y_orient         ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[0]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[10] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[11] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[12] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[13] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[14] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[15] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[16] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[17] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[18] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[19] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[1]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[20] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[21] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[22] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[23] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[24] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[25] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[26] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[27] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[28] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[29] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[2]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[30] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[31] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[32] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[33] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[34] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[35] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[36] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[37] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[38] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[39] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[3]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[4]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[5]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[6]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[7]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[8]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Crash:u7|oState_flag[9]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[1]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[2]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[3]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[4]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[5]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[6]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[7]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[8]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_x[9]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[1]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[2]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[3]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[4]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[5]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[6]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[7]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[8]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_VS ; Fall       ; Slider:u5|slider_y[9]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[0]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[10]   ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[1]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[2]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[3]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[4]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[5]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[6]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[7]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[8]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[9]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period       ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|oVGA_VS      ;
+; 0.164  ; 0.299        ; 0.216          ; 0.081 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|oVGA_VS      ;
+; 0.165  ; 0.300        ; 0.216          ; 0.081 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[0]    ;
+; 0.165  ; 0.300        ; 0.216          ; 0.081 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[10]   ;
+; 0.165  ; 0.300        ; 0.216          ; 0.081 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[1]    ;
+; 0.165  ; 0.300        ; 0.216          ; 0.081 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[2]    ;
+; 0.165  ; 0.300        ; 0.216          ; 0.081 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[3]    ;
+; 0.165  ; 0.300        ; 0.216          ; 0.081 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[4]    ;
+; 0.165  ; 0.300        ; 0.216          ; 0.081 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[5]    ;
+; 0.165  ; 0.300        ; 0.216          ; 0.081 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[6]    ;
+; 0.165  ; 0.300        ; 0.216          ; 0.081 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[7]    ;
+; 0.165  ; 0.300        ; 0.216          ; 0.081 ; High Pulse Width ; VGA_Ctrl:u2|oVGA_HS ; Fall       ; VGA_Ctrl:u2|V_Cont[8]    ;
++--------+--------------+----------------+-------+------------------+---------------------+------------+--------------------------+
 
 
-+-----------------------------------------------------------------------+
-; Setup Times                                                           ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; PS2_KBCLK ; CLOCK_50   ; 1.027 ; 1.800 ; Rise       ; CLOCK_50        ;
-; PS2_KBDAT ; CLOCK_50   ; 0.949 ; 1.760 ; Rise       ; CLOCK_50        ;
-+-----------+------------+-------+-------+------------+-----------------+
++------------------------------------------------------------------------------------+
+; Setup Times                                                                        ;
++-----------+---------------------+-------+-------+------------+---------------------+
+; Data Port ; Clock Port          ; Rise  ; Fall  ; Clock Edge ; Clock Reference     ;
++-----------+---------------------+-------+-------+------------+---------------------+
+; SW[*]     ; VGA_Ctrl:u2|oVGA_VS ; 2.017 ; 2.641 ; Fall       ; VGA_Ctrl:u2|oVGA_VS ;
+;  SW[1]    ; VGA_Ctrl:u2|oVGA_VS ; 2.017 ; 2.641 ; Fall       ; VGA_Ctrl:u2|oVGA_VS ;
+;  SW[2]    ; VGA_Ctrl:u2|oVGA_VS ; 1.636 ; 2.417 ; Fall       ; VGA_Ctrl:u2|oVGA_VS ;
+;  SW[3]    ; VGA_Ctrl:u2|oVGA_VS ; 1.334 ; 2.155 ; Fall       ; VGA_Ctrl:u2|oVGA_VS ;
+;  SW[4]    ; VGA_Ctrl:u2|oVGA_VS ; 1.644 ; 2.576 ; Fall       ; VGA_Ctrl:u2|oVGA_VS ;
++-----------+---------------------+-------+-------+------------+---------------------+
 
 
-+-------------------------------------------------------------------------+
-; Hold Times                                                              ;
-+-----------+------------+--------+--------+------------+-----------------+
-; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
-+-----------+------------+--------+--------+------------+-----------------+
-; PS2_KBCLK ; CLOCK_50   ; -0.815 ; -1.581 ; Rise       ; CLOCK_50        ;
-; PS2_KBDAT ; CLOCK_50   ; -0.662 ; -1.423 ; Rise       ; CLOCK_50        ;
-+-----------+------------+--------+--------+------------+-----------------+
++--------------------------------------------------------------------------------------+
+; Hold Times                                                                           ;
++-----------+---------------------+--------+--------+------------+---------------------+
+; Data Port ; Clock Port          ; Rise   ; Fall   ; Clock Edge ; Clock Reference     ;
++-----------+---------------------+--------+--------+------------+---------------------+
+; SW[*]     ; VGA_Ctrl:u2|oVGA_VS ; -0.915 ; -1.756 ; Fall       ; VGA_Ctrl:u2|oVGA_VS ;
+;  SW[1]    ; VGA_Ctrl:u2|oVGA_VS ; -1.156 ; -1.862 ; Fall       ; VGA_Ctrl:u2|oVGA_VS ;
+;  SW[2]    ; VGA_Ctrl:u2|oVGA_VS ; -1.380 ; -2.149 ; Fall       ; VGA_Ctrl:u2|oVGA_VS ;
+;  SW[3]    ; VGA_Ctrl:u2|oVGA_VS ; -1.119 ; -1.929 ; Fall       ; VGA_Ctrl:u2|oVGA_VS ;
+;  SW[4]    ; VGA_Ctrl:u2|oVGA_VS ; -0.915 ; -1.756 ; Fall       ; VGA_Ctrl:u2|oVGA_VS ;
++-----------+---------------------+--------+--------+------------+---------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------+
@@ -717,17 +751,23 @@ No paths to report.
 +-----------+---------------------+-------+-------+------------+------------------------------------------------+
 ; Data Port ; Clock Port          ; Rise  ; Fall  ; Clock Edge ; Clock Reference                                ;
 +-----------+---------------------+-------+-------+------------+------------------------------------------------+
-; VGA_HS    ; VGA_Ctrl:u2|oVGA_HS ;       ; 2.191 ; Rise       ; VGA_Ctrl:u2|oVGA_HS                            ;
-; VGA_HS    ; VGA_Ctrl:u2|oVGA_HS ; 2.217 ;       ; Fall       ; VGA_Ctrl:u2|oVGA_HS                            ;
-; VGA_VS    ; VGA_Ctrl:u2|oVGA_VS ;       ; 2.212 ; Rise       ; VGA_Ctrl:u2|oVGA_VS                            ;
-; VGA_VS    ; VGA_Ctrl:u2|oVGA_VS ; 2.211 ;       ; Fall       ; VGA_Ctrl:u2|oVGA_VS                            ;
-; VGA_B[*]  ; CLOCK_50            ; 5.295 ; 5.265 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_B[3] ; CLOCK_50            ; 5.295 ; 5.265 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
-; VGA_G[*]  ; CLOCK_50            ; 5.506 ; 5.491 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_G[2] ; CLOCK_50            ; 5.274 ; 5.234 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_G[3] ; CLOCK_50            ; 5.506 ; 5.491 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
-; VGA_R[*]  ; CLOCK_50            ; 5.315 ; 5.285 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_R[3] ; CLOCK_50            ; 5.315 ; 5.285 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+; VGA_HS    ; VGA_Ctrl:u2|oVGA_HS ;       ; 2.183 ; Rise       ; VGA_Ctrl:u2|oVGA_HS                            ;
+; VGA_HS    ; VGA_Ctrl:u2|oVGA_HS ; 2.224 ;       ; Fall       ; VGA_Ctrl:u2|oVGA_HS                            ;
+; VGA_VS    ; VGA_Ctrl:u2|oVGA_VS ;       ; 2.186 ; Rise       ; VGA_Ctrl:u2|oVGA_VS                            ;
+; VGA_VS    ; VGA_Ctrl:u2|oVGA_VS ; 2.214 ;       ; Fall       ; VGA_Ctrl:u2|oVGA_VS                            ;
+; VGA_B[*]  ; CLOCK_50            ; 5.091 ; 5.253 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[0] ; CLOCK_50            ; 4.870 ; 5.021 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[1] ; CLOCK_50            ; 5.091 ; 5.253 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[2] ; CLOCK_50            ; 5.072 ; 5.241 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[3] ; CLOCK_50            ; 5.031 ; 5.203 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+; VGA_G[*]  ; CLOCK_50            ; 5.003 ; 5.176 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_G[2] ; CLOCK_50            ; 4.951 ; 5.117 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_G[3] ; CLOCK_50            ; 5.003 ; 5.176 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+; VGA_R[*]  ; CLOCK_50            ; 5.417 ; 5.618 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[0] ; CLOCK_50            ; 5.028 ; 5.189 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[1] ; CLOCK_50            ; 5.417 ; 5.618 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[2] ; CLOCK_50            ; 5.334 ; 5.533 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[3] ; CLOCK_50            ; 5.057 ; 5.214 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
 +-----------+---------------------+-------+-------+------------+------------------------------------------------+
 
 
@@ -736,17 +776,23 @@ No paths to report.
 +-----------+---------------------+-------+-------+------------+------------------------------------------------+
 ; Data Port ; Clock Port          ; Rise  ; Fall  ; Clock Edge ; Clock Reference                                ;
 +-----------+---------------------+-------+-------+------------+------------------------------------------------+
-; VGA_HS    ; VGA_Ctrl:u2|oVGA_HS ;       ; 2.164 ; Rise       ; VGA_Ctrl:u2|oVGA_HS                            ;
-; VGA_HS    ; VGA_Ctrl:u2|oVGA_HS ; 2.186 ;       ; Fall       ; VGA_Ctrl:u2|oVGA_HS                            ;
-; VGA_VS    ; VGA_Ctrl:u2|oVGA_VS ;       ; 2.184 ; Rise       ; VGA_Ctrl:u2|oVGA_VS                            ;
-; VGA_VS    ; VGA_Ctrl:u2|oVGA_VS ; 2.180 ;       ; Fall       ; VGA_Ctrl:u2|oVGA_VS                            ;
-; VGA_B[*]  ; CLOCK_50            ; 2.900 ; 3.012 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_B[3] ; CLOCK_50            ; 2.900 ; 3.012 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
-; VGA_G[*]  ; CLOCK_50            ; 2.879 ; 2.982 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_G[2] ; CLOCK_50            ; 2.879 ; 2.982 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_G[3] ; CLOCK_50            ; 3.102 ; 3.229 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
-; VGA_R[*]  ; CLOCK_50            ; 2.920 ; 3.032 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_R[3] ; CLOCK_50            ; 2.920 ; 3.032 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+; VGA_HS    ; VGA_Ctrl:u2|oVGA_HS ;       ; 2.156 ; Rise       ; VGA_Ctrl:u2|oVGA_HS                            ;
+; VGA_HS    ; VGA_Ctrl:u2|oVGA_HS ; 2.193 ;       ; Fall       ; VGA_Ctrl:u2|oVGA_HS                            ;
+; VGA_VS    ; VGA_Ctrl:u2|oVGA_VS ;       ; 2.159 ; Rise       ; VGA_Ctrl:u2|oVGA_VS                            ;
+; VGA_VS    ; VGA_Ctrl:u2|oVGA_VS ; 2.183 ;       ; Fall       ; VGA_Ctrl:u2|oVGA_VS                            ;
+; VGA_B[*]  ; CLOCK_50            ; 2.652 ; 2.677 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[0] ; CLOCK_50            ; 2.652 ; 2.677 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[1] ; CLOCK_50            ; 2.803 ; 2.877 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[2] ; CLOCK_50            ; 2.846 ; 2.886 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[3] ; CLOCK_50            ; 2.871 ; 2.922 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+; VGA_G[*]  ; CLOCK_50            ; 2.481 ; 2.544 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_G[2] ; CLOCK_50            ; 2.788 ; 2.840 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_G[3] ; CLOCK_50            ; 2.481 ; 2.544 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+; VGA_R[*]  ; CLOCK_50            ; 2.746 ; 2.801 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[0] ; CLOCK_50            ; 2.804 ; 2.839 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[1] ; CLOCK_50            ; 3.115 ; 3.228 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[2] ; CLOCK_50            ; 3.097 ; 3.167 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[3] ; CLOCK_50            ; 2.746 ; 2.801 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
 +-----------+---------------------+-------+-------+------------+------------------------------------------------+
 
 
@@ -755,37 +801,41 @@ No paths to report.
 +-------------------------------------------------+----------+--------+----------+---------+---------------------+
 ; Clock                                           ; Setup    ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
 +-------------------------------------------------+----------+--------+----------+---------+---------------------+
-; Worst-case Slack                                ; -8.510   ; -2.485 ; 0.0      ; 0.0     ; -1.000              ;
-;  CLOCK_50                                       ; 15.579   ; 0.187  ; N/A      ; N/A     ; N/A                 ;
-;  VGA_Ctrl:u2|oVGA_HS                            ; -1.781   ; -2.485 ; N/A      ; N/A     ; N/A                 ;
-;  VGA_Ctrl:u2|oVGA_VS                            ; -4.862   ; 0.185  ; N/A      ; N/A     ; N/A                 ;
-;  u1|altpll_component|auto_generated|pll1|clk[0] ; -8.510   ; -0.154 ; N/A      ; N/A     ; N/A                 ;
-; Design-wide TNS                                 ; -160.294 ; -2.514 ; 0.0      ; 0.0     ; N/A                 ;
-;  CLOCK_50                                       ; 0.000    ; 0.000  ; N/A      ; N/A     ; N/A                 ;
-;  VGA_Ctrl:u2|oVGA_HS                            ; -17.710  ; -2.485 ; N/A      ; N/A     ; N/A                 ;
-;  VGA_Ctrl:u2|oVGA_VS                            ; -126.076 ; 0.000  ; N/A      ; N/A     ; N/A                 ;
-;  u1|altpll_component|auto_generated|pll1|clk[0] ; -16.508  ; -0.154 ; N/A      ; N/A     ; N/A                 ;
+; Worst-case Slack                                ; -9.789   ; -2.811 ; 0.0      ; 0.0     ; -1.000              ;
+;  VGA_Ctrl:u2|oVGA_HS                            ; -1.427   ; -2.811 ; N/A      ; N/A     ; N/A                 ;
+;  VGA_Ctrl:u2|oVGA_VS                            ; -7.626   ; 0.185  ; N/A      ; N/A     ; N/A                 ;
+;  u1|altpll_component|auto_generated|pll1|clk[0] ; -9.789   ; -0.142 ; N/A      ; N/A     ; N/A                 ;
+; Design-wide TNS                                 ; -543.936 ; -2.83  ; 0.0      ; 0.0     ; N/A                 ;
+;  VGA_Ctrl:u2|oVGA_HS                            ; -16.865  ; -2.811 ; N/A      ; N/A     ; N/A                 ;
+;  VGA_Ctrl:u2|oVGA_VS                            ; -375.329 ; 0.000  ; N/A      ; N/A     ; N/A                 ;
+;  u1|altpll_component|auto_generated|pll1|clk[0] ; -151.742 ; -0.142 ; N/A      ; N/A     ; N/A                 ;
 +-------------------------------------------------+----------+--------+----------+---------+---------------------+
 
 
-+-----------------------------------------------------------------------+
-; Setup Times                                                           ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; PS2_KBCLK ; CLOCK_50   ; 1.840 ; 2.391 ; Rise       ; CLOCK_50        ;
-; PS2_KBDAT ; CLOCK_50   ; 1.746 ; 2.273 ; Rise       ; CLOCK_50        ;
-+-----------+------------+-------+-------+------------+-----------------+
++------------------------------------------------------------------------------------+
+; Setup Times                                                                        ;
++-----------+---------------------+-------+-------+------------+---------------------+
+; Data Port ; Clock Port          ; Rise  ; Fall  ; Clock Edge ; Clock Reference     ;
++-----------+---------------------+-------+-------+------------+---------------------+
+; SW[*]     ; VGA_Ctrl:u2|oVGA_VS ; 3.795 ; 4.125 ; Fall       ; VGA_Ctrl:u2|oVGA_VS ;
+;  SW[1]    ; VGA_Ctrl:u2|oVGA_VS ; 3.795 ; 4.125 ; Fall       ; VGA_Ctrl:u2|oVGA_VS ;
+;  SW[2]    ; VGA_Ctrl:u2|oVGA_VS ; 3.207 ; 3.730 ; Fall       ; VGA_Ctrl:u2|oVGA_VS ;
+;  SW[3]    ; VGA_Ctrl:u2|oVGA_VS ; 2.623 ; 3.166 ; Fall       ; VGA_Ctrl:u2|oVGA_VS ;
+;  SW[4]    ; VGA_Ctrl:u2|oVGA_VS ; 3.249 ; 3.965 ; Fall       ; VGA_Ctrl:u2|oVGA_VS ;
++-----------+---------------------+-------+-------+------------+---------------------+
 
 
-+-------------------------------------------------------------------------+
-; Hold Times                                                              ;
-+-----------+------------+--------+--------+------------+-----------------+
-; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
-+-----------+------------+--------+--------+------------+-----------------+
-; PS2_KBCLK ; CLOCK_50   ; -0.815 ; -1.581 ; Rise       ; CLOCK_50        ;
-; PS2_KBDAT ; CLOCK_50   ; -0.662 ; -1.423 ; Rise       ; CLOCK_50        ;
-+-----------+------------+--------+--------+------------+-----------------+
++--------------------------------------------------------------------------------------+
+; Hold Times                                                                           ;
++-----------+---------------------+--------+--------+------------+---------------------+
+; Data Port ; Clock Port          ; Rise   ; Fall   ; Clock Edge ; Clock Reference     ;
++-----------+---------------------+--------+--------+------------+---------------------+
+; SW[*]     ; VGA_Ctrl:u2|oVGA_VS ; -0.915 ; -1.756 ; Fall       ; VGA_Ctrl:u2|oVGA_VS ;
+;  SW[1]    ; VGA_Ctrl:u2|oVGA_VS ; -1.156 ; -1.862 ; Fall       ; VGA_Ctrl:u2|oVGA_VS ;
+;  SW[2]    ; VGA_Ctrl:u2|oVGA_VS ; -1.380 ; -2.149 ; Fall       ; VGA_Ctrl:u2|oVGA_VS ;
+;  SW[3]    ; VGA_Ctrl:u2|oVGA_VS ; -1.119 ; -1.929 ; Fall       ; VGA_Ctrl:u2|oVGA_VS ;
+;  SW[4]    ; VGA_Ctrl:u2|oVGA_VS ; -0.915 ; -1.756 ; Fall       ; VGA_Ctrl:u2|oVGA_VS ;
++-----------+---------------------+--------+--------+------------+---------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------+
@@ -793,17 +843,23 @@ No paths to report.
 +-----------+---------------------+-------+-------+------------+------------------------------------------------+
 ; Data Port ; Clock Port          ; Rise  ; Fall  ; Clock Edge ; Clock Reference                                ;
 +-----------+---------------------+-------+-------+------------+------------------------------------------------+
-; VGA_HS    ; VGA_Ctrl:u2|oVGA_HS ;       ; 3.478 ; Rise       ; VGA_Ctrl:u2|oVGA_HS                            ;
-; VGA_HS    ; VGA_Ctrl:u2|oVGA_HS ; 3.421 ;       ; Fall       ; VGA_Ctrl:u2|oVGA_HS                            ;
-; VGA_VS    ; VGA_Ctrl:u2|oVGA_VS ;       ; 3.516 ; Rise       ; VGA_Ctrl:u2|oVGA_VS                            ;
-; VGA_VS    ; VGA_Ctrl:u2|oVGA_VS ; 3.419 ;       ; Fall       ; VGA_Ctrl:u2|oVGA_VS                            ;
-; VGA_B[*]  ; CLOCK_50            ; 8.937 ; 8.778 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_B[3] ; CLOCK_50            ; 8.937 ; 8.778 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
-; VGA_G[*]  ; CLOCK_50            ; 9.314 ; 9.139 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_G[2] ; CLOCK_50            ; 8.909 ; 8.745 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_G[3] ; CLOCK_50            ; 9.314 ; 9.139 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
-; VGA_R[*]  ; CLOCK_50            ; 8.957 ; 8.798 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_R[3] ; CLOCK_50            ; 8.957 ; 8.798 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+; VGA_HS    ; VGA_Ctrl:u2|oVGA_HS ;       ; 3.472 ; Rise       ; VGA_Ctrl:u2|oVGA_HS                            ;
+; VGA_HS    ; VGA_Ctrl:u2|oVGA_HS ; 3.418 ;       ; Fall       ; VGA_Ctrl:u2|oVGA_HS                            ;
+; VGA_VS    ; VGA_Ctrl:u2|oVGA_VS ;       ; 3.476 ; Rise       ; VGA_Ctrl:u2|oVGA_VS                            ;
+; VGA_VS    ; VGA_Ctrl:u2|oVGA_VS ; 3.405 ;       ; Fall       ; VGA_Ctrl:u2|oVGA_VS                            ;
+; VGA_B[*]  ; CLOCK_50            ; 8.737 ; 8.690 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[0] ; CLOCK_50            ; 8.320 ; 8.312 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[1] ; CLOCK_50            ; 8.737 ; 8.690 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[2] ; CLOCK_50            ; 8.705 ; 8.628 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[3] ; CLOCK_50            ; 8.667 ; 8.605 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+; VGA_G[*]  ; CLOCK_50            ; 8.564 ; 8.534 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_G[2] ; CLOCK_50            ; 8.491 ; 8.476 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_G[3] ; CLOCK_50            ; 8.564 ; 8.534 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+; VGA_R[*]  ; CLOCK_50            ; 9.292 ; 9.271 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[0] ; CLOCK_50            ; 8.584 ; 8.576 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[1] ; CLOCK_50            ; 9.292 ; 9.271 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[2] ; CLOCK_50            ; 9.155 ; 9.098 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[3] ; CLOCK_50            ; 8.667 ; 8.622 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
 +-----------+---------------------+-------+-------+------------+------------------------------------------------+
 
 
@@ -812,17 +868,23 @@ No paths to report.
 +-----------+---------------------+-------+-------+------------+------------------------------------------------+
 ; Data Port ; Clock Port          ; Rise  ; Fall  ; Clock Edge ; Clock Reference                                ;
 +-----------+---------------------+-------+-------+------------+------------------------------------------------+
-; VGA_HS    ; VGA_Ctrl:u2|oVGA_HS ;       ; 2.164 ; Rise       ; VGA_Ctrl:u2|oVGA_HS                            ;
-; VGA_HS    ; VGA_Ctrl:u2|oVGA_HS ; 2.186 ;       ; Fall       ; VGA_Ctrl:u2|oVGA_HS                            ;
-; VGA_VS    ; VGA_Ctrl:u2|oVGA_VS ;       ; 2.184 ; Rise       ; VGA_Ctrl:u2|oVGA_VS                            ;
-; VGA_VS    ; VGA_Ctrl:u2|oVGA_VS ; 2.180 ;       ; Fall       ; VGA_Ctrl:u2|oVGA_VS                            ;
-; VGA_B[*]  ; CLOCK_50            ; 2.900 ; 3.012 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_B[3] ; CLOCK_50            ; 2.900 ; 3.012 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
-; VGA_G[*]  ; CLOCK_50            ; 2.879 ; 2.982 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_G[2] ; CLOCK_50            ; 2.879 ; 2.982 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_G[3] ; CLOCK_50            ; 3.102 ; 3.229 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
-; VGA_R[*]  ; CLOCK_50            ; 2.920 ; 3.032 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_R[3] ; CLOCK_50            ; 2.920 ; 3.032 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+; VGA_HS    ; VGA_Ctrl:u2|oVGA_HS ;       ; 2.156 ; Rise       ; VGA_Ctrl:u2|oVGA_HS                            ;
+; VGA_HS    ; VGA_Ctrl:u2|oVGA_HS ; 2.193 ;       ; Fall       ; VGA_Ctrl:u2|oVGA_HS                            ;
+; VGA_VS    ; VGA_Ctrl:u2|oVGA_VS ;       ; 2.159 ; Rise       ; VGA_Ctrl:u2|oVGA_VS                            ;
+; VGA_VS    ; VGA_Ctrl:u2|oVGA_VS ; 2.183 ;       ; Fall       ; VGA_Ctrl:u2|oVGA_VS                            ;
+; VGA_B[*]  ; CLOCK_50            ; 2.652 ; 2.677 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[0] ; CLOCK_50            ; 2.652 ; 2.677 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[1] ; CLOCK_50            ; 2.803 ; 2.877 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[2] ; CLOCK_50            ; 2.846 ; 2.886 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[3] ; CLOCK_50            ; 2.871 ; 2.922 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+; VGA_G[*]  ; CLOCK_50            ; 2.481 ; 2.544 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_G[2] ; CLOCK_50            ; 2.788 ; 2.840 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_G[3] ; CLOCK_50            ; 2.481 ; 2.544 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+; VGA_R[*]  ; CLOCK_50            ; 2.746 ; 2.801 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[0] ; CLOCK_50            ; 2.804 ; 2.839 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[1] ; CLOCK_50            ; 3.115 ; 3.228 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[2] ; CLOCK_50            ; 3.097 ; 3.167 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[3] ; CLOCK_50            ; 2.746 ; 2.801 ; Rise       ; u1|altpll_component|auto_generated|pll1|clk[0] ;
 +-----------+---------------------+-------+-------+------------+------------------------------------------------+
 
 
@@ -1073,10 +1135,6 @@ No paths to report.
 ; BUTTON[1]               ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; BUTTON[2]               ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; SW[0]                   ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
-; SW[1]                   ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
-; SW[2]                   ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
-; SW[3]                   ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
-; SW[4]                   ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; SW[5]                   ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; SW[6]                   ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; SW[7]                   ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
@@ -1203,6 +1261,10 @@ No paths to report.
 ; GPIO1_D[31]             ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; BUTTON[0]               ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; CLOCK_50                ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; SW[4]                   ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; SW[3]                   ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; SW[1]                   ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; SW[2]                   ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; ~ALTERA_ASDO_DATA1~     ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; ~ALTERA_FLASH_nCE_nCSO~ ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; ~ALTERA_DATA0~          ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
@@ -1690,15 +1752,12 @@ No paths to report.
 +------------------------------------------------+------------------------------------------------+----------+----------+----------+----------+
 ; From Clock                                     ; To Clock                                       ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------------------------------------------+------------------------------------------------+----------+----------+----------+----------+
-; CLOCK_50                                       ; CLOCK_50                                       ; 258      ; 0        ; 0        ; 0        ;
-; u1|altpll_component|auto_generated|pll1|clk[0] ; u1|altpll_component|auto_generated|pll1|clk[0] ; 594      ; 0        ; 0        ; 0        ;
-; VGA_Ctrl:u2|oVGA_HS                            ; u1|altpll_component|auto_generated|pll1|clk[0] ; 1        ; 991      ; 0        ; 0        ;
-; VGA_Ctrl:u2|oVGA_VS                            ; u1|altpll_component|auto_generated|pll1|clk[0] ; 0        ; 624      ; 0        ; 0        ;
-; VGA_Ctrl:u2|oVGA_HS                            ; VGA_Ctrl:u2|oVGA_HS                            ; 0        ; 0        ; 0        ; 177      ;
-; VGA_Ctrl:u2|oVGA_VS                            ; VGA_Ctrl:u2|oVGA_HS                            ; 0        ; 0        ; 1        ; 23       ;
-; CLOCK_50                                       ; VGA_Ctrl:u2|oVGA_VS                            ; 0        ; 0        ; 59       ; 0        ;
-; VGA_Ctrl:u2|oVGA_HS                            ; VGA_Ctrl:u2|oVGA_VS                            ; 0        ; 0        ; 0        ; 4        ;
-; VGA_Ctrl:u2|oVGA_VS                            ; VGA_Ctrl:u2|oVGA_VS                            ; 0        ; 0        ; 0        ; 3357     ;
+; u1|altpll_component|auto_generated|pll1|clk[0] ; u1|altpll_component|auto_generated|pll1|clk[0] ; 4304     ; 0        ; 0        ; 0        ;
+; VGA_Ctrl:u2|oVGA_HS                            ; u1|altpll_component|auto_generated|pll1|clk[0] ; 1        ; 10194    ; 0        ; 0        ;
+; VGA_Ctrl:u2|oVGA_VS                            ; u1|altpll_component|auto_generated|pll1|clk[0] ; 0        ; 4282     ; 0        ; 0        ;
+; VGA_Ctrl:u2|oVGA_HS                            ; VGA_Ctrl:u2|oVGA_HS                            ; 0        ; 0        ; 0        ; 176      ;
+; VGA_Ctrl:u2|oVGA_VS                            ; VGA_Ctrl:u2|oVGA_HS                            ; 0        ; 0        ; 1        ; 1        ;
+; VGA_Ctrl:u2|oVGA_VS                            ; VGA_Ctrl:u2|oVGA_VS                            ; 0        ; 0        ; 0        ; 114885   ;
 +------------------------------------------------+------------------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -1708,15 +1767,12 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------------------------------------------+------------------------------------------------+----------+----------+----------+----------+
 ; From Clock                                     ; To Clock                                       ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------------------------------------------+------------------------------------------------+----------+----------+----------+----------+
-; CLOCK_50                                       ; CLOCK_50                                       ; 258      ; 0        ; 0        ; 0        ;
-; u1|altpll_component|auto_generated|pll1|clk[0] ; u1|altpll_component|auto_generated|pll1|clk[0] ; 594      ; 0        ; 0        ; 0        ;
-; VGA_Ctrl:u2|oVGA_HS                            ; u1|altpll_component|auto_generated|pll1|clk[0] ; 1        ; 991      ; 0        ; 0        ;
-; VGA_Ctrl:u2|oVGA_VS                            ; u1|altpll_component|auto_generated|pll1|clk[0] ; 0        ; 624      ; 0        ; 0        ;
-; VGA_Ctrl:u2|oVGA_HS                            ; VGA_Ctrl:u2|oVGA_HS                            ; 0        ; 0        ; 0        ; 177      ;
-; VGA_Ctrl:u2|oVGA_VS                            ; VGA_Ctrl:u2|oVGA_HS                            ; 0        ; 0        ; 1        ; 23       ;
-; CLOCK_50                                       ; VGA_Ctrl:u2|oVGA_VS                            ; 0        ; 0        ; 59       ; 0        ;
-; VGA_Ctrl:u2|oVGA_HS                            ; VGA_Ctrl:u2|oVGA_VS                            ; 0        ; 0        ; 0        ; 4        ;
-; VGA_Ctrl:u2|oVGA_VS                            ; VGA_Ctrl:u2|oVGA_VS                            ; 0        ; 0        ; 0        ; 3357     ;
+; u1|altpll_component|auto_generated|pll1|clk[0] ; u1|altpll_component|auto_generated|pll1|clk[0] ; 4304     ; 0        ; 0        ; 0        ;
+; VGA_Ctrl:u2|oVGA_HS                            ; u1|altpll_component|auto_generated|pll1|clk[0] ; 1        ; 10194    ; 0        ; 0        ;
+; VGA_Ctrl:u2|oVGA_VS                            ; u1|altpll_component|auto_generated|pll1|clk[0] ; 0        ; 4282     ; 0        ; 0        ;
+; VGA_Ctrl:u2|oVGA_HS                            ; VGA_Ctrl:u2|oVGA_HS                            ; 0        ; 0        ; 0        ; 176      ;
+; VGA_Ctrl:u2|oVGA_VS                            ; VGA_Ctrl:u2|oVGA_HS                            ; 0        ; 0        ; 1        ; 1        ;
+; VGA_Ctrl:u2|oVGA_VS                            ; VGA_Ctrl:u2|oVGA_VS                            ; 0        ; 0        ; 0        ; 114885   ;
 +------------------------------------------------+------------------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -1740,10 +1796,10 @@ No dedicated SERDES Receiver circuitry present in device or used in design.
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
-; Unconstrained Input Ports       ; 3     ; 3    ;
-; Unconstrained Input Port Paths  ; 97    ; 97   ;
-; Unconstrained Output Ports      ; 6     ; 6    ;
-; Unconstrained Output Port Paths ; 50    ; 50   ;
+; Unconstrained Input Ports       ; 5     ; 5    ;
+; Unconstrained Input Port Paths  ; 144   ; 144  ;
+; Unconstrained Output Ports      ; 12    ; 12   ;
+; Unconstrained Output Port Paths ; 122   ; 122  ;
 +---------------------------------+-------+------+
 
 
@@ -1753,7 +1809,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design.
 Info: *******************************************************************
 Info: Running Quartus II TimeQuest Timing Analyzer
     Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
-    Info: Processing started: Fri Jun 08 16:39:06 2018
+    Info: Processing started: Sat Jun 09 22:25:19 2018
 Info: Command: quartus_sta DE0_VGA -c DE0_VGA
 Info: qsta_default_script.tcl version: #3
 Info: Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -1774,7 +1830,6 @@ Critical Warning: The following clock transfers have no clock uncertainty assign
     Critical Warning: From VGA_Ctrl:u2|oVGA_HS (Rise) to u1|altpll_component|auto_generated|pll1|clk[0] (Rise) (setup and hold)
     Critical Warning: From VGA_Ctrl:u2|oVGA_HS (Fall) to u1|altpll_component|auto_generated|pll1|clk[0] (Rise) (setup and hold)
     Critical Warning: From VGA_Ctrl:u2|oVGA_VS (Fall) to u1|altpll_component|auto_generated|pll1|clk[0] (Rise) (setup and hold)
-    Critical Warning: From CLOCK_50 (Rise) to CLOCK_50 (Rise) (setup and hold)
     Critical Warning: From u1|altpll_component|auto_generated|pll1|clk[0] (Rise) to VGA_Ctrl:u2|oVGA_HS (Rise) (setup and hold)
     Critical Warning: From VGA_Ctrl:u2|oVGA_HS (Rise) to VGA_Ctrl:u2|oVGA_HS (Rise) (setup and hold)
     Critical Warning: From VGA_Ctrl:u2|oVGA_HS (Fall) to VGA_Ctrl:u2|oVGA_HS (Rise) (setup and hold)
@@ -1786,25 +1841,22 @@ Critical Warning: The following clock transfers have no clock uncertainty assign
     Critical Warning: From VGA_Ctrl:u2|oVGA_HS (Fall) to VGA_Ctrl:u2|oVGA_VS (Rise) (setup and hold)
     Critical Warning: From VGA_Ctrl:u2|oVGA_VS (Rise) to VGA_Ctrl:u2|oVGA_VS (Rise) (setup and hold)
     Critical Warning: From VGA_Ctrl:u2|oVGA_VS (Fall) to VGA_Ctrl:u2|oVGA_VS (Rise) (setup and hold)
-    Critical Warning: From CLOCK_50 (Rise) to VGA_Ctrl:u2|oVGA_VS (Fall) (setup and hold)
     Critical Warning: From VGA_Ctrl:u2|oVGA_HS (Fall) to VGA_Ctrl:u2|oVGA_VS (Fall) (setup and hold)
     Critical Warning: From VGA_Ctrl:u2|oVGA_VS (Rise) to VGA_Ctrl:u2|oVGA_VS (Fall) (setup and hold)
     Critical Warning: From VGA_Ctrl:u2|oVGA_VS (Fall) to VGA_Ctrl:u2|oVGA_VS (Fall) (setup and hold)
 Info: Analyzing Slow 1200mV 85C Model
 Critical Warning: Timing requirements not met
-Info: Worst-case setup slack is -8.510
+Info: Worst-case setup slack is -9.789
     Info:     Slack End Point TNS Clock 
     Info: ========= ============= =====================
-    Info:    -8.510       -16.508 u1|altpll_component|auto_generated|pll1|clk[0] 
-    Info:    -4.862      -126.076 VGA_Ctrl:u2|oVGA_VS 
-    Info:    -1.781       -17.710 VGA_Ctrl:u2|oVGA_HS 
-    Info:    15.579         0.000 CLOCK_50 
-Info: Worst-case hold slack is -2.485
+    Info:    -9.789      -151.742 u1|altpll_component|auto_generated|pll1|clk[0] 
+    Info:    -7.626      -375.329 VGA_Ctrl:u2|oVGA_VS 
+    Info:    -1.427       -16.865 VGA_Ctrl:u2|oVGA_HS 
+Info: Worst-case hold slack is -2.811
     Info:     Slack End Point TNS Clock 
     Info: ========= ============= =====================
-    Info:    -2.485        -2.485 VGA_Ctrl:u2|oVGA_HS 
-    Info:    -0.029        -0.029 u1|altpll_component|auto_generated|pll1|clk[0] 
-    Info:     0.358         0.000 CLOCK_50 
+    Info:    -2.811        -2.811 VGA_Ctrl:u2|oVGA_HS 
+    Info:    -0.019        -0.019 u1|altpll_component|auto_generated|pll1|clk[0] 
     Info:     0.358         0.000 VGA_Ctrl:u2|oVGA_VS 
 Info: No recovery paths to report
 Info: No removal paths to report
@@ -1819,7 +1871,6 @@ Critical Warning: The following clock transfers have no clock uncertainty assign
     Critical Warning: From VGA_Ctrl:u2|oVGA_HS (Rise) to u1|altpll_component|auto_generated|pll1|clk[0] (Rise) (setup and hold)
     Critical Warning: From VGA_Ctrl:u2|oVGA_HS (Fall) to u1|altpll_component|auto_generated|pll1|clk[0] (Rise) (setup and hold)
     Critical Warning: From VGA_Ctrl:u2|oVGA_VS (Fall) to u1|altpll_component|auto_generated|pll1|clk[0] (Rise) (setup and hold)
-    Critical Warning: From CLOCK_50 (Rise) to CLOCK_50 (Rise) (setup and hold)
     Critical Warning: From u1|altpll_component|auto_generated|pll1|clk[0] (Rise) to VGA_Ctrl:u2|oVGA_HS (Rise) (setup and hold)
     Critical Warning: From VGA_Ctrl:u2|oVGA_HS (Rise) to VGA_Ctrl:u2|oVGA_HS (Rise) (setup and hold)
     Critical Warning: From VGA_Ctrl:u2|oVGA_HS (Fall) to VGA_Ctrl:u2|oVGA_HS (Rise) (setup and hold)
@@ -1831,25 +1882,22 @@ Critical Warning: The following clock transfers have no clock uncertainty assign
     Critical Warning: From VGA_Ctrl:u2|oVGA_HS (Fall) to VGA_Ctrl:u2|oVGA_VS (Rise) (setup and hold)
     Critical Warning: From VGA_Ctrl:u2|oVGA_VS (Rise) to VGA_Ctrl:u2|oVGA_VS (Rise) (setup and hold)
     Critical Warning: From VGA_Ctrl:u2|oVGA_VS (Fall) to VGA_Ctrl:u2|oVGA_VS (Rise) (setup and hold)
-    Critical Warning: From CLOCK_50 (Rise) to VGA_Ctrl:u2|oVGA_VS (Fall) (setup and hold)
     Critical Warning: From VGA_Ctrl:u2|oVGA_HS (Fall) to VGA_Ctrl:u2|oVGA_VS (Fall) (setup and hold)
     Critical Warning: From VGA_Ctrl:u2|oVGA_VS (Rise) to VGA_Ctrl:u2|oVGA_VS (Fall) (setup and hold)
     Critical Warning: From VGA_Ctrl:u2|oVGA_VS (Fall) to VGA_Ctrl:u2|oVGA_VS (Fall) (setup and hold)
 Critical Warning: Timing requirements not met
-Info: Worst-case setup slack is -7.444
+Info: Worst-case setup slack is -8.573
     Info:     Slack End Point TNS Clock 
     Info: ========= ============= =====================
-    Info:    -7.444       -14.361 u1|altpll_component|auto_generated|pll1|clk[0] 
-    Info:    -4.257      -108.757 VGA_Ctrl:u2|oVGA_VS 
-    Info:    -1.476       -14.648 VGA_Ctrl:u2|oVGA_HS 
-    Info:    16.027         0.000 CLOCK_50 
-Info: Worst-case hold slack is -2.209
+    Info:    -8.573      -132.355 u1|altpll_component|auto_generated|pll1|clk[0] 
+    Info:    -6.793      -327.750 VGA_Ctrl:u2|oVGA_VS 
+    Info:    -1.213       -14.280 VGA_Ctrl:u2|oVGA_HS 
+Info: Worst-case hold slack is -2.518
     Info:     Slack End Point TNS Clock 
     Info: ========= ============= =====================
-    Info:    -2.209        -2.209 VGA_Ctrl:u2|oVGA_HS 
-    Info:    -0.154        -0.154 u1|altpll_component|auto_generated|pll1|clk[0] 
-    Info:     0.312         0.000 CLOCK_50 
-    Info:     0.313         0.000 VGA_Ctrl:u2|oVGA_VS 
+    Info:    -2.518        -2.518 VGA_Ctrl:u2|oVGA_HS 
+    Info:    -0.142        -0.142 u1|altpll_component|auto_generated|pll1|clk[0] 
+    Info:     0.312         0.000 VGA_Ctrl:u2|oVGA_VS 
 Info: No recovery paths to report
 Info: No removal paths to report
 Critical Warning: Found minimum pulse width or period violations. See Report Minimum Pulse Width for details.
@@ -1863,7 +1911,6 @@ Critical Warning: The following clock transfers have no clock uncertainty assign
     Critical Warning: From VGA_Ctrl:u2|oVGA_HS (Rise) to u1|altpll_component|auto_generated|pll1|clk[0] (Rise) (setup and hold)
     Critical Warning: From VGA_Ctrl:u2|oVGA_HS (Fall) to u1|altpll_component|auto_generated|pll1|clk[0] (Rise) (setup and hold)
     Critical Warning: From VGA_Ctrl:u2|oVGA_VS (Fall) to u1|altpll_component|auto_generated|pll1|clk[0] (Rise) (setup and hold)
-    Critical Warning: From CLOCK_50 (Rise) to CLOCK_50 (Rise) (setup and hold)
     Critical Warning: From u1|altpll_component|auto_generated|pll1|clk[0] (Rise) to VGA_Ctrl:u2|oVGA_HS (Rise) (setup and hold)
     Critical Warning: From VGA_Ctrl:u2|oVGA_HS (Rise) to VGA_Ctrl:u2|oVGA_HS (Rise) (setup and hold)
     Critical Warning: From VGA_Ctrl:u2|oVGA_HS (Fall) to VGA_Ctrl:u2|oVGA_HS (Rise) (setup and hold)
@@ -1875,25 +1922,22 @@ Critical Warning: The following clock transfers have no clock uncertainty assign
     Critical Warning: From VGA_Ctrl:u2|oVGA_HS (Fall) to VGA_Ctrl:u2|oVGA_VS (Rise) (setup and hold)
     Critical Warning: From VGA_Ctrl:u2|oVGA_VS (Rise) to VGA_Ctrl:u2|oVGA_VS (Rise) (setup and hold)
     Critical Warning: From VGA_Ctrl:u2|oVGA_VS (Fall) to VGA_Ctrl:u2|oVGA_VS (Rise) (setup and hold)
-    Critical Warning: From CLOCK_50 (Rise) to VGA_Ctrl:u2|oVGA_VS (Fall) (setup and hold)
     Critical Warning: From VGA_Ctrl:u2|oVGA_HS (Fall) to VGA_Ctrl:u2|oVGA_VS (Fall) (setup and hold)
     Critical Warning: From VGA_Ctrl:u2|oVGA_VS (Rise) to VGA_Ctrl:u2|oVGA_VS (Fall) (setup and hold)
     Critical Warning: From VGA_Ctrl:u2|oVGA_VS (Fall) to VGA_Ctrl:u2|oVGA_VS (Fall) (setup and hold)
 Critical Warning: Timing requirements not met
-Info: Worst-case setup slack is -4.735
+Info: Worst-case setup slack is -5.610
     Info:     Slack End Point TNS Clock 
     Info: ========= ============= =====================
-    Info:    -4.735        -9.151 u1|altpll_component|auto_generated|pll1|clk[0] 
-    Info:    -2.352       -55.745 VGA_Ctrl:u2|oVGA_VS 
-    Info:    -0.581        -3.775 VGA_Ctrl:u2|oVGA_HS 
-    Info:    17.509         0.000 CLOCK_50 
-Info: Worst-case hold slack is -1.494
+    Info:    -5.610       -86.530 u1|altpll_component|auto_generated|pll1|clk[0] 
+    Info:    -3.867      -179.582 VGA_Ctrl:u2|oVGA_VS 
+    Info:    -0.345        -3.987 VGA_Ctrl:u2|oVGA_HS 
+Info: Worst-case hold slack is -1.716
     Info:     Slack End Point TNS Clock 
     Info: ========= ============= =====================
-    Info:    -1.494        -1.494 VGA_Ctrl:u2|oVGA_HS 
-    Info:     0.046         0.000 u1|altpll_component|auto_generated|pll1|clk[0] 
+    Info:    -1.716        -1.716 VGA_Ctrl:u2|oVGA_HS 
+    Info:     0.054         0.000 u1|altpll_component|auto_generated|pll1|clk[0] 
     Info:     0.185         0.000 VGA_Ctrl:u2|oVGA_VS 
-    Info:     0.187         0.000 CLOCK_50 
 Info: No recovery paths to report
 Info: No removal paths to report
 Critical Warning: Found minimum pulse width or period violations. See Report Minimum Pulse Width for details.
@@ -1901,10 +1945,10 @@ Info: The Metastability Analysis global option is set to OFF.
 Info: No synchronizer chains to report.
 Info: Design is not fully constrained for setup requirements
 Info: Design is not fully constrained for hold requirements
-Info: Quartus II TimeQuest Timing Analyzer was successful. 0 errors, 70 warnings
-    Info: Peak virtual memory: 317 megabytes
-    Info: Processing ended: Fri Jun 08 16:39:09 2018
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:03
+Info: Quartus II TimeQuest Timing Analyzer was successful. 0 errors, 64 warnings
+    Info: Peak virtual memory: 288 megabytes
+    Info: Processing ended: Sat Jun 09 22:25:23 2018
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:04
 
 
