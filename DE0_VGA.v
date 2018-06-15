@@ -217,7 +217,7 @@ assign			PS2_MSCLK		=	1'hz;
 assign			GPIO0_D			=	32'hzzzzzzzz;
 assign			GPIO1_D			=	32'hzzzzzzzz;
 
-assign			HEX0_D			=	7'h7F;
+//assign			HEX0_D			=	7'h7F;
 assign			HEX0_DP			=	1'h1;
 assign			HEX1_D			=	7'h7F;
 assign			HEX1_DP			=	1'h1;
@@ -253,6 +253,11 @@ wire [4:0] control; // keybord control signal
 // crash = [left, right, up, down]
 wire [3:0] crash;
 wire [299:0] state_flag;
+wire [1:0]	level;
+wire [1:0]	slider_flag;
+wire orst;
+wire BallDie;
+wire VGA_VS_PAUSE;
 ////////////////////////	VGA			////////////////////////////
 
 VGA_CLK		u1
@@ -281,36 +286,39 @@ VGA_Ctrl	u2
 			.iRST_N(BUTTON[0])
 		);
 
-VGA_Pattern	u3
+VGA_Display	u3
 		(	//	Read Out Side
 			.oRed(mVGA_R),
 			.oGreen(mVGA_G),
 			.oBlue(mVGA_B),
+			.oVGA_VS(VGA_VS_PAUSE),
 			.iVGA_X(mVGA_X),
 			.iVGA_Y(mVGA_Y),
 			.iVGA_CLK(VGA_CTRL_CLK),
 			//  Control Signals
-			.iRST_n(BUTTON[0]),
+			.iRST_n(orst),
 			//  Slider location
 			.iSlider_x(slider_x),
 			.iSlider_y(slider_y),
 			.iBall_x(ball_x),
 			.iBall_y(ball_y),
 			.iState_flag(state_flag),
-			.iSlider_flag(~0)
-		);
+			.iSlider_flag(slider_flag),
+			.iSW(SW[9]),
+			.iVGA_VS(VGA_VS)
+);
 
 KeyBoard u4 (    
 	.clk(CLOCK_50),
-    .rst_n(BUTTON[0]),
+    .rst_n(orst),
     .data_in(PS2_KBDAT),
     .clk_in(PS2_KBCLK),                       
     .oControl(control)           
 );
 
 Slider u5 (	//	Read Out Side
-	.iFrame_CLK(VGA_VS),
-    .iRST_n(BUTTON[0]),
+	.iVGA_CLK(VGA_VS),
+    .iRST_n(orst),
     
     //.iSlider_go(control[1]),
     //.iSlider_back(control[2]),
@@ -327,24 +335,47 @@ Slider u5 (	//	Read Out Side
 );
 
 Ball u6 (
-	.iFrame_CLK(VGA_VS),
-	.iRST_n(BUTTON[0]),
+	.iVGA_CLK(VGA_VS_PAUSE),
+	.iRST_n(orst),
 	.iCrash(crash),
 	.oBall_x(ball_x),
     .oBall_y(ball_y)
+	
 );
 
 Crash u7 (
-	.iFrame_CLK(VGA_VS),
-	.iRST_n(BUTTON[0]),
+	.clk(VGA_VS_PAUSE),
+	.rst(orst),
 
+	.iLevel(level),
 	.iSlider_x(slider_x),
 	.iSlider_y(slider_y),
 	.iBall_x(ball_x),
 	.iBall_y(ball_y),
-	.iSlider_flag(0),
+	.iSlider_flag(slider_flag),
 	.oCrash(crash),
-	.oState_flag(state_flag)
+	.oState_flag(state_flag),
+	.oBallDie(BallDie)
+
+);
+
+Level_CTRL u8(
+	.iState_flag(state_flag),
+	.iLevel_Up(BUTTON[2]),
+	.iLevel_Down(BUTTON[1]),
+	.iCLK(VGA_CTRL_CLK),
+	.iRST(BUTTON[0]),
+	.iBallDie(BallDie),
+
+	.oLevel(level),
+	.oSlider_flag(slider_flag),
+	.oRST(orst)
+);
+
+LED u9(
+	.iCLK(VGA_CTRL_CLK),
+	.iLevel(level),
+	.oLED(HEX0_D)
 );
 
 endmodule

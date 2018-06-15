@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE0_VGA
-Sat Jun 09 22:25:04 2018
+Fri Jun 15 09:50:49 2018
 Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
 
 
@@ -12,22 +12,32 @@ Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
   4. Analysis & Synthesis Source Files Read
   5. Analysis & Synthesis Resource Usage Summary
   6. Analysis & Synthesis Resource Utilization by Entity
-  7. Registers Removed During Synthesis
-  8. General Register Statistics
-  9. Inverted Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Parameter Settings for User Entity Instance: VGA_CLK:u1|altpll:altpll_component
- 12. Parameter Settings for User Entity Instance: VGA_Ctrl:u2
- 13. Parameter Settings for User Entity Instance: VGA_Pattern:u3
- 14. Parameter Settings for User Entity Instance: Slider:u5
- 15. Parameter Settings for User Entity Instance: Ball:u6
- 16. Parameter Settings for User Entity Instance: Crash:u7
- 17. altpll Parameter Settings by Entity Instance
- 18. Port Connectivity Checks: "Crash:u7"
- 19. Port Connectivity Checks: "KeyBoard:u4"
- 20. Port Connectivity Checks: "VGA_Pattern:u3"
- 21. Port Connectivity Checks: "VGA_Ctrl:u2"
- 22. Analysis & Synthesis Messages
+  7. Analysis & Synthesis RAM Summary
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Source assignments for VGA_Display:u3|VGA_Image:u2|R:u1|altsyncram:altsyncram_component|altsyncram_sba1:auto_generated
+ 13. Source assignments for VGA_Display:u3|VGA_Image:u2|G:u2|altsyncram:altsyncram_component|altsyncram_hba1:auto_generated
+ 14. Source assignments for VGA_Display:u3|VGA_Image:u2|B:u3|altsyncram:altsyncram_component|altsyncram_cba1:auto_generated
+ 15. Parameter Settings for User Entity Instance: VGA_CLK:u1|altpll:altpll_component
+ 16. Parameter Settings for User Entity Instance: VGA_Ctrl:u2
+ 17. Parameter Settings for User Entity Instance: VGA_Display:u3|VGA_Pattern:u1
+ 18. Parameter Settings for User Entity Instance: VGA_Display:u3|VGA_Image:u2|R:u1|altsyncram:altsyncram_component
+ 19. Parameter Settings for User Entity Instance: VGA_Display:u3|VGA_Image:u2|G:u2|altsyncram:altsyncram_component
+ 20. Parameter Settings for User Entity Instance: VGA_Display:u3|VGA_Image:u2|B:u3|altsyncram:altsyncram_component
+ 21. Parameter Settings for User Entity Instance: Slider:u5
+ 22. Parameter Settings for User Entity Instance: Ball:u6
+ 23. Parameter Settings for User Entity Instance: Crash:u7
+ 24. altpll Parameter Settings by Entity Instance
+ 25. altsyncram Parameter Settings by Entity Instance
+ 26. Port Connectivity Checks: "KeyBoard:u4"
+ 27. Port Connectivity Checks: "VGA_Display:u3|VGA_Image:u2"
+ 28. Port Connectivity Checks: "VGA_Display:u3|VGA_Pattern:u1"
+ 29. Port Connectivity Checks: "VGA_Display:u3"
+ 30. Port Connectivity Checks: "VGA_Ctrl:u2"
+ 31. Analysis & Synthesis Messages
+ 32. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -53,18 +63,18 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +------------------------------------+------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Jun 09 22:25:04 2018    ;
+; Analysis & Synthesis Status        ; Successful - Fri Jun 15 09:50:49 2018    ;
 ; Quartus II Version                 ; 9.0 Build 132 02/25/2009 SJ Full Version ;
 ; Revision Name                      ; DE0_VGA                                  ;
 ; Top-level Entity Name              ; DE0_VGA                                  ;
 ; Family                             ; Cyclone III                              ;
-; Total logic elements               ; 928                                      ;
-;     Total combinational functions  ; 928                                      ;
-;     Dedicated logic registers      ; 125                                      ;
-; Total registers                    ; 125                                      ;
+; Total logic elements               ; 1,687                                    ;
+;     Total combinational functions  ; 1,683                                    ;
+;     Dedicated logic registers      ; 234                                      ;
+; Total registers                    ; 234                                      ;
 ; Total pins                         ; 252                                      ;
 ; Total virtual pins                 ; 0                                        ;
-; Total memory bits                  ; 0                                        ;
+; Total memory bits                  ; 230,400                                  ;
 ; Embedded Multiplier 9-bit elements ; 0                                        ;
 ; Total PLLs                         ; 1                                        ;
 +------------------------------------+------------------------------------------+
@@ -147,94 +157,155 @@ applicable agreement for further details.
 +----------------------------------------------------------------+--------------------+--------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                      ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------+
-; V/KeyBoard.v                     ; yes             ; User Verilog HDL File        ; D:/quartus2/FPGA-game-master/FPGA-game-master/V/KeyBoard.v        ;
-; V/Crash.v                        ; yes             ; User Verilog HDL File        ; D:/quartus2/FPGA-game-master/FPGA-game-master/V/Crash.v           ;
-; V/Ball.v                         ; yes             ; User Verilog HDL File        ; D:/quartus2/FPGA-game-master/FPGA-game-master/V/Ball.v            ;
-; V/Slider.v                       ; yes             ; User Verilog HDL File        ; D:/quartus2/FPGA-game-master/FPGA-game-master/V/Slider.v          ;
-; V/VGA_Ctrl.v                     ; yes             ; User Verilog HDL File        ; D:/quartus2/FPGA-game-master/FPGA-game-master/V/VGA_Ctrl.v        ;
-; V/VGA_CLK.v                      ; yes             ; User Wizard-Generated File   ; D:/quartus2/FPGA-game-master/FPGA-game-master/V/VGA_CLK.v         ;
-; V/VGA_Pattern.v                  ; yes             ; User Verilog HDL File        ; D:/quartus2/FPGA-game-master/FPGA-game-master/V/VGA_Pattern.v     ;
-; DE0_VGA.v                        ; yes             ; User Verilog HDL File        ; D:/quartus2/FPGA-game-master/FPGA-game-master/DE0_VGA.v           ;
-; V/Setting.v                      ; yes             ; Auto-Found Verilog HDL File  ; D:/quartus2/FPGA-game-master/FPGA-game-master/V/Setting.v         ;
-; altpll.tdf                       ; yes             ; Megafunction                 ; d:/quartus2/quartus/libraries/megafunctions/altpll.tdf            ;
-; aglobal90.inc                    ; yes             ; Megafunction                 ; d:/quartus2/quartus/libraries/megafunctions/aglobal90.inc         ;
-; stratix_pll.inc                  ; yes             ; Megafunction                 ; d:/quartus2/quartus/libraries/megafunctions/stratix_pll.inc       ;
-; stratixii_pll.inc                ; yes             ; Megafunction                 ; d:/quartus2/quartus/libraries/megafunctions/stratixii_pll.inc     ;
-; cycloneii_pll.inc                ; yes             ; Megafunction                 ; d:/quartus2/quartus/libraries/megafunctions/cycloneii_pll.inc     ;
-; db/VGA_CLK_altpll.v              ; yes             ; Auto-Generated Megafunction  ; D:/quartus2/FPGA-game-master/FPGA-game-master/db/VGA_CLK_altpll.v ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                          ;
++----------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                      ;
++----------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------+
+; V/VGA_Display.v                  ; yes             ; User Verilog HDL File                  ; F:/Project/FPGA/BLOCK3.0/BLOCK/FPGA-game-master/V/VGA_Display.v                   ;
+; V/VGA_Image.v                    ; yes             ; User Verilog HDL File                  ; F:/Project/FPGA/BLOCK3.0/BLOCK/FPGA-game-master/V/VGA_Image.v                     ;
+; V/KeyBoard.v                     ; yes             ; User Verilog HDL File                  ; F:/Project/FPGA/BLOCK3.0/BLOCK/FPGA-game-master/V/KeyBoard.v                      ;
+; V/Crash.v                        ; yes             ; User Verilog HDL File                  ; F:/Project/FPGA/BLOCK3.0/BLOCK/FPGA-game-master/V/Crash.v                         ;
+; V/Ball.v                         ; yes             ; User Verilog HDL File                  ; F:/Project/FPGA/BLOCK3.0/BLOCK/FPGA-game-master/V/Ball.v                          ;
+; V/Slider.v                       ; yes             ; User Verilog HDL File                  ; F:/Project/FPGA/BLOCK3.0/BLOCK/FPGA-game-master/V/Slider.v                        ;
+; V/VGA_Ctrl.v                     ; yes             ; User Verilog HDL File                  ; F:/Project/FPGA/BLOCK3.0/BLOCK/FPGA-game-master/V/VGA_Ctrl.v                      ;
+; V/VGA_CLK.v                      ; yes             ; User Wizard-Generated File             ; F:/Project/FPGA/BLOCK3.0/BLOCK/FPGA-game-master/V/VGA_CLK.v                       ;
+; V/VGA_Pattern.v                  ; yes             ; User Verilog HDL File                  ; F:/Project/FPGA/BLOCK3.0/BLOCK/FPGA-game-master/V/VGA_Pattern.v                   ;
+; DE0_VGA.v                        ; yes             ; User Verilog HDL File                  ; F:/Project/FPGA/BLOCK3.0/BLOCK/FPGA-game-master/DE0_VGA.v                         ;
+; V/Level_CTRL.v                   ; yes             ; User Verilog HDL File                  ; F:/Project/FPGA/BLOCK3.0/BLOCK/FPGA-game-master/V/Level_CTRL.v                    ;
+; V/LED.v                          ; yes             ; User Verilog HDL File                  ; F:/Project/FPGA/BLOCK3.0/BLOCK/FPGA-game-master/V/LED.v                           ;
+; images/B.v                       ; yes             ; User Wizard-Generated File             ; F:/Project/FPGA/BLOCK3.0/BLOCK/FPGA-game-master/images/B.v                        ;
+; images/G.v                       ; yes             ; User Wizard-Generated File             ; F:/Project/FPGA/BLOCK3.0/BLOCK/FPGA-game-master/images/G.v                        ;
+; images/R.v                       ; yes             ; User Wizard-Generated File             ; F:/Project/FPGA/BLOCK3.0/BLOCK/FPGA-game-master/images/R.v                        ;
+; V/Setting.v                      ; yes             ; Auto-Found Verilog HDL File            ; F:/Project/FPGA/BLOCK3.0/BLOCK/FPGA-game-master/V/Setting.v                       ;
+; altpll.tdf                       ; yes             ; Megafunction                           ; f:/program files/quartus-90/quartus/libraries/megafunctions/altpll.tdf            ;
+; aglobal90.inc                    ; yes             ; Megafunction                           ; f:/program files/quartus-90/quartus/libraries/megafunctions/aglobal90.inc         ;
+; stratix_pll.inc                  ; yes             ; Megafunction                           ; f:/program files/quartus-90/quartus/libraries/megafunctions/stratix_pll.inc       ;
+; stratixii_pll.inc                ; yes             ; Megafunction                           ; f:/program files/quartus-90/quartus/libraries/megafunctions/stratixii_pll.inc     ;
+; cycloneii_pll.inc                ; yes             ; Megafunction                           ; f:/program files/quartus-90/quartus/libraries/megafunctions/cycloneii_pll.inc     ;
+; db/VGA_CLK_altpll.v              ; yes             ; Auto-Generated Megafunction            ; F:/Project/FPGA/BLOCK3.0/BLOCK/FPGA-game-master/db/VGA_CLK_altpll.v               ;
+; altsyncram.tdf                   ; yes             ; Megafunction                           ; f:/program files/quartus-90/quartus/libraries/megafunctions/altsyncram.tdf        ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                           ; f:/program files/quartus-90/quartus/libraries/megafunctions/stratix_ram_block.inc ;
+; lpm_mux.inc                      ; yes             ; Megafunction                           ; f:/program files/quartus-90/quartus/libraries/megafunctions/lpm_mux.inc           ;
+; lpm_decode.inc                   ; yes             ; Megafunction                           ; f:/program files/quartus-90/quartus/libraries/megafunctions/lpm_decode.inc        ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                           ; f:/program files/quartus-90/quartus/libraries/megafunctions/a_rdenreg.inc         ;
+; altrom.inc                       ; yes             ; Megafunction                           ; f:/program files/quartus-90/quartus/libraries/megafunctions/altrom.inc            ;
+; altram.inc                       ; yes             ; Megafunction                           ; f:/program files/quartus-90/quartus/libraries/megafunctions/altram.inc            ;
+; altdpram.inc                     ; yes             ; Megafunction                           ; f:/program files/quartus-90/quartus/libraries/megafunctions/altdpram.inc          ;
+; altqpram.inc                     ; yes             ; Megafunction                           ; f:/program files/quartus-90/quartus/libraries/megafunctions/altqpram.inc          ;
+; db/altsyncram_sba1.tdf           ; yes             ; Auto-Generated Megafunction            ; F:/Project/FPGA/BLOCK3.0/BLOCK/FPGA-game-master/db/altsyncram_sba1.tdf            ;
+; ../assets/BLOCKS_R.mif           ; yes             ; Auto-Found Memory Initialization File  ; F:/Project/FPGA/BLOCK3.0/BLOCK/FPGA-game-master/assets/BLOCKS_R.mif               ;
+; db/decode_57a.tdf                ; yes             ; Auto-Generated Megafunction            ; F:/Project/FPGA/BLOCK3.0/BLOCK/FPGA-game-master/db/decode_57a.tdf                 ;
+; db/mux_olb.tdf                   ; yes             ; Auto-Generated Megafunction            ; F:/Project/FPGA/BLOCK3.0/BLOCK/FPGA-game-master/db/mux_olb.tdf                    ;
+; db/altsyncram_hba1.tdf           ; yes             ; Auto-Generated Megafunction            ; F:/Project/FPGA/BLOCK3.0/BLOCK/FPGA-game-master/db/altsyncram_hba1.tdf            ;
+; ../assets/BLOCKS_G.mif           ; yes             ; Auto-Found Memory Initialization File  ; F:/Project/FPGA/BLOCK3.0/BLOCK/FPGA-game-master/assets/BLOCKS_G.mif               ;
+; db/altsyncram_cba1.tdf           ; yes             ; Auto-Generated Megafunction            ; F:/Project/FPGA/BLOCK3.0/BLOCK/FPGA-game-master/db/altsyncram_cba1.tdf            ;
+; ../assets/BLOCKS_B.mif           ; yes             ; Auto-Found Memory Initialization File  ; F:/Project/FPGA/BLOCK3.0/BLOCK/FPGA-game-master/assets/BLOCKS_B.mif               ;
++----------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                   ;
-+---------------------------------------------+-----------------+
-; Resource                                    ; Usage           ;
-+---------------------------------------------+-----------------+
-; Estimated Total logic elements              ; 928             ;
-;                                             ;                 ;
-; Total combinational functions               ; 928             ;
-; Logic element usage by number of LUT inputs ;                 ;
-;     -- 4 input functions                    ; 420             ;
-;     -- 3 input functions                    ; 260             ;
-;     -- <=2 input functions                  ; 248             ;
-;                                             ;                 ;
-; Logic elements by mode                      ;                 ;
-;     -- normal mode                          ; 594             ;
-;     -- arithmetic mode                      ; 334             ;
-;                                             ;                 ;
-; Total registers                             ; 125             ;
-;     -- Dedicated logic registers            ; 125             ;
-;     -- I/O registers                        ; 0               ;
-;                                             ;                 ;
-; I/O pins                                    ; 252             ;
-; Total PLLs                                  ; 1               ;
-; Maximum fan-out node                        ; BUTTON[0]~input ;
-; Maximum fan-out                             ; 108             ;
-; Total fan-out                               ; 3690            ;
-; Average fan-out                             ; 2.21            ;
-+---------------------------------------------+-----------------+
++------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                      ;
++---------------------------------------------+--------------------+
+; Resource                                    ; Usage              ;
++---------------------------------------------+--------------------+
+; Estimated Total logic elements              ; 1,687              ;
+;                                             ;                    ;
+; Total combinational functions               ; 1683               ;
+; Logic element usage by number of LUT inputs ;                    ;
+;     -- 4 input functions                    ; 906                ;
+;     -- 3 input functions                    ; 371                ;
+;     -- <=2 input functions                  ; 406                ;
+;                                             ;                    ;
+; Logic elements by mode                      ;                    ;
+;     -- normal mode                          ; 1261               ;
+;     -- arithmetic mode                      ; 422                ;
+;                                             ;                    ;
+; Total registers                             ; 234                ;
+;     -- Dedicated logic registers            ; 234                ;
+;     -- I/O registers                        ; 0                  ;
+;                                             ;                    ;
+; I/O pins                                    ; 252                ;
+; Total memory bits                           ; 230400             ;
+; Total PLLs                                  ; 1                  ;
+; Maximum fan-out node                        ; Level_CTRL:u8|oRST ;
+; Maximum fan-out                             ; 216                ;
+; Total fan-out                               ; 7186               ;
+; Average fan-out                             ; 2.80               ;
++---------------------------------------------+--------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                             ;
-+------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node               ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                       ; Library Name ;
-+------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------+--------------+
-; |DE0_VGA                                 ; 928 (0)           ; 125 (0)      ; 0           ; 0            ; 0       ; 0         ; 252  ; 0            ; |DE0_VGA                                                                  ; work         ;
-;    |Ball:u6|                             ; 42 (42)           ; 19 (19)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_VGA|Ball:u6                                                          ; work         ;
-;    |Crash:u7|                            ; 517 (517)         ; 40 (40)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_VGA|Crash:u7                                                         ; work         ;
-;    |Slider:u5|                           ; 32 (32)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_VGA|Slider:u5                                                        ; work         ;
-;    |VGA_CLK:u1|                          ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_VGA|VGA_CLK:u1                                                       ; work         ;
-;       |altpll:altpll_component|          ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_VGA|VGA_CLK:u1|altpll:altpll_component                               ; work         ;
-;          |VGA_CLK_altpll:auto_generated| ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_VGA|VGA_CLK:u1|altpll:altpll_component|VGA_CLK_altpll:auto_generated ; work         ;
-;    |VGA_Ctrl:u2|                         ; 81 (81)           ; 24 (24)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_VGA|VGA_Ctrl:u2                                                      ; work         ;
-;    |VGA_Pattern:u3|                      ; 256 (256)         ; 24 (24)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_VGA|VGA_Pattern:u3                                                   ; work         ;
-+------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                          ;
++-------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                      ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                             ; Library Name ;
++-------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |DE0_VGA                                        ; 1683 (0)          ; 234 (0)      ; 230400      ; 0            ; 0       ; 0         ; 252  ; 0            ; |DE0_VGA                                                                                                                        ; work         ;
+;    |Ball:u6|                                    ; 52 (52)           ; 19 (19)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_VGA|Ball:u6                                                                                                                ; work         ;
+;    |Crash:u7|                                   ; 1059 (1059)       ; 76 (76)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_VGA|Crash:u7                                                                                                               ; work         ;
+;    |LED:u9|                                     ; 5 (5)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_VGA|LED:u9                                                                                                                 ; work         ;
+;    |Level_CTRL:u8|                              ; 87 (87)           ; 45 (45)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_VGA|Level_CTRL:u8                                                                                                          ; work         ;
+;    |Slider:u5|                                  ; 32 (32)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_VGA|Slider:u5                                                                                                              ; work         ;
+;    |VGA_CLK:u1|                                 ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_VGA|VGA_CLK:u1                                                                                                             ; work         ;
+;       |altpll:altpll_component|                 ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_VGA|VGA_CLK:u1|altpll:altpll_component                                                                                     ; work         ;
+;          |VGA_CLK_altpll:auto_generated|        ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_VGA|VGA_CLK:u1|altpll:altpll_component|VGA_CLK_altpll:auto_generated                                                       ; work         ;
+;    |VGA_Ctrl:u2|                                ; 114 (114)         ; 24 (24)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_VGA|VGA_Ctrl:u2                                                                                                            ; work         ;
+;    |VGA_Display:u3|                             ; 334 (1)           ; 46 (0)       ; 230400      ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_VGA|VGA_Display:u3                                                                                                         ; work         ;
+;       |VGA_Image:u2|                            ; 47 (44)           ; 22 (18)      ; 230400      ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_VGA|VGA_Display:u3|VGA_Image:u2                                                                                            ; work         ;
+;          |B:u3|                                 ; 3 (0)             ; 4 (0)        ; 76800       ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_VGA|VGA_Display:u3|VGA_Image:u2|B:u3                                                                                       ; work         ;
+;             |altsyncram:altsyncram_component|   ; 3 (0)             ; 4 (0)        ; 76800       ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_VGA|VGA_Display:u3|VGA_Image:u2|B:u3|altsyncram:altsyncram_component                                                       ; work         ;
+;                |altsyncram_cba1:auto_generated| ; 3 (0)             ; 4 (4)        ; 76800       ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_VGA|VGA_Display:u3|VGA_Image:u2|B:u3|altsyncram:altsyncram_component|altsyncram_cba1:auto_generated                        ; work         ;
+;                   |decode_57a:rden_decode|      ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_VGA|VGA_Display:u3|VGA_Image:u2|B:u3|altsyncram:altsyncram_component|altsyncram_cba1:auto_generated|decode_57a:rden_decode ; work         ;
+;          |G:u2|                                 ; 0 (0)             ; 0 (0)        ; 76800       ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_VGA|VGA_Display:u3|VGA_Image:u2|G:u2                                                                                       ; work         ;
+;             |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 76800       ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_VGA|VGA_Display:u3|VGA_Image:u2|G:u2|altsyncram:altsyncram_component                                                       ; work         ;
+;                |altsyncram_hba1:auto_generated| ; 0 (0)             ; 0 (0)        ; 76800       ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_VGA|VGA_Display:u3|VGA_Image:u2|G:u2|altsyncram:altsyncram_component|altsyncram_hba1:auto_generated                        ; work         ;
+;          |R:u1|                                 ; 0 (0)             ; 0 (0)        ; 76800       ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_VGA|VGA_Display:u3|VGA_Image:u2|R:u1                                                                                       ; work         ;
+;             |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 76800       ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_VGA|VGA_Display:u3|VGA_Image:u2|R:u1|altsyncram:altsyncram_component                                                       ; work         ;
+;                |altsyncram_sba1:auto_generated| ; 0 (0)             ; 0 (0)        ; 76800       ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_VGA|VGA_Display:u3|VGA_Image:u2|R:u1|altsyncram:altsyncram_component|altsyncram_sba1:auto_generated                        ; work         ;
+;       |VGA_Pattern:u1|                          ; 286 (286)         ; 24 (24)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_VGA|VGA_Display:u3|VGA_Pattern:u1                                                                                          ; work         ;
++-------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+----------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                               ;
-+-----------------------------------------+----------------------------------------+
-; Register name                           ; Reason for Removal                     ;
-+-----------------------------------------+----------------------------------------+
-; VGA_Pattern:u3|blockX[5..10]            ; Stuck at GND due to stuck port data_in ;
-; VGA_Pattern:u3|blockY[5..10]            ; Stuck at GND due to stuck port data_in ;
-; VGA_Pattern:u3|oGreen[0..1]             ; Stuck at GND due to stuck port data_in ;
-; VGA_Pattern:u3|numF[1]                  ; Merged with VGA_Pattern:u3|blockX[1]   ;
-; VGA_Pattern:u3|numF[0]                  ; Merged with VGA_Pattern:u3|blockX[0]   ;
-; VGA_Pattern:u3|oRed[0]                  ; Merged with VGA_Pattern:u3|oBlue[0]    ;
-; VGA_Pattern:u3|oBlue[2]                 ; Merged with VGA_Pattern:u3|oRed[2]     ;
-; VGA_Pattern:u3|oBlue[1]                 ; Merged with VGA_Pattern:u3|oRed[1]     ;
-; Ball:u6|ball_y[1]                       ; Merged with Ball:u6|ball_x[1]          ;
-; Crash:u7|oState_flag[40..299]           ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 280 ;                                        ;
-+-----------------------------------------+----------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                      ;
++------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+-------+------------------------+
+; Name                                                                                                       ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF                    ;
++------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+-------+------------------------+
+; VGA_Display:u3|VGA_Image:u2|B:u3|altsyncram:altsyncram_component|altsyncram_cba1:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 19200        ; 4            ; --           ; --           ; 76800 ; ../assets/BLOCKS_B.mif ;
+; VGA_Display:u3|VGA_Image:u2|G:u2|altsyncram:altsyncram_component|altsyncram_hba1:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 19200        ; 4            ; --           ; --           ; 76800 ; ../assets/BLOCKS_G.mif ;
+; VGA_Display:u3|VGA_Image:u2|R:u1|altsyncram:altsyncram_component|altsyncram_sba1:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 19200        ; 4            ; --           ; --           ; 76800 ; ../assets/BLOCKS_R.mif ;
++------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+-------+------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                                                                                      ;
++----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+; Register name                                                                                                        ; Reason for Removal                                                                                                               ;
++----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+; VGA_Display:u3|VGA_Image:u2|Ycoloradd[0..4]                                                                          ; Stuck at GND due to stuck port data_in                                                                                           ;
+; VGA_Display:u3|VGA_Pattern:u1|blockX[5..10]                                                                          ; Stuck at GND due to stuck port data_in                                                                                           ;
+; VGA_Display:u3|VGA_Pattern:u1|blockY[5..10]                                                                          ; Stuck at GND due to stuck port data_in                                                                                           ;
+; VGA_Display:u3|VGA_Pattern:u1|oGreen[0..1]                                                                           ; Stuck at GND due to stuck port data_in                                                                                           ;
+; Level_CTRL:u8|oSlider_flag[1]                                                                                        ; Merged with Level_CTRL:u8|oSlider_flag[0]                                                                                        ;
+; VGA_Display:u3|VGA_Image:u2|G:u2|altsyncram:altsyncram_component|altsyncram_hba1:auto_generated|address_reg_a[1]     ; Merged with VGA_Display:u3|VGA_Image:u2|B:u3|altsyncram:altsyncram_component|altsyncram_cba1:auto_generated|address_reg_a[1]     ;
+; VGA_Display:u3|VGA_Image:u2|R:u1|altsyncram:altsyncram_component|altsyncram_sba1:auto_generated|address_reg_a[1]     ; Merged with VGA_Display:u3|VGA_Image:u2|B:u3|altsyncram:altsyncram_component|altsyncram_cba1:auto_generated|address_reg_a[1]     ;
+; VGA_Display:u3|VGA_Image:u2|G:u2|altsyncram:altsyncram_component|altsyncram_hba1:auto_generated|address_reg_a[0]     ; Merged with VGA_Display:u3|VGA_Image:u2|B:u3|altsyncram:altsyncram_component|altsyncram_cba1:auto_generated|address_reg_a[0]     ;
+; VGA_Display:u3|VGA_Image:u2|R:u1|altsyncram:altsyncram_component|altsyncram_sba1:auto_generated|address_reg_a[0]     ; Merged with VGA_Display:u3|VGA_Image:u2|B:u3|altsyncram:altsyncram_component|altsyncram_cba1:auto_generated|address_reg_a[0]     ;
+; VGA_Display:u3|VGA_Image:u2|G:u2|altsyncram:altsyncram_component|altsyncram_hba1:auto_generated|out_address_reg_a[1] ; Merged with VGA_Display:u3|VGA_Image:u2|B:u3|altsyncram:altsyncram_component|altsyncram_cba1:auto_generated|out_address_reg_a[1] ;
+; VGA_Display:u3|VGA_Image:u2|R:u1|altsyncram:altsyncram_component|altsyncram_sba1:auto_generated|out_address_reg_a[1] ; Merged with VGA_Display:u3|VGA_Image:u2|B:u3|altsyncram:altsyncram_component|altsyncram_cba1:auto_generated|out_address_reg_a[1] ;
+; VGA_Display:u3|VGA_Image:u2|G:u2|altsyncram:altsyncram_component|altsyncram_hba1:auto_generated|out_address_reg_a[0] ; Merged with VGA_Display:u3|VGA_Image:u2|B:u3|altsyncram:altsyncram_component|altsyncram_cba1:auto_generated|out_address_reg_a[0] ;
+; VGA_Display:u3|VGA_Image:u2|R:u1|altsyncram:altsyncram_component|altsyncram_sba1:auto_generated|out_address_reg_a[0] ; Merged with VGA_Display:u3|VGA_Image:u2|B:u3|altsyncram:altsyncram_component|altsyncram_cba1:auto_generated|out_address_reg_a[0] ;
+; VGA_Display:u3|VGA_Pattern:u1|numF[1]                                                                                ; Merged with VGA_Display:u3|VGA_Pattern:u1|blockX[1]                                                                              ;
+; VGA_Display:u3|VGA_Pattern:u1|numF[0]                                                                                ; Merged with VGA_Display:u3|VGA_Pattern:u1|blockX[0]                                                                              ;
+; VGA_Display:u3|VGA_Pattern:u1|oRed[0]                                                                                ; Merged with VGA_Display:u3|VGA_Pattern:u1|oBlue[0]                                                                               ;
+; VGA_Display:u3|VGA_Pattern:u1|oBlue[2]                                                                               ; Merged with VGA_Display:u3|VGA_Pattern:u1|oRed[2]                                                                                ;
+; VGA_Display:u3|VGA_Pattern:u1|oBlue[1]                                                                               ; Merged with VGA_Display:u3|VGA_Pattern:u1|oRed[1]                                                                                ;
+; Ball:u6|ball_y[1]                                                                                                    ; Merged with Ball:u6|ball_x[1]                                                                                                    ;
+; LED:u9|oLED[1]                                                                                                       ; Stuck at GND due to stuck port data_in                                                                                           ;
+; Crash:u7|oState_flag[0,19..21,38..40,59..63,76..80,82,84,86,93,95,97,99..299]                                        ; Stuck at GND due to stuck port data_in                                                                                           ;
+; Total Number of Removed Registers = 259                                                                              ;                                                                                                                                  ;
++----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -242,12 +313,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 125   ;
-; Number of registers using Synchronous Clear  ; 22    ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 108   ;
+; Total registers                              ; 234   ;
+; Number of registers using Synchronous Clear  ; 79    ;
+; Number of registers using Synchronous Load   ; 1     ;
+; Number of registers using Asynchronous Clear ; 166   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 18    ;
+; Number of registers using Clock Enable       ; 59    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -257,80 +328,72 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------+---------+
 ; Inverted Register                       ; Fan out ;
 +-----------------------------------------+---------+
+; Ball:u6|ball_x[8]                       ; 10      ;
+; Ball:u6|ball_x[6]                       ; 59      ;
+; Ball:u6|ball_y[7]                       ; 17      ;
+; Ball:u6|ball_y[6]                       ; 12      ;
+; Ball:u6|ball_y[3]                       ; 11      ;
 ; Slider:u5|slider_y[8]                   ; 5       ;
 ; Slider:u5|slider_y[7]                   ; 5       ;
 ; Slider:u5|slider_y[6]                   ; 6       ;
 ; Slider:u5|slider_y[4]                   ; 6       ;
 ; Slider:u5|slider_y[3]                   ; 5       ;
 ; Slider:u5|slider_y[1]                   ; 7       ;
+; Slider:u5|slider_x[8]                   ; 6       ;
 ; Slider:u5|slider_x[6]                   ; 6       ;
-; Slider:u5|slider_x[5]                   ; 6       ;
-; Slider:u5|slider_x[2]                   ; 6       ;
-; Ball:u6|ball_x[8]                       ; 9       ;
-; Ball:u6|ball_x[6]                       ; 45      ;
-; Ball:u6|ball_y[8]                       ; 14      ;
-; Ball:u6|ball_y[5]                       ; 12      ;
-; Ball:u6|ball_y[3]                       ; 8       ;
-; Ball:u6|ball_y[2]                       ; 7       ;
 ; VGA_Ctrl:u2|oVGA_HS                     ; 14      ;
-; VGA_Ctrl:u2|oVGA_VS                     ; 79      ;
-; Crash:u7|oState_flag[10]                ; 5       ;
-; Crash:u7|oState_flag[6]                 ; 5       ;
-; Crash:u7|oState_flag[2]                 ; 5       ;
-; Crash:u7|oState_flag[14]                ; 5       ;
-; Crash:u7|oState_flag[5]                 ; 5       ;
-; Crash:u7|oState_flag[9]                 ; 5       ;
-; Crash:u7|oState_flag[1]                 ; 5       ;
-; Crash:u7|oState_flag[13]                ; 5       ;
-; Crash:u7|oState_flag[8]                 ; 5       ;
-; Crash:u7|oState_flag[4]                 ; 5       ;
-; Crash:u7|oState_flag[0]                 ; 5       ;
-; Crash:u7|oState_flag[12]                ; 5       ;
-; Crash:u7|oState_flag[7]                 ; 5       ;
-; Crash:u7|oState_flag[11]                ; 5       ;
-; Crash:u7|oState_flag[3]                 ; 5       ;
-; Crash:u7|oState_flag[15]                ; 5       ;
-; Crash:u7|oState_flag[37]                ; 5       ;
-; Crash:u7|oState_flag[38]                ; 5       ;
-; Crash:u7|oState_flag[36]                ; 5       ;
-; Crash:u7|oState_flag[39]                ; 5       ;
-; Crash:u7|oState_flag[34]                ; 5       ;
-; Crash:u7|oState_flag[33]                ; 5       ;
-; Crash:u7|oState_flag[32]                ; 5       ;
-; Crash:u7|oState_flag[35]                ; 5       ;
-; Crash:u7|oState_flag[21]                ; 5       ;
-; Crash:u7|oState_flag[25]                ; 5       ;
-; Crash:u7|oState_flag[17]                ; 5       ;
-; Crash:u7|oState_flag[29]                ; 5       ;
-; Crash:u7|oState_flag[26]                ; 5       ;
-; Crash:u7|oState_flag[22]                ; 5       ;
-; Crash:u7|oState_flag[18]                ; 5       ;
-; Crash:u7|oState_flag[30]                ; 5       ;
-; Crash:u7|oState_flag[24]                ; 5       ;
-; Crash:u7|oState_flag[20]                ; 5       ;
-; Crash:u7|oState_flag[16]                ; 5       ;
-; Crash:u7|oState_flag[28]                ; 5       ;
-; Crash:u7|oState_flag[23]                ; 5       ;
-; Crash:u7|oState_flag[27]                ; 5       ;
-; Crash:u7|oState_flag[19]                ; 5       ;
-; Crash:u7|oState_flag[31]                ; 5       ;
-; Total number of inverted registers = 57 ;         ;
+; VGA_Ctrl:u2|oVGA_VS                     ; 21      ;
+; Crash:u7|oState_flag[30]                ; 6       ;
+; Crash:u7|oState_flag[29]                ; 6       ;
+; Crash:u7|oState_flag[28]                ; 6       ;
+; Crash:u7|oState_flag[31]                ; 6       ;
+; Total number of inverted registers = 19 ;         ;
 +-----------------------------------------+---------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |DE0_VGA|VGA_Pattern:u3|oRed[3] ;
-; 5:1                ; 6 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |DE0_VGA|Slider:u5|slider_x[1]  ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 0 LEs                ; 9 LEs                  ; Yes        ; |DE0_VGA|Slider:u5|slider_y[2]  ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 0 LEs                ; 9 LEs                  ; Yes        ; |DE0_VGA|Slider:u5|slider_x[5]  ;
-; 5:1                ; 6 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |DE0_VGA|Slider:u5|slider_y[1]  ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |DE0_VGA|VGA_Pattern:u3|oRed~3  ;
-; 4:1                ; 75 bits   ; 150 LEs       ; 150 LEs              ; 0 LEs                  ; No         ; |DE0_VGA|Crash:u7|Mux0          ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |DE0_VGA|LED:u9|oLED[4]                         ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |DE0_VGA|VGA_Display:u3|VGA_Pattern:u1|oBlue[0] ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 0 LEs                ; 21 LEs                 ; Yes        ; |DE0_VGA|Slider:u5|slider_x[3]                  ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 0 LEs                ; 9 LEs                  ; Yes        ; |DE0_VGA|Slider:u5|slider_y[9]                  ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; Yes        ; |DE0_VGA|Level_CTRL:u8|oLevel[1]                ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 0 LEs                ; 6 LEs                  ; Yes        ; |DE0_VGA|Slider:u5|slider_x[8]                  ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |DE0_VGA|Slider:u5|slider_y[7]                  ;
+; 4:1                ; 75 bits   ; 150 LEs       ; 150 LEs              ; 0 LEs                  ; No         ; |DE0_VGA|Crash:u7|Mux0                          ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |DE0_VGA|VGA_Ctrl:u2|oVGA_G[0]                  ;
+; 6:1                ; 10 bits   ; 40 LEs        ; 30 LEs               ; 10 LEs                 ; No         ; |DE0_VGA|VGA_Ctrl:u2|oVGA_R[0]                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for VGA_Display:u3|VGA_Image:u2|R:u1|altsyncram:altsyncram_component|altsyncram_sba1:auto_generated ;
++---------------------------------+--------------------+------+----------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                       ;
++---------------------------------+--------------------+------+----------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                        ;
++---------------------------------+--------------------+------+----------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for VGA_Display:u3|VGA_Image:u2|G:u2|altsyncram:altsyncram_component|altsyncram_hba1:auto_generated ;
++---------------------------------+--------------------+------+----------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                       ;
++---------------------------------+--------------------+------+----------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                        ;
++---------------------------------+--------------------+------+----------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for VGA_Display:u3|VGA_Image:u2|B:u3|altsyncram:altsyncram_component|altsyncram_cba1:auto_generated ;
++---------------------------------+--------------------+------+----------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                       ;
++---------------------------------+--------------------+------+----------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                        ;
++---------------------------------+--------------------+------+----------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------+
@@ -728,7 +791,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: VGA_Pattern:u3                                                                                                                                                                                                                                                                                             ;
+; Parameter Settings for User Entity Instance: VGA_Display:u3|VGA_Pattern:u1                                                                                                                                                                                                                                                                              ;
 +------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
 ; Parameter Name         ; Value                                                                                                                                                                                                                                                                                                        ; Type            ;
 +------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
@@ -738,21 +801,200 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; SLIDER_RIGHT_BOUNDARY  ; 590                                                                                                                                                                                                                                                                                                          ; Signed Integer  ;
 ; SLIDER_UP_BOUNDARY     ; 400                                                                                                                                                                                                                                                                                                          ; Signed Integer  ;
 ; SLIDER_DOWN_BOUNDARY   ; 475                                                                                                                                                                                                                                                                                                          ; Signed Integer  ;
-; SLIDER_X_INIT_LOCATION ; 100                                                                                                                                                                                                                                                                                                          ; Signed Integer  ;
+; SLIDER_X_INIT_LOCATION ; 320                                                                                                                                                                                                                                                                                                          ; Signed Integer  ;
 ; SLIDER_Y_INIT_LOCATION ; 475                                                                                                                                                                                                                                                                                                          ; Signed Integer  ;
 ; SLIDER_LOW_SPEED       ; 1                                                                                                                                                                                                                                                                                                            ; Signed Integer  ;
 ; SLIDER_MEDIUM_SPEED    ; 2                                                                                                                                                                                                                                                                                                            ; Signed Integer  ;
 ; SLIDER_HIGH_SPEED      ; 3                                                                                                                                                                                                                                                                                                            ; Signed Integer  ;
 ; BALL_X_INIT_LOCATION   ; 320                                                                                                                                                                                                                                                                                                          ; Signed Integer  ;
-; BALL_Y_INIT_LOCATION   ; 300                                                                                                                                                                                                                                                                                                          ; Signed Integer  ;
+; BALL_Y_INIT_LOCATION   ; 200                                                                                                                                                                                                                                                                                                          ; Signed Integer  ;
 ; BALL_RADIUS            ; 10                                                                                                                                                                                                                                                                                                           ; Signed Integer  ;
 ; BALL_TOWARD_RIGHT      ; 0                                                                                                                                                                                                                                                                                                            ; Signed Integer  ;
 ; BALL_TOWARD_LEFT       ; 1                                                                                                                                                                                                                                                                                                            ; Signed Integer  ;
 ; BALL_TOWARD_UP         ; 1                                                                                                                                                                                                                                                                                                            ; Signed Integer  ;
 ; BALL_TOWARD_DOWN       ; 0                                                                                                                                                                                                                                                                                                            ; Signed Integer  ;
 ; BLOCK_SIZE             ; 32                                                                                                                                                                                                                                                                                                           ; Signed Integer  ;
-; BLOCK_RST_1            ; 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111111111111111111111111111111111111111 ; Unsigned Binary ;
+; BLOCK_RST_1            ; 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011110000000000000000000000000000 ; Unsigned Binary ;
+; BLOCK_RST_2            ; 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111111111110000000111111111111110000011111111111111110001111111111111111110 ; Unsigned Binary ;
+; BLOCK_RST_3            ; 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000101010111111010101000001111111111110000011111111111111111100000111111111111000001111111111111111110 ; Unsigned Binary ;
 +------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: VGA_Display:u3|VGA_Image:u2|R:u1|altsyncram:altsyncram_component ;
++------------------------------------+------------------------+-------------------------------------------------+
+; Parameter Name                     ; Value                  ; Type                                            ;
++------------------------------------+------------------------+-------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                      ; Untyped                                         ;
+; AUTO_CARRY_CHAINS                  ; ON                     ; AUTO_CARRY                                      ;
+; IGNORE_CARRY_BUFFERS               ; OFF                    ; IGNORE_CARRY                                    ;
+; AUTO_CASCADE_CHAINS                ; ON                     ; AUTO_CASCADE                                    ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                    ; IGNORE_CASCADE                                  ;
+; WIDTH_BYTEENA                      ; 1                      ; Untyped                                         ;
+; OPERATION_MODE                     ; ROM                    ; Untyped                                         ;
+; WIDTH_A                            ; 4                      ; Signed Integer                                  ;
+; WIDTHAD_A                          ; 15                     ; Signed Integer                                  ;
+; NUMWORDS_A                         ; 19200                  ; Signed Integer                                  ;
+; OUTDATA_REG_A                      ; CLOCK0                 ; Untyped                                         ;
+; ADDRESS_ACLR_A                     ; NONE                   ; Untyped                                         ;
+; OUTDATA_ACLR_A                     ; NONE                   ; Untyped                                         ;
+; WRCONTROL_ACLR_A                   ; NONE                   ; Untyped                                         ;
+; INDATA_ACLR_A                      ; NONE                   ; Untyped                                         ;
+; BYTEENA_ACLR_A                     ; NONE                   ; Untyped                                         ;
+; WIDTH_B                            ; 1                      ; Untyped                                         ;
+; WIDTHAD_B                          ; 1                      ; Untyped                                         ;
+; NUMWORDS_B                         ; 1                      ; Untyped                                         ;
+; INDATA_REG_B                       ; CLOCK1                 ; Untyped                                         ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                 ; Untyped                                         ;
+; RDCONTROL_REG_B                    ; CLOCK1                 ; Untyped                                         ;
+; ADDRESS_REG_B                      ; CLOCK1                 ; Untyped                                         ;
+; OUTDATA_REG_B                      ; UNREGISTERED           ; Untyped                                         ;
+; BYTEENA_REG_B                      ; CLOCK1                 ; Untyped                                         ;
+; INDATA_ACLR_B                      ; NONE                   ; Untyped                                         ;
+; WRCONTROL_ACLR_B                   ; NONE                   ; Untyped                                         ;
+; ADDRESS_ACLR_B                     ; NONE                   ; Untyped                                         ;
+; OUTDATA_ACLR_B                     ; NONE                   ; Untyped                                         ;
+; RDCONTROL_ACLR_B                   ; NONE                   ; Untyped                                         ;
+; BYTEENA_ACLR_B                     ; NONE                   ; Untyped                                         ;
+; WIDTH_BYTEENA_A                    ; 1                      ; Signed Integer                                  ;
+; WIDTH_BYTEENA_B                    ; 1                      ; Untyped                                         ;
+; RAM_BLOCK_TYPE                     ; AUTO                   ; Untyped                                         ;
+; BYTE_SIZE                          ; 8                      ; Untyped                                         ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE              ; Untyped                                         ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ   ; Untyped                                         ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ   ; Untyped                                         ;
+; INIT_FILE                          ; ../assets/BLOCKS_R.mif ; Untyped                                         ;
+; INIT_FILE_LAYOUT                   ; PORT_A                 ; Untyped                                         ;
+; MAXIMUM_DEPTH                      ; 0                      ; Untyped                                         ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS                 ; Untyped                                         ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                 ; Untyped                                         ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS                 ; Untyped                                         ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                 ; Untyped                                         ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN        ; Untyped                                         ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN        ; Untyped                                         ;
+; ENABLE_ECC                         ; FALSE                  ; Untyped                                         ;
+; DEVICE_FAMILY                      ; Cyclone III            ; Untyped                                         ;
+; CBXI_PARAMETER                     ; altsyncram_sba1        ; Untyped                                         ;
++------------------------------------+------------------------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: VGA_Display:u3|VGA_Image:u2|G:u2|altsyncram:altsyncram_component ;
++------------------------------------+------------------------+-------------------------------------------------+
+; Parameter Name                     ; Value                  ; Type                                            ;
++------------------------------------+------------------------+-------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                      ; Untyped                                         ;
+; AUTO_CARRY_CHAINS                  ; ON                     ; AUTO_CARRY                                      ;
+; IGNORE_CARRY_BUFFERS               ; OFF                    ; IGNORE_CARRY                                    ;
+; AUTO_CASCADE_CHAINS                ; ON                     ; AUTO_CASCADE                                    ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                    ; IGNORE_CASCADE                                  ;
+; WIDTH_BYTEENA                      ; 1                      ; Untyped                                         ;
+; OPERATION_MODE                     ; ROM                    ; Untyped                                         ;
+; WIDTH_A                            ; 4                      ; Signed Integer                                  ;
+; WIDTHAD_A                          ; 15                     ; Signed Integer                                  ;
+; NUMWORDS_A                         ; 19200                  ; Signed Integer                                  ;
+; OUTDATA_REG_A                      ; CLOCK0                 ; Untyped                                         ;
+; ADDRESS_ACLR_A                     ; NONE                   ; Untyped                                         ;
+; OUTDATA_ACLR_A                     ; NONE                   ; Untyped                                         ;
+; WRCONTROL_ACLR_A                   ; NONE                   ; Untyped                                         ;
+; INDATA_ACLR_A                      ; NONE                   ; Untyped                                         ;
+; BYTEENA_ACLR_A                     ; NONE                   ; Untyped                                         ;
+; WIDTH_B                            ; 1                      ; Untyped                                         ;
+; WIDTHAD_B                          ; 1                      ; Untyped                                         ;
+; NUMWORDS_B                         ; 1                      ; Untyped                                         ;
+; INDATA_REG_B                       ; CLOCK1                 ; Untyped                                         ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                 ; Untyped                                         ;
+; RDCONTROL_REG_B                    ; CLOCK1                 ; Untyped                                         ;
+; ADDRESS_REG_B                      ; CLOCK1                 ; Untyped                                         ;
+; OUTDATA_REG_B                      ; UNREGISTERED           ; Untyped                                         ;
+; BYTEENA_REG_B                      ; CLOCK1                 ; Untyped                                         ;
+; INDATA_ACLR_B                      ; NONE                   ; Untyped                                         ;
+; WRCONTROL_ACLR_B                   ; NONE                   ; Untyped                                         ;
+; ADDRESS_ACLR_B                     ; NONE                   ; Untyped                                         ;
+; OUTDATA_ACLR_B                     ; NONE                   ; Untyped                                         ;
+; RDCONTROL_ACLR_B                   ; NONE                   ; Untyped                                         ;
+; BYTEENA_ACLR_B                     ; NONE                   ; Untyped                                         ;
+; WIDTH_BYTEENA_A                    ; 1                      ; Signed Integer                                  ;
+; WIDTH_BYTEENA_B                    ; 1                      ; Untyped                                         ;
+; RAM_BLOCK_TYPE                     ; AUTO                   ; Untyped                                         ;
+; BYTE_SIZE                          ; 8                      ; Untyped                                         ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE              ; Untyped                                         ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ   ; Untyped                                         ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ   ; Untyped                                         ;
+; INIT_FILE                          ; ../assets/BLOCKS_G.mif ; Untyped                                         ;
+; INIT_FILE_LAYOUT                   ; PORT_A                 ; Untyped                                         ;
+; MAXIMUM_DEPTH                      ; 0                      ; Untyped                                         ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS                 ; Untyped                                         ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                 ; Untyped                                         ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS                 ; Untyped                                         ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                 ; Untyped                                         ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN        ; Untyped                                         ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN        ; Untyped                                         ;
+; ENABLE_ECC                         ; FALSE                  ; Untyped                                         ;
+; DEVICE_FAMILY                      ; Cyclone III            ; Untyped                                         ;
+; CBXI_PARAMETER                     ; altsyncram_hba1        ; Untyped                                         ;
++------------------------------------+------------------------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: VGA_Display:u3|VGA_Image:u2|B:u3|altsyncram:altsyncram_component ;
++------------------------------------+------------------------+-------------------------------------------------+
+; Parameter Name                     ; Value                  ; Type                                            ;
++------------------------------------+------------------------+-------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                      ; Untyped                                         ;
+; AUTO_CARRY_CHAINS                  ; ON                     ; AUTO_CARRY                                      ;
+; IGNORE_CARRY_BUFFERS               ; OFF                    ; IGNORE_CARRY                                    ;
+; AUTO_CASCADE_CHAINS                ; ON                     ; AUTO_CASCADE                                    ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                    ; IGNORE_CASCADE                                  ;
+; WIDTH_BYTEENA                      ; 1                      ; Untyped                                         ;
+; OPERATION_MODE                     ; ROM                    ; Untyped                                         ;
+; WIDTH_A                            ; 4                      ; Signed Integer                                  ;
+; WIDTHAD_A                          ; 15                     ; Signed Integer                                  ;
+; NUMWORDS_A                         ; 19200                  ; Signed Integer                                  ;
+; OUTDATA_REG_A                      ; CLOCK0                 ; Untyped                                         ;
+; ADDRESS_ACLR_A                     ; NONE                   ; Untyped                                         ;
+; OUTDATA_ACLR_A                     ; NONE                   ; Untyped                                         ;
+; WRCONTROL_ACLR_A                   ; NONE                   ; Untyped                                         ;
+; INDATA_ACLR_A                      ; NONE                   ; Untyped                                         ;
+; BYTEENA_ACLR_A                     ; NONE                   ; Untyped                                         ;
+; WIDTH_B                            ; 1                      ; Untyped                                         ;
+; WIDTHAD_B                          ; 1                      ; Untyped                                         ;
+; NUMWORDS_B                         ; 1                      ; Untyped                                         ;
+; INDATA_REG_B                       ; CLOCK1                 ; Untyped                                         ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                 ; Untyped                                         ;
+; RDCONTROL_REG_B                    ; CLOCK1                 ; Untyped                                         ;
+; ADDRESS_REG_B                      ; CLOCK1                 ; Untyped                                         ;
+; OUTDATA_REG_B                      ; UNREGISTERED           ; Untyped                                         ;
+; BYTEENA_REG_B                      ; CLOCK1                 ; Untyped                                         ;
+; INDATA_ACLR_B                      ; NONE                   ; Untyped                                         ;
+; WRCONTROL_ACLR_B                   ; NONE                   ; Untyped                                         ;
+; ADDRESS_ACLR_B                     ; NONE                   ; Untyped                                         ;
+; OUTDATA_ACLR_B                     ; NONE                   ; Untyped                                         ;
+; RDCONTROL_ACLR_B                   ; NONE                   ; Untyped                                         ;
+; BYTEENA_ACLR_B                     ; NONE                   ; Untyped                                         ;
+; WIDTH_BYTEENA_A                    ; 1                      ; Signed Integer                                  ;
+; WIDTH_BYTEENA_B                    ; 1                      ; Untyped                                         ;
+; RAM_BLOCK_TYPE                     ; AUTO                   ; Untyped                                         ;
+; BYTE_SIZE                          ; 8                      ; Untyped                                         ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE              ; Untyped                                         ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ   ; Untyped                                         ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ   ; Untyped                                         ;
+; INIT_FILE                          ; ../assets/BLOCKS_B.mif ; Untyped                                         ;
+; INIT_FILE_LAYOUT                   ; PORT_A                 ; Untyped                                         ;
+; MAXIMUM_DEPTH                      ; 0                      ; Untyped                                         ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS                 ; Untyped                                         ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                 ; Untyped                                         ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS                 ; Untyped                                         ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                 ; Untyped                                         ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN        ; Untyped                                         ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN        ; Untyped                                         ;
+; ENABLE_ECC                         ; FALSE                  ; Untyped                                         ;
+; DEVICE_FAMILY                      ; Cyclone III            ; Untyped                                         ;
+; CBXI_PARAMETER                     ; altsyncram_cba1        ; Untyped                                         ;
++------------------------------------+------------------------+-------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -767,20 +1009,22 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; SLIDER_RIGHT_BOUNDARY  ; 590                                                                                                                                                                                                                                                                                                          ; Signed Integer  ;
 ; SLIDER_UP_BOUNDARY     ; 400                                                                                                                                                                                                                                                                                                          ; Signed Integer  ;
 ; SLIDER_DOWN_BOUNDARY   ; 475                                                                                                                                                                                                                                                                                                          ; Signed Integer  ;
-; SLIDER_X_INIT_LOCATION ; 100                                                                                                                                                                                                                                                                                                          ; Signed Integer  ;
+; SLIDER_X_INIT_LOCATION ; 320                                                                                                                                                                                                                                                                                                          ; Signed Integer  ;
 ; SLIDER_Y_INIT_LOCATION ; 475                                                                                                                                                                                                                                                                                                          ; Signed Integer  ;
 ; SLIDER_LOW_SPEED       ; 1                                                                                                                                                                                                                                                                                                            ; Signed Integer  ;
 ; SLIDER_MEDIUM_SPEED    ; 2                                                                                                                                                                                                                                                                                                            ; Signed Integer  ;
 ; SLIDER_HIGH_SPEED      ; 3                                                                                                                                                                                                                                                                                                            ; Signed Integer  ;
 ; BALL_X_INIT_LOCATION   ; 320                                                                                                                                                                                                                                                                                                          ; Signed Integer  ;
-; BALL_Y_INIT_LOCATION   ; 300                                                                                                                                                                                                                                                                                                          ; Signed Integer  ;
+; BALL_Y_INIT_LOCATION   ; 200                                                                                                                                                                                                                                                                                                          ; Signed Integer  ;
 ; BALL_RADIUS            ; 10                                                                                                                                                                                                                                                                                                           ; Signed Integer  ;
 ; BALL_TOWARD_RIGHT      ; 0                                                                                                                                                                                                                                                                                                            ; Signed Integer  ;
 ; BALL_TOWARD_LEFT       ; 1                                                                                                                                                                                                                                                                                                            ; Signed Integer  ;
 ; BALL_TOWARD_UP         ; 1                                                                                                                                                                                                                                                                                                            ; Signed Integer  ;
 ; BALL_TOWARD_DOWN       ; 0                                                                                                                                                                                                                                                                                                            ; Signed Integer  ;
 ; BLOCK_SIZE             ; 32                                                                                                                                                                                                                                                                                                           ; Signed Integer  ;
-; BLOCK_RST_1            ; 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111111111111111111111111111111111111111 ; Unsigned Binary ;
+; BLOCK_RST_1            ; 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011110000000000000000000000000000 ; Unsigned Binary ;
+; BLOCK_RST_2            ; 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111111111110000000111111111111110000011111111111111110001111111111111111110 ; Unsigned Binary ;
+; BLOCK_RST_3            ; 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000101010111111010101000001111111111110000011111111111111111100000111111111111000001111111111111111110 ; Unsigned Binary ;
 +------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -796,20 +1040,22 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; SLIDER_RIGHT_BOUNDARY  ; 590                                                                                                                                                                                                                                                                                                          ; Signed Integer  ;
 ; SLIDER_UP_BOUNDARY     ; 400                                                                                                                                                                                                                                                                                                          ; Signed Integer  ;
 ; SLIDER_DOWN_BOUNDARY   ; 475                                                                                                                                                                                                                                                                                                          ; Signed Integer  ;
-; SLIDER_X_INIT_LOCATION ; 100                                                                                                                                                                                                                                                                                                          ; Signed Integer  ;
+; SLIDER_X_INIT_LOCATION ; 320                                                                                                                                                                                                                                                                                                          ; Signed Integer  ;
 ; SLIDER_Y_INIT_LOCATION ; 475                                                                                                                                                                                                                                                                                                          ; Signed Integer  ;
 ; SLIDER_LOW_SPEED       ; 1                                                                                                                                                                                                                                                                                                            ; Signed Integer  ;
 ; SLIDER_MEDIUM_SPEED    ; 2                                                                                                                                                                                                                                                                                                            ; Signed Integer  ;
 ; SLIDER_HIGH_SPEED      ; 3                                                                                                                                                                                                                                                                                                            ; Signed Integer  ;
 ; BALL_X_INIT_LOCATION   ; 320                                                                                                                                                                                                                                                                                                          ; Signed Integer  ;
-; BALL_Y_INIT_LOCATION   ; 300                                                                                                                                                                                                                                                                                                          ; Signed Integer  ;
+; BALL_Y_INIT_LOCATION   ; 200                                                                                                                                                                                                                                                                                                          ; Signed Integer  ;
 ; BALL_RADIUS            ; 10                                                                                                                                                                                                                                                                                                           ; Signed Integer  ;
 ; BALL_TOWARD_RIGHT      ; 0                                                                                                                                                                                                                                                                                                            ; Signed Integer  ;
 ; BALL_TOWARD_LEFT       ; 1                                                                                                                                                                                                                                                                                                            ; Signed Integer  ;
 ; BALL_TOWARD_UP         ; 1                                                                                                                                                                                                                                                                                                            ; Signed Integer  ;
 ; BALL_TOWARD_DOWN       ; 0                                                                                                                                                                                                                                                                                                            ; Signed Integer  ;
 ; BLOCK_SIZE             ; 32                                                                                                                                                                                                                                                                                                           ; Signed Integer  ;
-; BLOCK_RST_1            ; 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111111111111111111111111111111111111111 ; Unsigned Binary ;
+; BLOCK_RST_1            ; 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011110000000000000000000000000000 ; Unsigned Binary ;
+; BLOCK_RST_2            ; 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111111111110000000111111111111110000011111111111111110001111111111111111110 ; Unsigned Binary ;
+; BLOCK_RST_3            ; 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000101010111111010101000001111111111110000011111111111111111100000111111111111000001111111111111111110 ; Unsigned Binary ;
 +------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -825,20 +1071,22 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; SLIDER_RIGHT_BOUNDARY  ; 590                                                                                                                                                                                                                                                                                                          ; Signed Integer  ;
 ; SLIDER_UP_BOUNDARY     ; 400                                                                                                                                                                                                                                                                                                          ; Signed Integer  ;
 ; SLIDER_DOWN_BOUNDARY   ; 475                                                                                                                                                                                                                                                                                                          ; Signed Integer  ;
-; SLIDER_X_INIT_LOCATION ; 100                                                                                                                                                                                                                                                                                                          ; Signed Integer  ;
+; SLIDER_X_INIT_LOCATION ; 320                                                                                                                                                                                                                                                                                                          ; Signed Integer  ;
 ; SLIDER_Y_INIT_LOCATION ; 475                                                                                                                                                                                                                                                                                                          ; Signed Integer  ;
 ; SLIDER_LOW_SPEED       ; 1                                                                                                                                                                                                                                                                                                            ; Signed Integer  ;
 ; SLIDER_MEDIUM_SPEED    ; 2                                                                                                                                                                                                                                                                                                            ; Signed Integer  ;
 ; SLIDER_HIGH_SPEED      ; 3                                                                                                                                                                                                                                                                                                            ; Signed Integer  ;
 ; BALL_X_INIT_LOCATION   ; 320                                                                                                                                                                                                                                                                                                          ; Signed Integer  ;
-; BALL_Y_INIT_LOCATION   ; 300                                                                                                                                                                                                                                                                                                          ; Signed Integer  ;
+; BALL_Y_INIT_LOCATION   ; 200                                                                                                                                                                                                                                                                                                          ; Signed Integer  ;
 ; BALL_RADIUS            ; 10                                                                                                                                                                                                                                                                                                           ; Signed Integer  ;
 ; BALL_TOWARD_RIGHT      ; 0                                                                                                                                                                                                                                                                                                            ; Signed Integer  ;
 ; BALL_TOWARD_LEFT       ; 1                                                                                                                                                                                                                                                                                                            ; Signed Integer  ;
 ; BALL_TOWARD_UP         ; 1                                                                                                                                                                                                                                                                                                            ; Signed Integer  ;
 ; BALL_TOWARD_DOWN       ; 0                                                                                                                                                                                                                                                                                                            ; Signed Integer  ;
 ; BLOCK_SIZE             ; 32                                                                                                                                                                                                                                                                                                           ; Signed Integer  ;
-; BLOCK_RST_1            ; 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111111111111111111111111111111111111111 ; Unsigned Binary ;
+; BLOCK_RST_1            ; 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011110000000000000000000000000000 ; Unsigned Binary ;
+; BLOCK_RST_2            ; 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111111111110000000111111111111110000011111111111111110001111111111111111110 ; Unsigned Binary ;
+; BLOCK_RST_3            ; 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000101010111111010101000001111111111110000011111111111111111100000111111111111000001111111111111111110 ; Unsigned Binary ;
 +------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -860,14 +1108,46 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Crash:u7"                                                                                                                                                                                       ;
-+--------------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port               ; Type  ; Severity ; Details                                                                                                                                                                            ;
-+--------------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; iSlider_flag       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (2 bits) it drives.  The 30 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; iSlider_flag[1..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
-+--------------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                             ;
++-------------------------------------------+------------------------------------------------------------------+
+; Name                                      ; Value                                                            ;
++-------------------------------------------+------------------------------------------------------------------+
+; Number of entity instances                ; 3                                                                ;
+; Entity Instance                           ; VGA_Display:u3|VGA_Image:u2|R:u1|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; ROM                                                              ;
+;     -- WIDTH_A                            ; 4                                                                ;
+;     -- NUMWORDS_A                         ; 19200                                                            ;
+;     -- OUTDATA_REG_A                      ; CLOCK0                                                           ;
+;     -- WIDTH_B                            ; 1                                                                ;
+;     -- NUMWORDS_B                         ; 1                                                                ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                           ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                     ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                             ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                        ;
+; Entity Instance                           ; VGA_Display:u3|VGA_Image:u2|G:u2|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; ROM                                                              ;
+;     -- WIDTH_A                            ; 4                                                                ;
+;     -- NUMWORDS_A                         ; 19200                                                            ;
+;     -- OUTDATA_REG_A                      ; CLOCK0                                                           ;
+;     -- WIDTH_B                            ; 1                                                                ;
+;     -- NUMWORDS_B                         ; 1                                                                ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                           ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                     ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                             ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                        ;
+; Entity Instance                           ; VGA_Display:u3|VGA_Image:u2|B:u3|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; ROM                                                              ;
+;     -- WIDTH_A                            ; 4                                                                ;
+;     -- NUMWORDS_A                         ; 19200                                                            ;
+;     -- OUTDATA_REG_A                      ; CLOCK0                                                           ;
+;     -- WIDTH_B                            ; 1                                                                ;
+;     -- NUMWORDS_B                         ; 1                                                                ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                           ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                     ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                             ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                        ;
++-------------------------------------------+------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------+
@@ -879,14 +1159,39 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "VGA_Pattern:u3"                                                                                                                                                                                 ;
-+--------------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port               ; Type  ; Severity ; Details                                                                                                                                                                            ;
-+--------------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; iSlider_flag       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (2 bits) it drives.  The 30 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; iSlider_flag[1..0] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
-+--------------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "VGA_Display:u3|VGA_Image:u2"                                                                                                                         ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                                                                            ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+; oRed   ; Output ; Warning  ; Output or bidir port (10 bits) is wider than the port expression (4 bits) it drives; bit(s) "oRed[9..4]" have no fanouts                           ;
+; oGreen ; Output ; Warning  ; Output or bidir port (10 bits) is wider than the port expression (4 bits) it drives; bit(s) "oGreen[9..4]" have no fanouts                         ;
+; oBlue  ; Output ; Warning  ; Output or bidir port (10 bits) is wider than the port expression (4 bits) it drives; bit(s) "oBlue[9..4]" have no fanouts                          ;
+; iVGA_X ; Input  ; Warning  ; Input port expression (10 bits) is smaller than the input port (11 bits) it drives.  Extra input bit(s) "iVGA_X[10..10]" will be connected to GND. ;
+; iVGA_Y ; Input  ; Warning  ; Input port expression (10 bits) is smaller than the input port (11 bits) it drives.  Extra input bit(s) "iVGA_Y[10..10]" will be connected to GND. ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "VGA_Display:u3|VGA_Pattern:u1"                                                                                               ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                                                    ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------------------------+
+; oRed   ; Output ; Warning  ; Output or bidir port (10 bits) is wider than the port expression (4 bits) it drives; bit(s) "oRed[9..4]" have no fanouts   ;
+; oGreen ; Output ; Warning  ; Output or bidir port (10 bits) is wider than the port expression (4 bits) it drives; bit(s) "oGreen[9..4]" have no fanouts ;
+; oBlue  ; Output ; Warning  ; Output or bidir port (10 bits) is wider than the port expression (4 bits) it drives; bit(s) "oBlue[9..4]" have no fanouts  ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "VGA_Display:u3"                                                                                                                                                          ;
++--------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                                                                                                ;
++--------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; oRed   ; Output ; Warning  ; Output or bidir port (4 bits) is smaller than the port expression (10 bits) it drives.  The 6 most-significant bit(s) in the port expression will be connected to GND. ;
+; oGreen ; Output ; Warning  ; Output or bidir port (4 bits) is smaller than the port expression (10 bits) it drives.  The 6 most-significant bit(s) in the port expression will be connected to GND. ;
+; oBlue  ; Output ; Warning  ; Output or bidir port (4 bits) is smaller than the port expression (10 bits) it drives.  The 6 most-significant bit(s) in the port expression will be connected to GND. ;
++--------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -911,8 +1216,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
-    Info: Processing started: Sat Jun 09 22:24:27 2018
+    Info: Processing started: Fri Jun 15 09:50:05 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE0_VGA -c DE0_VGA
+Info: Found 1 design units, including 1 entities, in source file V/VGA_Display.v
+    Info: Found entity 1: VGA_Display
+Warning (10238): Verilog Module Declaration warning at VGA_Image.v(10): ignored anonymous port(s) indicated by duplicate or dangling comma(s) in the port list for module "VGA_Image"
+Info: Found 1 design units, including 1 entities, in source file V/VGA_Image.v
+    Info: Found entity 1: VGA_Image
 Info: Found 1 design units, including 1 entities, in source file V/KeyBoard.v
     Info: Found entity 1: KeyBoard
 Info: Found 1 design units, including 1 entities, in source file V/Crash.v
@@ -929,6 +1239,16 @@ Info: Found 1 design units, including 1 entities, in source file V/VGA_Pattern.v
     Info: Found entity 1: VGA_Pattern
 Info: Found 1 design units, including 1 entities, in source file DE0_VGA.v
     Info: Found entity 1: DE0_VGA
+Info: Found 1 design units, including 1 entities, in source file V/Level_CTRL.v
+    Info: Found entity 1: Level_CTRL
+Info: Found 1 design units, including 1 entities, in source file V/LED.v
+    Info: Found entity 1: LED
+Info: Found 1 design units, including 1 entities, in source file images/B.v
+    Info: Found entity 1: B
+Info: Found 1 design units, including 1 entities, in source file images/G.v
+    Info: Found entity 1: G
+Info: Found 1 design units, including 1 entities, in source file images/R.v
+    Info: Found entity 1: R
 Info: Elaborating entity "DE0_VGA" for the top level hierarchy
 Warning (10230): Verilog HDL assignment warning at DE0_VGA.v(208): truncated value with size 16 to match size of target (15)
 Warning (10034): Output port "UART_TXD" at DE0_VGA.v(144) has no driver
@@ -1060,7 +1380,111 @@ Warning (10230): Verilog HDL assignment warning at VGA_Ctrl.v(61): truncated val
 Warning (10230): Verilog HDL assignment warning at VGA_Ctrl.v(62): truncated value with size 32 to match size of target (10)
 Warning (10230): Verilog HDL assignment warning at VGA_Ctrl.v(64): truncated value with size 32 to match size of target (11)
 Warning (10230): Verilog HDL assignment warning at VGA_Ctrl.v(65): truncated value with size 32 to match size of target (11)
-Info: Elaborating entity "VGA_Pattern" for hierarchy "VGA_Pattern:u3"
+Info: Elaborating entity "VGA_Display" for hierarchy "VGA_Display:u3"
+Warning (10230): Verilog HDL assignment warning at VGA_Display.v(56): truncated value with size 32 to match size of target (1)
+Info: Elaborating entity "VGA_Pattern" for hierarchy "VGA_Display:u3|VGA_Pattern:u1"
+Info: Elaborating entity "VGA_Image" for hierarchy "VGA_Display:u3|VGA_Image:u2"
+Warning (10230): Verilog HDL assignment warning at VGA_Image.v(50): truncated value with size 32 to match size of target (15)
+Warning (10230): Verilog HDL assignment warning at VGA_Image.v(65): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at VGA_Image.v(67): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at VGA_Image.v(68): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at VGA_Image.v(69): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at VGA_Image.v(70): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at VGA_Image.v(72): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at VGA_Image.v(73): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at VGA_Image.v(74): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at VGA_Image.v(75): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at VGA_Image.v(77): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at VGA_Image.v(78): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at VGA_Image.v(79): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at VGA_Image.v(80): truncated value with size 32 to match size of target (1)
+Warning (10034): Output port "oRed[9]" at VGA_Image.v(12) has no driver
+Warning (10034): Output port "oRed[8]" at VGA_Image.v(12) has no driver
+Warning (10034): Output port "oRed[7]" at VGA_Image.v(12) has no driver
+Warning (10034): Output port "oRed[6]" at VGA_Image.v(12) has no driver
+Warning (10034): Output port "oRed[5]" at VGA_Image.v(12) has no driver
+Warning (10034): Output port "oRed[4]" at VGA_Image.v(12) has no driver
+Warning (10034): Output port "oGreen[9]" at VGA_Image.v(13) has no driver
+Warning (10034): Output port "oGreen[8]" at VGA_Image.v(13) has no driver
+Warning (10034): Output port "oGreen[7]" at VGA_Image.v(13) has no driver
+Warning (10034): Output port "oGreen[6]" at VGA_Image.v(13) has no driver
+Warning (10034): Output port "oGreen[5]" at VGA_Image.v(13) has no driver
+Warning (10034): Output port "oGreen[4]" at VGA_Image.v(13) has no driver
+Warning (10034): Output port "oBlue[9]" at VGA_Image.v(14) has no driver
+Warning (10034): Output port "oBlue[8]" at VGA_Image.v(14) has no driver
+Warning (10034): Output port "oBlue[7]" at VGA_Image.v(14) has no driver
+Warning (10034): Output port "oBlue[6]" at VGA_Image.v(14) has no driver
+Warning (10034): Output port "oBlue[5]" at VGA_Image.v(14) has no driver
+Warning (10034): Output port "oBlue[4]" at VGA_Image.v(14) has no driver
+Info: Elaborating entity "R" for hierarchy "VGA_Display:u3|VGA_Image:u2|R:u1"
+Info: Elaborating entity "altsyncram" for hierarchy "VGA_Display:u3|VGA_Image:u2|R:u1|altsyncram:altsyncram_component"
+Info: Elaborated megafunction instantiation "VGA_Display:u3|VGA_Image:u2|R:u1|altsyncram:altsyncram_component"
+Info: Instantiated megafunction "VGA_Display:u3|VGA_Image:u2|R:u1|altsyncram:altsyncram_component" with the following parameter:
+    Info: Parameter "address_aclr_a" = "NONE"
+    Info: Parameter "clock_enable_input_a" = "BYPASS"
+    Info: Parameter "clock_enable_output_a" = "BYPASS"
+    Info: Parameter "init_file" = "../assets/BLOCKS_R.mif"
+    Info: Parameter "intended_device_family" = "Cyclone III"
+    Info: Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info: Parameter "lpm_type" = "altsyncram"
+    Info: Parameter "numwords_a" = "19200"
+    Info: Parameter "operation_mode" = "ROM"
+    Info: Parameter "outdata_aclr_a" = "NONE"
+    Info: Parameter "outdata_reg_a" = "CLOCK0"
+    Info: Parameter "widthad_a" = "15"
+    Info: Parameter "width_a" = "4"
+    Info: Parameter "width_byteena_a" = "1"
+Info: Found 1 design units, including 1 entities, in source file db/altsyncram_sba1.tdf
+    Info: Found entity 1: altsyncram_sba1
+Info: Elaborating entity "altsyncram_sba1" for hierarchy "VGA_Display:u3|VGA_Image:u2|R:u1|altsyncram:altsyncram_component|altsyncram_sba1:auto_generated"
+Info: Found 1 design units, including 1 entities, in source file db/decode_57a.tdf
+    Info: Found entity 1: decode_57a
+Info: Elaborating entity "decode_57a" for hierarchy "VGA_Display:u3|VGA_Image:u2|R:u1|altsyncram:altsyncram_component|altsyncram_sba1:auto_generated|decode_57a:rden_decode"
+Info: Found 1 design units, including 1 entities, in source file db/mux_olb.tdf
+    Info: Found entity 1: mux_olb
+Info: Elaborating entity "mux_olb" for hierarchy "VGA_Display:u3|VGA_Image:u2|R:u1|altsyncram:altsyncram_component|altsyncram_sba1:auto_generated|mux_olb:mux2"
+Info: Elaborating entity "G" for hierarchy "VGA_Display:u3|VGA_Image:u2|G:u2"
+Info: Elaborating entity "altsyncram" for hierarchy "VGA_Display:u3|VGA_Image:u2|G:u2|altsyncram:altsyncram_component"
+Info: Elaborated megafunction instantiation "VGA_Display:u3|VGA_Image:u2|G:u2|altsyncram:altsyncram_component"
+Info: Instantiated megafunction "VGA_Display:u3|VGA_Image:u2|G:u2|altsyncram:altsyncram_component" with the following parameter:
+    Info: Parameter "address_aclr_a" = "NONE"
+    Info: Parameter "clock_enable_input_a" = "BYPASS"
+    Info: Parameter "clock_enable_output_a" = "BYPASS"
+    Info: Parameter "init_file" = "../assets/BLOCKS_G.mif"
+    Info: Parameter "intended_device_family" = "Cyclone III"
+    Info: Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info: Parameter "lpm_type" = "altsyncram"
+    Info: Parameter "numwords_a" = "19200"
+    Info: Parameter "operation_mode" = "ROM"
+    Info: Parameter "outdata_aclr_a" = "NONE"
+    Info: Parameter "outdata_reg_a" = "CLOCK0"
+    Info: Parameter "widthad_a" = "15"
+    Info: Parameter "width_a" = "4"
+    Info: Parameter "width_byteena_a" = "1"
+Info: Found 1 design units, including 1 entities, in source file db/altsyncram_hba1.tdf
+    Info: Found entity 1: altsyncram_hba1
+Info: Elaborating entity "altsyncram_hba1" for hierarchy "VGA_Display:u3|VGA_Image:u2|G:u2|altsyncram:altsyncram_component|altsyncram_hba1:auto_generated"
+Info: Elaborating entity "B" for hierarchy "VGA_Display:u3|VGA_Image:u2|B:u3"
+Info: Elaborating entity "altsyncram" for hierarchy "VGA_Display:u3|VGA_Image:u2|B:u3|altsyncram:altsyncram_component"
+Info: Elaborated megafunction instantiation "VGA_Display:u3|VGA_Image:u2|B:u3|altsyncram:altsyncram_component"
+Info: Instantiated megafunction "VGA_Display:u3|VGA_Image:u2|B:u3|altsyncram:altsyncram_component" with the following parameter:
+    Info: Parameter "address_aclr_a" = "NONE"
+    Info: Parameter "clock_enable_input_a" = "BYPASS"
+    Info: Parameter "clock_enable_output_a" = "BYPASS"
+    Info: Parameter "init_file" = "../assets/BLOCKS_B.mif"
+    Info: Parameter "intended_device_family" = "Cyclone III"
+    Info: Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info: Parameter "lpm_type" = "altsyncram"
+    Info: Parameter "numwords_a" = "19200"
+    Info: Parameter "operation_mode" = "ROM"
+    Info: Parameter "outdata_aclr_a" = "NONE"
+    Info: Parameter "outdata_reg_a" = "CLOCK0"
+    Info: Parameter "widthad_a" = "15"
+    Info: Parameter "width_a" = "4"
+    Info: Parameter "width_byteena_a" = "1"
+Info: Found 1 design units, including 1 entities, in source file db/altsyncram_cba1.tdf
+    Info: Found entity 1: altsyncram_cba1
+Info: Elaborating entity "altsyncram_cba1" for hierarchy "VGA_Display:u3|VGA_Image:u2|B:u3|altsyncram:altsyncram_component|altsyncram_cba1:auto_generated"
 Info: Elaborating entity "KeyBoard" for hierarchy "KeyBoard:u4"
 Info: Elaborating entity "Slider" for hierarchy "Slider:u5"
 Warning (10230): Verilog HDL assignment warning at Slider.v(37): truncated value with size 32 to match size of target (10)
@@ -1095,35 +1519,147 @@ Warning (10240): Verilog HDL Always Construct warning at Ball.v(85): inferring l
 Info (10041): Inferred latch for "ball_y[0]" at Ball.v(85)
 Info (10041): Inferred latch for "ball_x[0]" at Ball.v(53)
 Info: Elaborating entity "Crash" for hierarchy "Crash:u7"
-Warning (10230): Verilog HDL assignment warning at Crash.v(46): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at Crash.v(64): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at Crash.v(82): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at Crash.v(100): truncated value with size 32 to match size of target (1)
-Critical Warning (10237): Verilog HDL warning at Crash.v(119): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead
-Critical Warning (10237): Verilog HDL warning at Crash.v(120): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead
-Critical Warning (10237): Verilog HDL warning at Crash.v(121): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead
-Critical Warning (10237): Verilog HDL warning at Crash.v(123): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead
-Critical Warning (10237): Verilog HDL warning at Crash.v(124): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead
+Warning (10230): Verilog HDL assignment warning at Crash.v(50): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at Crash.v(52): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at Crash.v(70): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at Crash.v(88): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at Crash.v(106): truncated value with size 32 to match size of target (1)
 Critical Warning (10237): Verilog HDL warning at Crash.v(125): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead
+Critical Warning (10237): Verilog HDL warning at Crash.v(126): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead
 Critical Warning (10237): Verilog HDL warning at Crash.v(127): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead
-Critical Warning (10237): Verilog HDL warning at Crash.v(128): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead
 Critical Warning (10237): Verilog HDL warning at Crash.v(129): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead
+Critical Warning (10237): Verilog HDL warning at Crash.v(130): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead
 Critical Warning (10237): Verilog HDL warning at Crash.v(131): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead
-Critical Warning (10237): Verilog HDL warning at Crash.v(132): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead
 Critical Warning (10237): Verilog HDL warning at Crash.v(133): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead
-Warning: 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Critical Warning (10237): Verilog HDL warning at Crash.v(134): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead
+Critical Warning (10237): Verilog HDL warning at Crash.v(135): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead
+Critical Warning (10237): Verilog HDL warning at Crash.v(137): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead
+Critical Warning (10237): Verilog HDL warning at Crash.v(138): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead
+Critical Warning (10237): Verilog HDL warning at Crash.v(139): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead
+Info: Elaborating entity "Level_CTRL" for hierarchy "Level_CTRL:u8"
+Warning (10036): Verilog HDL or VHDL warning at Level_CTRL.v(35): object "PASS_LEVEL" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at Level_CTRL.v(49): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at Level_CTRL.v(68): truncated value with size 32 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Level_CTRL.v(91): truncated value with size 32 to match size of target (2)
+Info: Elaborating entity "LED" for hierarchy "LED:u9"
+Warning: Net is missing source, defaulting to GND
+    Warning (12110): Net "mVGA_R[9]" is missing source, defaulting to GND
+    Warning (12110): Net "mVGA_R[8]" is missing source, defaulting to GND
+    Warning (12110): Net "mVGA_R[7]" is missing source, defaulting to GND
+    Warning (12110): Net "mVGA_R[6]" is missing source, defaulting to GND
+    Warning (12110): Net "mVGA_R[5]" is missing source, defaulting to GND
+    Warning (12110): Net "mVGA_R[4]" is missing source, defaulting to GND
+    Warning (12110): Net "mVGA_G[9]" is missing source, defaulting to GND
+    Warning (12110): Net "mVGA_G[8]" is missing source, defaulting to GND
+    Warning (12110): Net "mVGA_G[7]" is missing source, defaulting to GND
+    Warning (12110): Net "mVGA_G[6]" is missing source, defaulting to GND
+    Warning (12110): Net "mVGA_G[5]" is missing source, defaulting to GND
+    Warning (12110): Net "mVGA_G[4]" is missing source, defaulting to GND
+    Warning (12110): Net "mVGA_B[9]" is missing source, defaulting to GND
+    Warning (12110): Net "mVGA_B[8]" is missing source, defaulting to GND
+    Warning (12110): Net "mVGA_B[7]" is missing source, defaulting to GND
+    Warning (12110): Net "mVGA_B[6]" is missing source, defaulting to GND
+    Warning (12110): Net "mVGA_B[5]" is missing source, defaulting to GND
+    Warning (12110): Net "mVGA_B[4]" is missing source, defaulting to GND
+Warning: Net is missing source, defaulting to GND
+    Warning (12110): Net "mVGA_R[9]" is missing source, defaulting to GND
+    Warning (12110): Net "mVGA_R[8]" is missing source, defaulting to GND
+    Warning (12110): Net "mVGA_R[7]" is missing source, defaulting to GND
+    Warning (12110): Net "mVGA_R[6]" is missing source, defaulting to GND
+    Warning (12110): Net "mVGA_R[5]" is missing source, defaulting to GND
+    Warning (12110): Net "mVGA_R[4]" is missing source, defaulting to GND
+    Warning (12110): Net "mVGA_G[9]" is missing source, defaulting to GND
+    Warning (12110): Net "mVGA_G[8]" is missing source, defaulting to GND
+    Warning (12110): Net "mVGA_G[7]" is missing source, defaulting to GND
+    Warning (12110): Net "mVGA_G[6]" is missing source, defaulting to GND
+    Warning (12110): Net "mVGA_G[5]" is missing source, defaulting to GND
+    Warning (12110): Net "mVGA_G[4]" is missing source, defaulting to GND
+    Warning (12110): Net "mVGA_B[9]" is missing source, defaulting to GND
+    Warning (12110): Net "mVGA_B[8]" is missing source, defaulting to GND
+    Warning (12110): Net "mVGA_B[7]" is missing source, defaulting to GND
+    Warning (12110): Net "mVGA_B[6]" is missing source, defaulting to GND
+    Warning (12110): Net "mVGA_B[5]" is missing source, defaulting to GND
+    Warning (12110): Net "mVGA_B[4]" is missing source, defaulting to GND
+Warning: 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning: The following bidir pins have no drivers
     Warning: Bidir "FL_DQ15_AM1" has no driver
 Info: Registers with preset signals will power-up high
 Info: DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning: Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
+    Warning (13310): Register "Crash:u7|oState_flag[22]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[22]~_emulated" and latch "Crash:u7|oState_flag[22]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[23]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[23]~_emulated" and latch "Crash:u7|oState_flag[22]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[49]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[49]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[50]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[50]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[48]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[48]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[51]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[51]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[16]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[16]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[17]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[17]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[18]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[18]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[54]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[54]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[53]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[53]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[52]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[52]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[55]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[55]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[41]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[41]~_emulated" and latch "Crash:u7|oState_flag[41]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[42]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[42]~_emulated" and latch "Crash:u7|oState_flag[41]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[43]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[43]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[14]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[14]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[13]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[13]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[12]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[12]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[15]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[15]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[9]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[9]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[10]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[10]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[8]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[8]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[11]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[11]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[46]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[46]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[45]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[45]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[44]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[44]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[47]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[47]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[33]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[33]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[34]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[34]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[32]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[32]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[35]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[35]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[6]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[6]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[5]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[5]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[4]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[4]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[7]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[7]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[1]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[1]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[2]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[2]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[3]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[3]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[36]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[36]~_emulated" and latch "Crash:u7|oState_flag[22]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[37]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[37]~_emulated" and latch "Crash:u7|oState_flag[22]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[25]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[25]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[26]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[26]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[24]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[24]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[27]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[27]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[56]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[56]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[57]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[57]~_emulated" and latch "Crash:u7|oState_flag[41]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[58]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[58]~_emulated" and latch "Crash:u7|oState_flag[41]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[74]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[74]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[73]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[73]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[72]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[72]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[75]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[75]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[81]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[81]~_emulated" and latch "Crash:u7|oState_flag[41]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[83]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[83]~_emulated" and latch "Crash:u7|oState_flag[41]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[65]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[65]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[66]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[66]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[64]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[64]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[67]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[67]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[89]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[89]~_emulated" and latch "Crash:u7|oState_flag[41]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[90]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[90]~_emulated" and latch "Crash:u7|oState_flag[41]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[88]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[88]~_emulated" and latch "Crash:u7|oState_flag[41]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[91]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[91]~_emulated" and latch "Crash:u7|oState_flag[41]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[70]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[70]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[69]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[69]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[68]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[68]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[71]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[71]~_emulated" and latch "Crash:u7|oState_flag[49]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[85]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[85]~_emulated" and latch "Crash:u7|oState_flag[41]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[87]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[87]~_emulated" and latch "Crash:u7|oState_flag[41]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[92]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[92]~_emulated" and latch "Crash:u7|oState_flag[41]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[94]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[94]~_emulated" and latch "Crash:u7|oState_flag[41]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[96]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[96]~_emulated" and latch "Crash:u7|oState_flag[41]~latch"
+    Warning (13310): Register "Crash:u7|oState_flag[98]" is converted into an equivalent circuit using register "Crash:u7|oState_flag[98]~_emulated" and latch "Crash:u7|oState_flag[41]~latch"
 Warning: Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX0_D[0]" is stuck at VCC
-    Warning (13410): Pin "HEX0_D[1]" is stuck at VCC
-    Warning (13410): Pin "HEX0_D[2]" is stuck at VCC
-    Warning (13410): Pin "HEX0_D[3]" is stuck at VCC
-    Warning (13410): Pin "HEX0_D[4]" is stuck at VCC
-    Warning (13410): Pin "HEX0_D[5]" is stuck at VCC
-    Warning (13410): Pin "HEX0_D[6]" is stuck at VCC
+    Warning (13410): Pin "HEX0_D[1]" is stuck at GND
     Warning (13410): Pin "HEX0_DP" is stuck at VCC
     Warning (13410): Pin "HEX1_D[0]" is stuck at VCC
     Warning (13410): Pin "HEX1_D[1]" is stuck at VCC
@@ -1217,22 +1753,18 @@ Warning: Output pins are stuck at VCC or GND
     Warning (13410): Pin "LCD_EN" is stuck at GND
     Warning (13410): Pin "LCD_RS" is stuck at GND
     Warning (13410): Pin "SD_CLK" is stuck at GND
-    Warning (13410): Pin "VGA_G[0]" is stuck at GND
-    Warning (13410): Pin "VGA_G[1]" is stuck at GND
     Warning (13410): Pin "GPIO0_CLKOUT[0]" is stuck at GND
     Warning (13410): Pin "GPIO0_CLKOUT[1]" is stuck at GND
     Warning (13410): Pin "GPIO1_CLKOUT[0]" is stuck at GND
     Warning (13410): Pin "GPIO1_CLKOUT[1]" is stuck at GND
-Warning: Design contains 17 input pin(s) that do not drive logic
+Info: Generated suppressed messages file F:/Project/FPGA/BLOCK3.0/BLOCK/FPGA-game-master/DE0_VGA.map.smsg
+Warning: Design contains 14 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "CLOCK_50_2"
-    Warning (15610): No output dependent on input pin "BUTTON[1]"
-    Warning (15610): No output dependent on input pin "BUTTON[2]"
     Warning (15610): No output dependent on input pin "SW[0]"
     Warning (15610): No output dependent on input pin "SW[5]"
     Warning (15610): No output dependent on input pin "SW[6]"
     Warning (15610): No output dependent on input pin "SW[7]"
     Warning (15610): No output dependent on input pin "SW[8]"
-    Warning (15610): No output dependent on input pin "SW[9]"
     Warning (15610): No output dependent on input pin "UART_RXD"
     Warning (15610): No output dependent on input pin "UART_RTS"
     Warning (15610): No output dependent on input pin "FL_RY"
@@ -1241,16 +1773,23 @@ Warning: Design contains 17 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "GPIO0_CLKIN[1]"
     Warning (15610): No output dependent on input pin "GPIO1_CLKIN[0]"
     Warning (15610): No output dependent on input pin "GPIO1_CLKIN[1]"
-Info: Implemented 1190 device resources after synthesis - the final resource count might be different
+Info: Implemented 1989 device resources after synthesis - the final resource count might be different
     Info: Implemented 23 input pins
     Info: Implemented 118 output pins
     Info: Implemented 111 bidirectional pins
-    Info: Implemented 937 logic cells
+    Info: Implemented 1700 logic cells
+    Info: Implemented 36 RAM segments
     Info: Implemented 1 ClockLock PLLs
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 238 warnings
-    Info: Peak virtual memory: 265 megabytes
-    Info: Processing ended: Sat Jun 09 22:25:04 2018
-    Info: Elapsed time: 00:00:37
-    Info: Total CPU time (on all processors): 00:00:35
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 377 warnings
+    Info: Peak virtual memory: 301 megabytes
+    Info: Processing ended: Fri Jun 15 09:50:50 2018
+    Info: Elapsed time: 00:00:45
+    Info: Total CPU time (on all processors): 00:00:43
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in F:/Project/FPGA/BLOCK3.0/BLOCK/FPGA-game-master/DE0_VGA.map.smsg.
 
 

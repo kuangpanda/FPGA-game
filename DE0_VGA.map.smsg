@@ -1,1 +1,1 @@
-Warning (10268): Verilog HDL information at Crash.v(83): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at Level_CTRL.v(40): always construct contains both blocking and non-blocking assignments

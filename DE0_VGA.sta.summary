@@ -3,75 +3,195 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'u1|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -9.789
-TNS   : -151.742
+Slack : -12.746
+TNS   : -773.556
 
 Type  : Slow 1200mV 85C Model Setup 'VGA_Ctrl:u2|oVGA_VS'
-Slack : -7.626
-TNS   : -375.329
+Slack : -10.747
+TNS   : -922.382
+
+Type  : Slow 1200mV 85C Model Setup 'SW[9]'
+Slack : -8.667
+TNS   : -659.517
+
+Type  : Slow 1200mV 85C Model Setup 'Level_CTRL:u8|oRST'
+Slack : -7.758
+TNS   : -29.707
 
 Type  : Slow 1200mV 85C Model Setup 'VGA_Ctrl:u2|oVGA_HS'
-Slack : -1.427
-TNS   : -16.865
+Slack : -1.491
+TNS   : -17.499
+
+Type  : Slow 1200mV 85C Model Hold 'SW[9]'
+Slack : -4.354
+TNS   : -218.777
 
 Type  : Slow 1200mV 85C Model Hold 'VGA_Ctrl:u2|oVGA_HS'
-Slack : -2.811
-TNS   : -2.811
-
-Type  : Slow 1200mV 85C Model Hold 'u1|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -0.019
-TNS   : -0.019
+Slack : -2.683
+TNS   : -2.683
 
 Type  : Slow 1200mV 85C Model Hold 'VGA_Ctrl:u2|oVGA_VS'
-Slack : 0.358
+Slack : -2.392
+TNS   : -49.548
+
+Type  : Slow 1200mV 85C Model Hold 'u1|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -0.026
+TNS   : -0.026
+
+Type  : Slow 1200mV 85C Model Hold 'Level_CTRL:u8|oRST'
+Slack : 0.357
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'u1|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -2.771
+TNS   : -68.873
+
+Type  : Slow 1200mV 85C Model Recovery 'VGA_Ctrl:u2|oVGA_VS'
+Slack : 1.126
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'SW[9]'
+Slack : 3.271
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'SW[9]'
+Slack : -3.268
+TNS   : -310.038
+
+Type  : Slow 1200mV 85C Model Removal 'VGA_Ctrl:u2|oVGA_VS'
+Slack : -1.306
+TNS   : -142.665
+
+Type  : Slow 1200mV 85C Model Removal 'u1|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 2.493
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'u1|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -8.573
-TNS   : -132.355
+Slack : -11.354
+TNS   : -687.238
 
 Type  : Slow 1200mV 0C Model Setup 'VGA_Ctrl:u2|oVGA_VS'
-Slack : -6.793
-TNS   : -327.750
+Slack : -9.636
+TNS   : -826.124
+
+Type  : Slow 1200mV 0C Model Setup 'SW[9]'
+Slack : -7.679
+TNS   : -583.379
+
+Type  : Slow 1200mV 0C Model Setup 'Level_CTRL:u8|oRST'
+Slack : -7.012
+TNS   : -26.568
 
 Type  : Slow 1200mV 0C Model Setup 'VGA_Ctrl:u2|oVGA_HS'
-Slack : -1.213
-TNS   : -14.280
+Slack : -1.264
+TNS   : -14.787
+
+Type  : Slow 1200mV 0C Model Hold 'SW[9]'
+Slack : -4.021
+TNS   : -205.496
 
 Type  : Slow 1200mV 0C Model Hold 'VGA_Ctrl:u2|oVGA_HS'
-Slack : -2.518
-TNS   : -2.518
-
-Type  : Slow 1200mV 0C Model Hold 'u1|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -0.142
-TNS   : -0.142
+Slack : -2.397
+TNS   : -2.397
 
 Type  : Slow 1200mV 0C Model Hold 'VGA_Ctrl:u2|oVGA_VS'
+Slack : -2.171
+TNS   : -45.329
+
+Type  : Slow 1200mV 0C Model Hold 'u1|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -0.148
+TNS   : -0.148
+
+Type  : Slow 1200mV 0C Model Hold 'Level_CTRL:u8|oRST'
 Slack : 0.312
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Setup 'u1|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -5.610
-TNS   : -86.530
+Type  : Slow 1200mV 0C Model Recovery 'u1|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -2.282
+TNS   : -56.644
 
-Type  : Fast 1200mV 0C Model Setup 'VGA_Ctrl:u2|oVGA_VS'
-Slack : -3.867
-TNS   : -179.582
-
-Type  : Fast 1200mV 0C Model Setup 'VGA_Ctrl:u2|oVGA_HS'
-Slack : -0.345
-TNS   : -3.987
-
-Type  : Fast 1200mV 0C Model Hold 'VGA_Ctrl:u2|oVGA_HS'
-Slack : -1.716
-TNS   : -1.716
-
-Type  : Fast 1200mV 0C Model Hold 'u1|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 0.054
+Type  : Slow 1200mV 0C Model Recovery 'VGA_Ctrl:u2|oVGA_VS'
+Slack : 1.029
 TNS   : 0.000
 
+Type  : Slow 1200mV 0C Model Recovery 'SW[9]'
+Slack : 3.070
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'SW[9]'
+Slack : -3.060
+TNS   : -290.278
+
+Type  : Slow 1200mV 0C Model Removal 'VGA_Ctrl:u2|oVGA_VS'
+Slack : -1.210
+TNS   : -131.763
+
+Type  : Slow 1200mV 0C Model Removal 'u1|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 2.132
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'u1|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -7.615
+TNS   : -457.020
+
+Type  : Fast 1200mV 0C Model Setup 'VGA_Ctrl:u2|oVGA_VS'
+Slack : -6.171
+TNS   : -517.835
+
+Type  : Fast 1200mV 0C Model Setup 'SW[9]'
+Slack : -4.591
+TNS   : -338.819
+
+Type  : Fast 1200mV 0C Model Setup 'Level_CTRL:u8|oRST'
+Slack : -4.403
+TNS   : -16.522
+
+Type  : Fast 1200mV 0C Model Setup 'VGA_Ctrl:u2|oVGA_HS'
+Slack : -0.371
+TNS   : -4.237
+
+Type  : Fast 1200mV 0C Model Hold 'SW[9]'
+Slack : -2.950
+TNS   : -166.518
+
+Type  : Fast 1200mV 0C Model Hold 'VGA_Ctrl:u2|oVGA_HS'
+Slack : -1.619
+TNS   : -1.619
+
 Type  : Fast 1200mV 0C Model Hold 'VGA_Ctrl:u2|oVGA_VS'
-Slack : 0.185
+Slack : -1.442
+TNS   : -31.605
+
+Type  : Fast 1200mV 0C Model Hold 'u1|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.052
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Level_CTRL:u8|oRST'
+Slack : 0.140
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'u1|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -1.544
+TNS   : -38.351
+
+Type  : Fast 1200mV 0C Model Recovery 'VGA_Ctrl:u2|oVGA_VS'
+Slack : 1.005
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'SW[9]'
+Slack : 2.525
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'SW[9]'
+Slack : -2.240
+TNS   : -212.505
+
+Type  : Fast 1200mV 0C Model Removal 'VGA_Ctrl:u2|oVGA_VS'
+Slack : -0.732
+TNS   : -81.503
+
+Type  : Fast 1200mV 0C Model Removal 'u1|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 1.507
 TNS   : 0.000
 
 ------------------------------------------------------------
