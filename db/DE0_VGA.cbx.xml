@@ -2,8 +2,6 @@
 <LOG_ROOT>
 	<PROJECT NAME="DE0_VGA">
 		<CBX_INST_ENTRY INSTANCE_NAME="|DE0_VGA|VGA_CLK:u1|altpll:altpll_component" CBX_FILE_NAME="VGA_CLK_altpll.v"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|DE0_VGA|VGA_Display:u3|VGA_Image:u2|B:u3|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_cba1.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|DE0_VGA|VGA_Display:u3|VGA_Image:u2|G:u2|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_hba1.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|DE0_VGA|VGA_Display:u3|VGA_Image:u2|R:u1|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_sba1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|DE0_VGA|VGA_Display:u3|VGA_Image:u2|block:u1|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_84a1.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

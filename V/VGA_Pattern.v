@@ -12,7 +12,8 @@ module	VGA_Pattern	(	//	Read Out Side
 						iBall_x,
 						iBall_y,
 						iState_flag,
-						iSlider_flag
+						iSlider_flag,
+						iSpecial_block
 						);
 
 `include "Setting.v"			
@@ -28,6 +29,7 @@ input   [9:0]       iBall_x;
 input   [9:0]       iBall_y;
 input	[299:0]		iState_flag;
 input	[1:0]		iSlider_flag;
+input				iSpecial_block;
 input				iVGA_CLK;
 //	Control Signals
 input				iRST_n;
@@ -48,16 +50,19 @@ begin
 		oGreen	<=	0;
 		oBlue	<=	0;
 	end
+	//draw the slider
 	else if (iVGA_Y>=(iSlider_y - 20) && iVGA_Y<=(iSlider_y + 20) && iVGA_X <= (iSlider_x + 50) && iVGA_X >= (iSlider_x - 50)) begin
 	  	oRed <= 0;
 		oBlue <= 8; 
 		oGreen <= 8;
 	end
+	//draw the ball
 	else if (iVGA_Y>=(iBall_y - 10) && iVGA_Y <= (iBall_y + 10) && iVGA_X <= (iBall_x + 10) && iVGA_X >= (iBall_x - 10)) begin
 		oRed <= 12;
 		oBlue <= 12;
 		oGreen <= 12;
 	end 
+	//draw the const block_0
 	else if (iVGA_Y >= 280 && iVGA_Y <= 312 && iVGA_X >= 100 && iVGA_X <= 196) begin
 		if(iSlider_flag[0]) begin
 			oRed <= 9;
@@ -70,8 +75,9 @@ begin
 			oGreen <= 0;
 		end
 	end
+	//draw the const block_1
 	else if (iVGA_Y >= 230 && iVGA_Y <= 262 && iVGA_X >= 500 && iVGA_X <= 596) begin
-		if(iSlider_flag[0]) begin
+		if(iSlider_flag[1]) begin
 			oRed <= 9;
 			oBlue <= 1; 
 			oGreen <= 8;
@@ -82,6 +88,20 @@ begin
 			oGreen <= 0;
 		end
 	end
+	//draw the special block
+	else if (iVGA_Y >= 161 && iVGA_Y <= 191 && iVGA_X >=289 && iVGA_X <= 319 ) begin
+		if(iSpecial_block) begin
+			oRed <= 1;
+			oBlue <= 9;
+			oGreen <= 1;
+		end
+		else begin
+	    	oRed <= 0;
+			oBlue <= 0; 
+			oGreen <= 0;
+		end
+	end
+	//draw normal blocks
 	else if (iVGA_Y>=(blockY * 32 + 1) && iVGA_Y<=((blockY+1)*32 - 1) && iVGA_X>=(blockX*32 + 1) && iVGA_X<=((blockX+1)*32 - 1)) begin
 		if (iState_flag[numF]==1) begin
 			oRed <= 15;

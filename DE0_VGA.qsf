@@ -551,6 +551,8 @@ set_global_assignment -name TIMEQUEST_MULTICORNER_ANALYSIS ON
 set_global_assignment -name TIMEQUEST_DO_CCPP_REMOVAL ON
 set_global_assignment -name MISC_FILE "E:/DE0/DE0_VGA/DE0_VGA.dpf"
 set_global_assignment -name MISC_FILE "D:/TERASIC_TEST/DE0/DE0_VGA/DE0_VGA.dpf"
+set_global_assignment -name MISC_FILE "D:/quartus2/BLOCK/BLOCK/FPGA-game-master/DE0_VGA.dpf"
+set_global_assignment -name VERILOG_FILE V/iic.v
 set_global_assignment -name VERILOG_FILE V/VGA_Display.v
 set_global_assignment -name VERILOG_FILE V/VGA_Image.v
 set_global_assignment -name VERILOG_FILE V/KeyBoard.v
@@ -563,6 +565,4 @@ set_global_assignment -name VERILOG_FILE V/VGA_Pattern.v
 set_global_assignment -name VERILOG_FILE DE0_VGA.v
 set_global_assignment -name VERILOG_FILE V/Level_CTRL.v
 set_global_assignment -name VERILOG_FILE V/LED.v
-set_global_assignment -name QIP_FILE images/B.qip
-set_global_assignment -name QIP_FILE images/G.qip
-set_global_assignment -name QIP_FILE images/R.qip
+set_global_assignment -name QIP_FILE images/blocks.qip

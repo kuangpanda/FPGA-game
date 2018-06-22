@@ -76,14 +76,14 @@ begin
 	begin
 //		if(H_Cont<H_TOTAL)
 		if(H_Cont<H_TOTAL-1)
-			H_Cont	<=	H_Cont+1'b1;
+		H_Cont	<=	H_Cont+1'b1;
 		else
-			H_Cont	<=	0;
+		H_Cont	<=	0;
 		//	Horizontal Sync
 		if(H_Cont==H_FRONT-1)			//	Front porch end
-			oVGA_HS	<=	1'b0;
+		oVGA_HS	<=	1'b0;
 		if(H_Cont==H_FRONT+H_SYNC-1)	//	Sync pulse end
-			oVGA_HS	<=	1'b1;
+		oVGA_HS	<=	1'b1;
 	end
 end
 
@@ -97,14 +97,16 @@ begin
 	end
 	else
 	begin
+//		if(V_Cont<V_TOTAL)
 		if(V_Cont<V_TOTAL-1)
-			V_Cont	<=	V_Cont+1'b1;
+		V_Cont	<=	V_Cont+1'b1;
 		else
-			V_Cont	<=	0;
+		V_Cont	<=	0;
+		//	Vertical Sync
 		if(V_Cont==V_FRONT-1)			//	Front porch end
-			oVGA_VS	<=	1'b0;
+		oVGA_VS	<=	1'b0;
 		if(V_Cont==V_FRONT+V_SYNC-1)	//	Sync pulse end
-			oVGA_VS	<=	1'b1;
+		oVGA_VS	<=	1'b1;
 	end
 end
 

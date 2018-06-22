@@ -19,6 +19,7 @@ module	VGA_Display (	//	Read Out Side
 	iBall_y,
 	iState_flag,
 	iSlider_flag,
+	iSpecial_block,
 	iVGA_VS
 );
 
@@ -34,6 +35,7 @@ input   [9:0]       iBall_x;
 input   [9:0]       iBall_y;
 input	[299:0]		iState_flag;
 input	[1:0]		iSlider_flag;
+input 				iSpecial_block;
 input				iVGA_CLK;
 input               iSW;
 //	Control Signals
@@ -71,7 +73,8 @@ VGA_Pattern	u1 (	//	Read Out Side
 	.iBall_x(iBall_x),
 	.iBall_y(iBall_y),
 	.iState_flag(iState_flag),
-	.iSlider_flag(iSlider_flag)
+	.iSlider_flag(iSlider_flag),
+	.iSpecial_block(iSpecial_block)
 );
 
 VGA_Image u2 (	//	Read Out Side

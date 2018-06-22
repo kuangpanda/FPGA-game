@@ -7,6 +7,8 @@ module Slider (	//	Read Out Side
     iSlider_up,
     iSlider_down,
 
+    iSpecial_block,
+
 	oSlider_x,
     oSlider_y
 );
@@ -17,6 +19,8 @@ input iSlider_go;
 input iSlider_back;
 input iSlider_up;
 input iSlider_down;
+
+input iSpecial_block;
 
 input iVGA_CLK;
 
@@ -37,19 +41,34 @@ always @(posedge iVGA_CLK or negedge iRST_n) begin
         slider_x <= SLIDER_X_INIT_LOCATION;
     end 
     else if (slider_x <= SLIDER_LEFT_BOUNDARY) begin
-        slider_x <= slider_x + 2;
+        slider_x <= slider_x + 1;
     end
     else if (slider_x >= SLIDER_RIGHT_BOUNDARY) begin
-        slider_x <= slider_x - 2;
+        slider_x <= slider_x - 1;
     end
-    else if (iSlider_go) begin
-        slider_x <= slider_x + 2;
+    else if(iSpecial_block==0)
+    begin
+        if (iSlider_go) begin
+            slider_x <= slider_x + 5;
+        end
+        else if (iSlider_back) begin
+            slider_x <= slider_x - 5;
+        end
+        else begin 
+            slider_x <= slider_x;
+        end
     end
-    else if (iSlider_back) begin
-        slider_x <= slider_x - 2;
-    end
-    else begin 
-        slider_x <= slider_x;
+    else if(iSpecial_block==1)
+    begin
+        if (iSlider_go) begin
+            slider_x <= slider_x + 3;
+        end
+        else if (iSlider_back) begin
+            slider_x <= slider_x - 3;
+        end
+        else begin 
+            slider_x <= slider_x;
+        end
     end
 end
 

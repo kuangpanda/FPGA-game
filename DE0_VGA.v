@@ -255,9 +255,12 @@ wire [3:0] crash;
 wire [299:0] state_flag;
 wire [1:0]	level;
 wire [1:0]	slider_flag;
+wire special_block;
+wire special_attacked;
 wire orst;
 wire BallDie;
 wire VGA_VS_PAUSE;
+wire [7:0] odata_test;
 ////////////////////////	VGA			////////////////////////////
 
 VGA_CLK		u1
@@ -304,6 +307,7 @@ VGA_Display	u3
 			.iBall_y(ball_y),
 			.iState_flag(state_flag),
 			.iSlider_flag(slider_flag),
+			.iSpecial_block(special_block),
 			.iSW(SW[9]),
 			.iVGA_VS(VGA_VS)
 );
@@ -317,17 +321,19 @@ KeyBoard u4 (
 );
 
 Slider u5 (	//	Read Out Side
-	.iVGA_CLK(VGA_VS),
+	.iVGA_CLK(VGA_VS_PAUSE),
     .iRST_n(orst),
     
     //.iSlider_go(control[1]),
     //.iSlider_back(control[2]),
     //.iSlider_up(control[4]),
     //.iSlider_down(control[3]),
-	.iSlider_go(SW[1]),
-    .iSlider_back(SW[2]),
-    .iSlider_up(SW[4]),
-    .iSlider_down(SW[3]),
+	.iSlider_go(odata_test[0] || control[1]),
+    .iSlider_back(odata_test[1] || control[2]),
+    .iSlider_up(control[4]),
+    .iSlider_down(control[3]),
+
+	.iSpecial_block(special_block),
 
 	.oSlider_x(slider_x),
     .oSlider_y(slider_y)
@@ -353,8 +359,10 @@ Crash u7 (
 	.iBall_x(ball_x),
 	.iBall_y(ball_y),
 	.iSlider_flag(slider_flag),
+	.iSpecial_block(special_block),
 	.oCrash(crash),
 	.oState_flag(state_flag),
+	.oSpecial_attacked(special_attacked),
 	.oBallDie(BallDie)
 
 );
@@ -366,9 +374,10 @@ Level_CTRL u8(
 	.iCLK(VGA_CTRL_CLK),
 	.iRST(BUTTON[0]),
 	.iBallDie(BallDie),
-
+	.iSpecial_attacked(special_attacked),
 	.oLevel(level),
 	.oSlider_flag(slider_flag),
+	.oSpecial_block(special_block),
 	.oRST(orst)
 );
 
@@ -376,6 +385,16 @@ LED u9(
 	.iCLK(VGA_CTRL_CLK),
 	.iLevel(level),
 	.oLED(HEX0_D)
+);
+
+iic u10(
+	.CLOCK_50(CLOCK_50),
+	.rst_n(orst),
+	.sda(GPIO0_D[0]),
+	.scl(GPIO0_D[1]),
+	.sw1(SW[1]),
+	.sw2(SW[2]),
+	.data_test(odata_test)
 );
 
 endmodule

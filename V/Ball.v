@@ -37,7 +37,7 @@ assign down = iCrash[0];
 reg x_orient;
 always @(posedge iVGA_CLK or negedge iRST_n) begin
 	if (!iRST_n) begin
-	    x_orient <= BALL_TOWARD_RIGHT;
+	    x_orient <= BALL_TOWARD_LEFT;
     end
     else if (!x_orient && right) begin // right
 	    x_orient <= BALL_TOWARD_LEFT;
@@ -69,7 +69,7 @@ end
 reg y_orient;
 always@(posedge iVGA_CLK or negedge iRST_n) begin
 	if (!iRST_n) begin
-	    y_orient <= BALL_TOWARD_DOWN;
+	    y_orient <= BALL_TOWARD_UP;
     end
     else if (!y_orient && down) begin
 	    y_orient <= BALL_TOWARD_UP;

@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Fri Jun 15 09:50:49 2018
+Analysis & Synthesis Status : Successful - Tue Jun 19 22:34:27 2018
 Quartus II Version : 9.0 Build 132 02/25/2009 SJ Full Version
 Revision Name : DE0_VGA
 Top-level Entity Name : DE0_VGA
 Family : Cyclone III
-Total logic elements : 1,687
-    Total combinational functions : 1,683
-    Dedicated logic registers : 234
-Total registers : 234
+Total logic elements : 1,756
+    Total combinational functions : 1,730
+    Dedicated logic registers : 347
+Total registers : 347
 Total pins : 252
 Total virtual pins : 0
-Total memory bits : 230,400
+Total memory bits : 65,536
 Embedded Multiplier 9-bit elements : 0
 Total PLLs : 1

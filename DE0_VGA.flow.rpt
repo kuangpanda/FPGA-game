@@ -1,5 +1,5 @@
 Flow report for DE0_VGA
-Fri Jun 15 09:51:14 2018
+Tue Jun 19 22:34:48 2018
 Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +------------------------------------+------------------------------------------+
-; Flow Status                        ; Successful - Fri Jun 15 09:51:08 2018    ;
+; Flow Status                        ; Successful - Tue Jun 19 22:34:42 2018    ;
 ; Quartus II Version                 ; 9.0 Build 132 02/25/2009 SJ Full Version ;
 ; Revision Name                      ; DE0_VGA                                  ;
 ; Top-level Entity Name              ; DE0_VGA                                  ;
@@ -46,13 +46,13 @@ applicable agreement for further details.
 ; Device                             ; EP3C16F484C6                             ;
 ; Timing Models                      ; Final                                    ;
 ; Met timing requirements            ; N/A                                      ;
-; Total logic elements               ; 1,685 / 15,408 ( 11 % )                  ;
-;     Total combinational functions  ; 1,683 / 15,408 ( 11 % )                  ;
-;     Dedicated logic registers      ; 234 / 15,408 ( 2 % )                     ;
-; Total registers                    ; 234                                      ;
+; Total logic elements               ; 1,746 / 15,408 ( 11 % )                  ;
+;     Total combinational functions  ; 1,730 / 15,408 ( 11 % )                  ;
+;     Dedicated logic registers      ; 347 / 15,408 ( 2 % )                     ;
+; Total registers                    ; 347                                      ;
 ; Total pins                         ; 252 / 347 ( 73 % )                       ;
 ; Total virtual pins                 ; 0                                        ;
-; Total memory bits                  ; 230,400 / 516,096 ( 45 % )               ;
+; Total memory bits                  ; 65,536 / 516,096 ( 13 % )                ;
 ; Embedded Multiplier 9-bit elements ; 0 / 112 ( 0 % )                          ;
 ; Total PLLs                         ; 1 / 4 ( 25 % )                           ;
 +------------------------------------+------------------------------------------+
@@ -63,40 +63,46 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/15/2018 09:50:06 ;
+; Start date & time ; 06/19/2018 22:33:47 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DE0_VGA             ;
 +-------------------+---------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                        ;
-+------------------------------------+-----------------------------------------+---------------+-------------+------------+
-; Assignment Name                    ; Value                                   ; Default Value ; Entity Name ; Section Id ;
-+------------------------------------+-----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID              ; 31032341226904.152902740606628          ; --            ; --          ; --         ;
-; IP_TOOL_NAME                       ; ROM: 1-PORT                             ; --            ; --          ; --         ;
-; IP_TOOL_NAME                       ; ROM: 1-PORT                             ; --            ; --          ; --         ;
-; IP_TOOL_NAME                       ; ROM: 1-PORT                             ; --            ; --          ; --         ;
-; IP_TOOL_VERSION                    ; 9.0                                     ; --            ; --          ; --         ;
-; IP_TOOL_VERSION                    ; 9.0                                     ; --            ; --          ; --         ;
-; IP_TOOL_VERSION                    ; 9.0                                     ; --            ; --          ; --         ;
-; MISC_FILE                          ; E:/DE0/DE0_VGA/DE0_VGA.dpf              ; --            ; --          ; --         ;
-; MISC_FILE                          ; D:/TERASIC_TEST/DE0/DE0_VGA/DE0_VGA.dpf ; --            ; --          ; --         ;
-; MISC_FILE                          ; images/B.bsf                            ; --            ; --          ; --         ;
-; MISC_FILE                          ; images/B_inst.v                         ; --            ; --          ; --         ;
-; MISC_FILE                          ; images/B_bb.v                           ; --            ; --          ; --         ;
-; MISC_FILE                          ; images/G.bsf                            ; --            ; --          ; --         ;
-; MISC_FILE                          ; images/G_inst.v                         ; --            ; --          ; --         ;
-; MISC_FILE                          ; images/G_bb.v                           ; --            ; --          ; --         ;
-; MISC_FILE                          ; images/R.bsf                            ; --            ; --          ; --         ;
-; MISC_FILE                          ; images/R_inst.v                         ; --            ; --          ; --         ;
-; MISC_FILE                          ; images/R_bb.v                           ; --            ; --          ; --         ;
-; NOMINAL_CORE_SUPPLY_VOLTAGE        ; 1.2V                                    ; --            ; --          ; --         ;
-; PARTITION_COLOR                    ; 14622752                                ; --            ; --          ; Top        ;
-; PARTITION_NETLIST_TYPE             ; SOURCE                                  ; --            ; --          ; Top        ;
-; USE_GENERATED_PHYSICAL_CONSTRAINTS ; Off                                     ; --            ; --          ; eda_palace ;
-+------------------------------------+-----------------------------------------+---------------+-------------+------------+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                     ;
++------------------------------------+------------------------------------------------------+---------------+-------------+------------+
+; Assignment Name                    ; Value                                                ; Default Value ; Entity Name ; Section Id ;
++------------------------------------+------------------------------------------------------+---------------+-------------+------------+
+; COMPILER_SIGNATURE_ID              ; 115410750020457.152941882702540                      ; --            ; --          ; --         ;
+; IP_TOOL_NAME                       ; ROM: 1-PORT                                          ; --            ; --          ; --         ;
+; IP_TOOL_NAME                       ; ROM: 1-PORT                                          ; --            ; --          ; --         ;
+; IP_TOOL_NAME                       ; ROM: 1-PORT                                          ; --            ; --          ; --         ;
+; IP_TOOL_NAME                       ; ROM: 1-PORT                                          ; --            ; --          ; --         ;
+; IP_TOOL_VERSION                    ; 9.0                                                  ; --            ; --          ; --         ;
+; IP_TOOL_VERSION                    ; 9.0                                                  ; --            ; --          ; --         ;
+; IP_TOOL_VERSION                    ; 9.0                                                  ; --            ; --          ; --         ;
+; IP_TOOL_VERSION                    ; 9.0                                                  ; --            ; --          ; --         ;
+; MISC_FILE                          ; E:/DE0/DE0_VGA/DE0_VGA.dpf                           ; --            ; --          ; --         ;
+; MISC_FILE                          ; D:/TERASIC_TEST/DE0/DE0_VGA/DE0_VGA.dpf              ; --            ; --          ; --         ;
+; MISC_FILE                          ; D:/quartus2/BLOCK/BLOCK/FPGA-game-master/DE0_VGA.dpf ; --            ; --          ; --         ;
+; MISC_FILE                          ; B.bsf                                                ; --            ; --          ; --         ;
+; MISC_FILE                          ; B_inst.v                                             ; --            ; --          ; --         ;
+; MISC_FILE                          ; B_bb.v                                               ; --            ; --          ; --         ;
+; MISC_FILE                          ; G.bsf                                                ; --            ; --          ; --         ;
+; MISC_FILE                          ; G_inst.v                                             ; --            ; --          ; --         ;
+; MISC_FILE                          ; G_bb.v                                               ; --            ; --          ; --         ;
+; MISC_FILE                          ; R.bsf                                                ; --            ; --          ; --         ;
+; MISC_FILE                          ; R_inst.v                                             ; --            ; --          ; --         ;
+; MISC_FILE                          ; R_bb.v                                               ; --            ; --          ; --         ;
+; MISC_FILE                          ; block.bsf                                            ; --            ; --          ; --         ;
+; MISC_FILE                          ; block_inst.v                                         ; --            ; --          ; --         ;
+; MISC_FILE                          ; block_bb.v                                           ; --            ; --          ; --         ;
+; NOMINAL_CORE_SUPPLY_VOLTAGE        ; 1.2V                                                 ; --            ; --          ; --         ;
+; PARTITION_COLOR                    ; 14622752                                             ; --            ; --          ; Top        ;
+; PARTITION_NETLIST_TYPE             ; SOURCE                                               ; --            ; --          ; Top        ;
+; USE_GENERATED_PHYSICAL_CONSTRAINTS ; Off                                                  ; --            ; --          ; eda_palace ;
++------------------------------------+------------------------------------------------------+---------------+-------------+------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -104,11 +110,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:43     ; 1.0                     ; 301 MB              ; 00:00:42                           ;
-; Fitter                    ; 00:00:13     ; 1.4                     ; 415 MB              ; 00:00:11                           ;
-; Assembler                 ; 00:00:03     ; 1.0                     ; 300 MB              ; 00:00:02                           ;
-; TimeQuest Timing Analyzer ; 00:00:06     ; 1.0                     ; 327 MB              ; 00:00:05                           ;
-; Total                     ; 00:01:05     ; --                      ; --                  ; 00:01:00                           ;
+; Analysis & Synthesis      ; 00:00:40     ; 1.0                     ; 269 MB              ; 00:00:40                           ;
+; Fitter                    ; 00:00:10     ; 1.2                     ; 388 MB              ; 00:00:10                           ;
+; Assembler                 ; 00:00:02     ; 1.0                     ; 271 MB              ; 00:00:02                           ;
+; TimeQuest Timing Analyzer ; 00:00:05     ; 1.0                     ; 298 MB              ; 00:00:05                           ;
+; Total                     ; 00:00:57     ; --                      ; --                  ; 00:00:57                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -117,10 +123,10 @@ applicable agreement for further details.
 +---------------------------+------------------+---------------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name       ; OS Version ; Processor type ;
 +---------------------------+------------------+---------------+------------+----------------+
-; Analysis & Synthesis      ; LAPTOP-F7BHIU1M  ; Windows Vista ; 6.2        ; x86_64         ;
-; Fitter                    ; LAPTOP-F7BHIU1M  ; Windows Vista ; 6.2        ; x86_64         ;
-; Assembler                 ; LAPTOP-F7BHIU1M  ; Windows Vista ; 6.2        ; x86_64         ;
-; TimeQuest Timing Analyzer ; LAPTOP-F7BHIU1M  ; Windows Vista ; 6.2        ; x86_64         ;
+; Analysis & Synthesis      ; DESKTOP-IKTD0IH  ; Windows Vista ; 6.2        ; x86_64         ;
+; Fitter                    ; DESKTOP-IKTD0IH  ; Windows Vista ; 6.2        ; x86_64         ;
+; Assembler                 ; DESKTOP-IKTD0IH  ; Windows Vista ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; DESKTOP-IKTD0IH  ; Windows Vista ; 6.2        ; x86_64         ;
 +---------------------------+------------------+---------------+------------+----------------+
 
 

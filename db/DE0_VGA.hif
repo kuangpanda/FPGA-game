@@ -55,980 +55,13 @@ VGA_CLK:u1
 
 # end
 # entity
-VGA_CLK_altpll
-# storage
-db|DE0_VGA.(3).cnf
-db|DE0_VGA.(3).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-db|VGA_CLK_altpll.v
-a74956f8d9dfa89aa535b9f84714f22b
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-VGA_CLK:u1|altpll:altpll_component|VGA_CLK_altpll:auto_generated
-}
-# macro_sequence
-ALTERA_RESERVED_QISALTERA_RESERVED_QIS
-# end
-# entity
-VGA_Ctrl
-# storage
-db|DE0_VGA.(4).cnf
-db|DE0_VGA.(4).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-V|VGA_Ctrl.v
-1ac38ab4ec1ecb385f67d5bc764a9624
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-H_FRONT
-16
-PARAMETER_SIGNED_DEC
-DEF
-H_SYNC
-96
-PARAMETER_SIGNED_DEC
-DEF
-H_BACK
-48
-PARAMETER_SIGNED_DEC
-DEF
-H_ACT
-640
-PARAMETER_SIGNED_DEC
-DEF
-H_BLANK
-160
-PARAMETER_SIGNED_DEC
-DEF
-H_TOTAL
-800
-PARAMETER_SIGNED_DEC
-DEF
-V_FRONT
-10
-PARAMETER_SIGNED_DEC
-DEF
-V_SYNC
-2
-PARAMETER_SIGNED_DEC
-DEF
-V_BACK
-33
-PARAMETER_SIGNED_DEC
-DEF
-V_ACT
-480
-PARAMETER_SIGNED_DEC
-DEF
-V_BLANK
-45
-PARAMETER_SIGNED_DEC
-DEF
-V_TOTAL
-525
-PARAMETER_SIGNED_DEC
-DEF
-}
-# hierarchies {
-VGA_Ctrl:u2
-}
-# macro_sequence
-
-# end
-# entity
-VGA_Image
-# storage
-db|DE0_VGA.(7).cnf
-db|DE0_VGA.(7).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-V|VGA_Image.v
-6b475c50a62091ccc82e1b529f6aec6
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-VGA_Display:u3|VGA_Image:u2
-}
-# macro_sequence
-
-# end
-# entity
-decode_57a
-# storage
-db|DE0_VGA.(11).cnf
-db|DE0_VGA.(11).cnf
-# case_insensitive
-# source_file
-db|decode_57a.tdf
-f553c2c370e56b9bc96c49fb5b1e4b5
-7
-# used_port {
-eq2
--1
-3
-eq1
--1
-3
-eq0
--1
-3
-data1
--1
-3
-data0
--1
-3
-}
-# hierarchies {
-VGA_Display:u3|VGA_Image:u2|R:u1|altsyncram:altsyncram_component|altsyncram_sba1:auto_generated|decode_57a:rden_decode
-VGA_Display:u3|VGA_Image:u2|G:u2|altsyncram:altsyncram_component|altsyncram_hba1:auto_generated|decode_57a:rden_decode
-VGA_Display:u3|VGA_Image:u2|B:u3|altsyncram:altsyncram_component|altsyncram_cba1:auto_generated|decode_57a:rden_decode
-}
-# macro_sequence
-
-# end
-# entity
-mux_olb
-# storage
-db|DE0_VGA.(12).cnf
-db|DE0_VGA.(12).cnf
-# case_insensitive
-# source_file
-db|mux_olb.tdf
-f76bc24566eac7a7f34af2a8adce472
-7
-# used_port {
-sel1
--1
-3
-sel0
--1
-3
-result3
--1
-3
-result2
--1
-3
-result1
--1
-3
-result0
--1
-3
-data9
--1
-3
-data8
--1
-3
-data7
--1
-3
-data6
--1
-3
-data5
--1
-3
-data4
--1
-3
-data3
--1
-3
-data2
--1
-3
-data11
--1
-3
-data10
--1
-3
-data1
--1
-3
-data0
--1
-3
-}
-# hierarchies {
-VGA_Display:u3|VGA_Image:u2|R:u1|altsyncram:altsyncram_component|altsyncram_sba1:auto_generated|mux_olb:mux2
-VGA_Display:u3|VGA_Image:u2|G:u2|altsyncram:altsyncram_component|altsyncram_hba1:auto_generated|mux_olb:mux2
-VGA_Display:u3|VGA_Image:u2|B:u3|altsyncram:altsyncram_component|altsyncram_cba1:auto_generated|mux_olb:mux2
-}
-# macro_sequence
-
-# end
-# entity
-KeyBoard
-# storage
-db|DE0_VGA.(19).cnf
-db|DE0_VGA.(19).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-V|KeyBoard.v
-43b0197cffd8e958738e255797cefec
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-KeyBoard:u4
-}
-# macro_sequence
-
-# end
-# entity
-Slider
-# storage
-db|DE0_VGA.(20).cnf
-db|DE0_VGA.(20).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-V|Slider.v
-74314331d4dad1d5d2ef5a16147bce1
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-SLIDER_LENGTH
-100
-PARAMETER_SIGNED_DEC
-DEF
-SLIDER_WIDTH
-10
-PARAMETER_SIGNED_DEC
-DEF
-SLIDER_LEFT_BOUNDARY
-50
-PARAMETER_SIGNED_DEC
-DEF
-SLIDER_RIGHT_BOUNDARY
-590
-PARAMETER_SIGNED_DEC
-DEF
-SLIDER_UP_BOUNDARY
-400
-PARAMETER_SIGNED_DEC
-DEF
-SLIDER_DOWN_BOUNDARY
-475
-PARAMETER_SIGNED_DEC
-DEF
-SLIDER_X_INIT_LOCATION
-320
-PARAMETER_SIGNED_DEC
-DEF
-SLIDER_Y_INIT_LOCATION
-475
-PARAMETER_SIGNED_DEC
-DEF
-SLIDER_LOW_SPEED
-1
-PARAMETER_SIGNED_DEC
-DEF
-SLIDER_MEDIUM_SPEED
-2
-PARAMETER_SIGNED_DEC
-DEF
-SLIDER_HIGH_SPEED
-3
-PARAMETER_SIGNED_DEC
-DEF
-BALL_X_INIT_LOCATION
-320
-PARAMETER_SIGNED_DEC
-DEF
-BALL_Y_INIT_LOCATION
-200
-PARAMETER_SIGNED_DEC
-DEF
-BALL_RADIUS
-10
-PARAMETER_SIGNED_DEC
-DEF
-BALL_TOWARD_RIGHT
-0
-PARAMETER_SIGNED_DEC
-DEF
-BALL_TOWARD_LEFT
-1
-PARAMETER_SIGNED_DEC
-DEF
-BALL_TOWARD_UP
-1
-PARAMETER_SIGNED_DEC
-DEF
-BALL_TOWARD_DOWN
-0
-PARAMETER_SIGNED_DEC
-DEF
-BLOCK_SIZE
-32
-PARAMETER_SIGNED_DEC
-DEF
-BLOCK_RST_1
-000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011110000000000000000000000000000
-PARAMETER_UNSIGNED_BIN
-DEF
-BLOCK_RST_2
-000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111111111110000000111111111111110000011111111111111110001111111111111111110
-PARAMETER_UNSIGNED_BIN
-DEF
-BLOCK_RST_3
-000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000101010111111010101000001111111111110000011111111111111111100000111111111111000001111111111111111110
-PARAMETER_UNSIGNED_BIN
-DEF
-}
-# include_file {
-V|Setting.v
-3941964f1ed35b804eb334cf1a71f023
-}
-# hierarchies {
-Slider:u5
-}
-# macro_sequence
-
-# end
-# entity
-Ball
-# storage
-db|DE0_VGA.(21).cnf
-db|DE0_VGA.(21).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-V|Ball.v
-b758c8d36e4c84e22b7911bebf629999
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-SLIDER_LENGTH
-100
-PARAMETER_SIGNED_DEC
-DEF
-SLIDER_WIDTH
-10
-PARAMETER_SIGNED_DEC
-DEF
-SLIDER_LEFT_BOUNDARY
-50
-PARAMETER_SIGNED_DEC
-DEF
-SLIDER_RIGHT_BOUNDARY
-590
-PARAMETER_SIGNED_DEC
-DEF
-SLIDER_UP_BOUNDARY
-400
-PARAMETER_SIGNED_DEC
-DEF
-SLIDER_DOWN_BOUNDARY
-475
-PARAMETER_SIGNED_DEC
-DEF
-SLIDER_X_INIT_LOCATION
-320
-PARAMETER_SIGNED_DEC
-DEF
-SLIDER_Y_INIT_LOCATION
-475
-PARAMETER_SIGNED_DEC
-DEF
-SLIDER_LOW_SPEED
-1
-PARAMETER_SIGNED_DEC
-DEF
-SLIDER_MEDIUM_SPEED
-2
-PARAMETER_SIGNED_DEC
-DEF
-SLIDER_HIGH_SPEED
-3
-PARAMETER_SIGNED_DEC
-DEF
-BALL_X_INIT_LOCATION
-320
-PARAMETER_SIGNED_DEC
-DEF
-BALL_Y_INIT_LOCATION
-200
-PARAMETER_SIGNED_DEC
-DEF
-BALL_RADIUS
-10
-PARAMETER_SIGNED_DEC
-DEF
-BALL_TOWARD_RIGHT
-0
-PARAMETER_SIGNED_DEC
-DEF
-BALL_TOWARD_LEFT
-1
-PARAMETER_SIGNED_DEC
-DEF
-BALL_TOWARD_UP
-1
-PARAMETER_SIGNED_DEC
-DEF
-BALL_TOWARD_DOWN
-0
-PARAMETER_SIGNED_DEC
-DEF
-BLOCK_SIZE
-32
-PARAMETER_SIGNED_DEC
-DEF
-BLOCK_RST_1
-000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011110000000000000000000000000000
-PARAMETER_UNSIGNED_BIN
-DEF
-BLOCK_RST_2
-000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111111111110000000111111111111110000011111111111111110001111111111111111110
-PARAMETER_UNSIGNED_BIN
-DEF
-BLOCK_RST_3
-000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000101010111111010101000001111111111110000011111111111111111100000111111111111000001111111111111111110
-PARAMETER_UNSIGNED_BIN
-DEF
-}
-# include_file {
-V|Setting.v
-3941964f1ed35b804eb334cf1a71f023
-}
-# hierarchies {
-Ball:u6
-}
-# macro_sequence
-
-# end
-# entity
-Crash
-# storage
-db|DE0_VGA.(22).cnf
-db|DE0_VGA.(22).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-V|Crash.v
-1cb5bed05a2f3dc2eda06c50b7e04f1
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-SLIDER_LENGTH
-100
-PARAMETER_SIGNED_DEC
-DEF
-SLIDER_WIDTH
-10
-PARAMETER_SIGNED_DEC
-DEF
-SLIDER_LEFT_BOUNDARY
-50
-PARAMETER_SIGNED_DEC
-DEF
-SLIDER_RIGHT_BOUNDARY
-590
-PARAMETER_SIGNED_DEC
-DEF
-SLIDER_UP_BOUNDARY
-400
-PARAMETER_SIGNED_DEC
-DEF
-SLIDER_DOWN_BOUNDARY
-475
-PARAMETER_SIGNED_DEC
-DEF
-SLIDER_X_INIT_LOCATION
-320
-PARAMETER_SIGNED_DEC
-DEF
-SLIDER_Y_INIT_LOCATION
-475
-PARAMETER_SIGNED_DEC
-DEF
-SLIDER_LOW_SPEED
-1
-PARAMETER_SIGNED_DEC
-DEF
-SLIDER_MEDIUM_SPEED
-2
-PARAMETER_SIGNED_DEC
-DEF
-SLIDER_HIGH_SPEED
-3
-PARAMETER_SIGNED_DEC
-DEF
-BALL_X_INIT_LOCATION
-320
-PARAMETER_SIGNED_DEC
-DEF
-BALL_Y_INIT_LOCATION
-200
-PARAMETER_SIGNED_DEC
-DEF
-BALL_RADIUS
-10
-PARAMETER_SIGNED_DEC
-DEF
-BALL_TOWARD_RIGHT
-0
-PARAMETER_SIGNED_DEC
-DEF
-BALL_TOWARD_LEFT
-1
-PARAMETER_SIGNED_DEC
-DEF
-BALL_TOWARD_UP
-1
-PARAMETER_SIGNED_DEC
-DEF
-BALL_TOWARD_DOWN
-0
-PARAMETER_SIGNED_DEC
-DEF
-BLOCK_SIZE
-32
-PARAMETER_SIGNED_DEC
-DEF
-BLOCK_RST_1
-000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011110000000000000000000000000000
-PARAMETER_UNSIGNED_BIN
-DEF
-BLOCK_RST_2
-000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111111111110000000111111111111110000011111111111111110001111111111111111110
-PARAMETER_UNSIGNED_BIN
-DEF
-BLOCK_RST_3
-000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000101010111111010101000001111111111110000011111111111111111100000111111111111000001111111111111111110
-PARAMETER_UNSIGNED_BIN
-DEF
-}
-# include_file {
-V|Setting.v
-3941964f1ed35b804eb334cf1a71f023
-}
-# hierarchies {
-Crash:u7
-}
-# macro_sequence
-
-# end
-# entity
-LED
-# storage
-db|DE0_VGA.(24).cnf
-db|DE0_VGA.(24).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-V|LED.v
-9fce6152884d760f26b442891dcd3d
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-LED:u9
-}
-# macro_sequence
-
-# end
-# entity
-Level_CTRL
-# storage
-db|DE0_VGA.(23).cnf
-db|DE0_VGA.(23).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-V|Level_CTRL.v
-3c437cda9c9e251522795a259f75d6d0
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-Level_CTRL:u8
-}
-# macro_sequence
-
-# end
-# entity
-VGA_Pattern
-# storage
-db|DE0_VGA.(6).cnf
-db|DE0_VGA.(6).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-V|VGA_Pattern.v
-6248f259cfbfd50db661fbce8d710e7
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-SLIDER_LENGTH
-100
-PARAMETER_SIGNED_DEC
-DEF
-SLIDER_WIDTH
-10
-PARAMETER_SIGNED_DEC
-DEF
-SLIDER_LEFT_BOUNDARY
-50
-PARAMETER_SIGNED_DEC
-DEF
-SLIDER_RIGHT_BOUNDARY
-590
-PARAMETER_SIGNED_DEC
-DEF
-SLIDER_UP_BOUNDARY
-400
-PARAMETER_SIGNED_DEC
-DEF
-SLIDER_DOWN_BOUNDARY
-475
-PARAMETER_SIGNED_DEC
-DEF
-SLIDER_X_INIT_LOCATION
-320
-PARAMETER_SIGNED_DEC
-DEF
-SLIDER_Y_INIT_LOCATION
-475
-PARAMETER_SIGNED_DEC
-DEF
-SLIDER_LOW_SPEED
-1
-PARAMETER_SIGNED_DEC
-DEF
-SLIDER_MEDIUM_SPEED
-2
-PARAMETER_SIGNED_DEC
-DEF
-SLIDER_HIGH_SPEED
-3
-PARAMETER_SIGNED_DEC
-DEF
-BALL_X_INIT_LOCATION
-320
-PARAMETER_SIGNED_DEC
-DEF
-BALL_Y_INIT_LOCATION
-200
-PARAMETER_SIGNED_DEC
-DEF
-BALL_RADIUS
-10
-PARAMETER_SIGNED_DEC
-DEF
-BALL_TOWARD_RIGHT
-0
-PARAMETER_SIGNED_DEC
-DEF
-BALL_TOWARD_LEFT
-1
-PARAMETER_SIGNED_DEC
-DEF
-BALL_TOWARD_UP
-1
-PARAMETER_SIGNED_DEC
-DEF
-BALL_TOWARD_DOWN
-0
-PARAMETER_SIGNED_DEC
-DEF
-BLOCK_SIZE
-32
-PARAMETER_SIGNED_DEC
-DEF
-BLOCK_RST_1
-000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011110000000000000000000000000000
-PARAMETER_UNSIGNED_BIN
-DEF
-BLOCK_RST_2
-000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111111111110000000111111111111110000011111111111111110001111111111111111110
-PARAMETER_UNSIGNED_BIN
-DEF
-BLOCK_RST_3
-000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000101010111111010101000001111111111110000011111111111111111100000111111111111000001111111111111111110
-PARAMETER_UNSIGNED_BIN
-DEF
-}
-# include_file {
-V|Setting.v
-3941964f1ed35b804eb334cf1a71f023
-}
-# hierarchies {
-VGA_Display:u3|VGA_Pattern:u1
-}
-# macro_sequence
-
-# end
-# entity
-DE0_VGA
-# storage
-db|DE0_VGA.(0).cnf
-db|DE0_VGA.(0).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-DE0_VGA.v
-a413a67e1b47bb77f02e547c315528f6
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-|
-}
-# macro_sequence
-
-# end
-# entity
-VGA_Display
-# storage
-db|DE0_VGA.(5).cnf
-db|DE0_VGA.(5).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-V|VGA_Display.v
-615d791ed9ebf15417bdde888718a35
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-VGA_Display:u3
-}
-# macro_sequence
-
-# end
-# entity
 altpll
 # storage
 db|DE0_VGA.(2).cnf
 db|DE0_VGA.(2).cnf
 # case_insensitive
 # source_file
-..|..|..|..|..|program files|quartus-90|quartus|libraries|megafunctions|altpll.tdf
+..|..|..|quartus|libraries|megafunctions|altpll.tdf
 d980162588d7aa8b78874932c782e18
 7
 # user_parameter {
@@ -2549,17 +1582,175 @@ clkena
 2
 }
 # include_file {
-..|..|..|..|..|program files|quartus-90|quartus|libraries|megafunctions|stratixii_pll.inc
-6d1985e16ab5f59a1fd6b0ae20978a4e
-..|..|..|..|..|program files|quartus-90|quartus|libraries|megafunctions|stratix_pll.inc
+..|..|..|quartus|libraries|megafunctions|stratix_pll.inc
 5f8211898149ceae8264a0ea5036254f
-..|..|..|..|..|program files|quartus-90|quartus|libraries|megafunctions|aglobal90.inc
-99832fdf63412df51d7531202d74e75
-..|..|..|..|..|program files|quartus-90|quartus|libraries|megafunctions|cycloneii_pll.inc
+..|..|..|quartus|libraries|megafunctions|cycloneii_pll.inc
 39a0d9d1237d1db39c848c3f9faffc
+..|..|..|quartus|libraries|megafunctions|stratixii_pll.inc
+6d1985e16ab5f59a1fd6b0ae20978a4e
+..|..|..|quartus|libraries|megafunctions|aglobal90.inc
+99832fdf63412df51d7531202d74e75
 }
 # hierarchies {
 VGA_CLK:u1|altpll:altpll_component
+}
+# macro_sequence
+
+# end
+# entity
+VGA_CLK_altpll
+# storage
+db|DE0_VGA.(3).cnf
+db|DE0_VGA.(3).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+db|VGA_CLK_altpll.v
+a74956f8d9dfa89aa535b9f84714f22b
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+VGA_CLK:u1|altpll:altpll_component|VGA_CLK_altpll:auto_generated
+}
+# macro_sequence
+ALTERA_RESERVED_QISALTERA_RESERVED_QIS
+# end
+# entity
+VGA_Ctrl
+# storage
+db|DE0_VGA.(4).cnf
+db|DE0_VGA.(4).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+V|VGA_Ctrl.v
+1ac38ab4ec1ecb385f67d5bc764a9624
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+H_FRONT
+16
+PARAMETER_SIGNED_DEC
+DEF
+H_SYNC
+96
+PARAMETER_SIGNED_DEC
+DEF
+H_BACK
+48
+PARAMETER_SIGNED_DEC
+DEF
+H_ACT
+640
+PARAMETER_SIGNED_DEC
+DEF
+H_BLANK
+160
+PARAMETER_SIGNED_DEC
+DEF
+H_TOTAL
+800
+PARAMETER_SIGNED_DEC
+DEF
+V_FRONT
+10
+PARAMETER_SIGNED_DEC
+DEF
+V_SYNC
+2
+PARAMETER_SIGNED_DEC
+DEF
+V_BACK
+33
+PARAMETER_SIGNED_DEC
+DEF
+V_ACT
+480
+PARAMETER_SIGNED_DEC
+DEF
+V_BLANK
+45
+PARAMETER_SIGNED_DEC
+DEF
+V_TOTAL
+525
+PARAMETER_SIGNED_DEC
+DEF
+}
+# hierarchies {
+VGA_Ctrl:u2
+}
+# macro_sequence
+
+# end
+# entity
+VGA_Display
+# storage
+db|DE0_VGA.(5).cnf
+db|DE0_VGA.(5).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+V|VGA_Display.v
+68d024bde72bab5ca2c815ef97714ef5
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+VGA_Display:u3
 }
 # macro_sequence
 
@@ -2575,8 +1766,8 @@ ON
 }
 # case_sensitive
 # source_file
-images|R.v
-5ed8afb267a62f42770c93f8db8976c
+R.v
+a6b4ee28cbc168baa4fcdb5b52d93ca2
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -2594,9 +1785,6 @@ VERILOG_CONSTANT_LOOP_LIMIT
 VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
 }
-# hierarchies {
-VGA_Display:u3|VGA_Image:u2|R:u1
-}
 # macro_sequence
 
 # end
@@ -2607,7 +1795,7 @@ db|DE0_VGA.(9).cnf
 db|DE0_VGA.(9).cnf
 # case_insensitive
 # source_file
-..|..|..|..|..|program files|quartus-90|quartus|libraries|megafunctions|altsyncram.tdf
+..|..|..|quartus|libraries|megafunctions|altsyncram.tdf
 3514e215aa7b20abd3414f7dd9c98ab7
 7
 # user_parameter {
@@ -2764,7 +1952,7 @@ NEW_DATA_NO_NBE_READ
 PARAMETER_UNKNOWN
 DEF
 INIT_FILE
-../assets/BLOCKS_R.mif
+./assets/FPGA_R.mif
 PARAMETER_UNKNOWN
 USR
 INIT_FILE_LAYOUT
@@ -2808,7 +1996,7 @@ Cyclone III
 PARAMETER_UNKNOWN
 USR
 CBXI_PARAMETER
-altsyncram_sba1
+altsyncram_e3a1
 PARAMETER_UNKNOWN
 USR
 }
@@ -2878,109 +2066,123 @@ address_b
 2
 }
 # include_file {
-..|..|..|..|..|program files|quartus-90|quartus|libraries|megafunctions|a_rdenreg.inc
-60d229340bc3c24acb0a137b4849830
-..|..|..|..|..|program files|quartus-90|quartus|libraries|megafunctions|stratix_ram_block.inc
-2263a3bdfffeb150af977ee13902f70
-..|..|..|..|..|program files|quartus-90|quartus|libraries|megafunctions|lpm_decode.inc
-bd0e2f5e01c1bd360461dceb53d48
-..|..|..|..|..|program files|quartus-90|quartus|libraries|megafunctions|lpm_mux.inc
-c22bfd353214c01495b560fc34e47d79
-..|..|..|..|..|program files|quartus-90|quartus|libraries|megafunctions|altrom.inc
-d4e3a69a331d3a99d3281790d99a1ebd
-..|..|..|..|..|program files|quartus-90|quartus|libraries|megafunctions|aglobal90.inc
-99832fdf63412df51d7531202d74e75
-..|..|..|..|..|program files|quartus-90|quartus|libraries|megafunctions|altqpram.inc
-74e08939f96a7ea8e7a4d59a5b01fe7
-..|..|..|..|..|program files|quartus-90|quartus|libraries|megafunctions|altram.inc
-e66a83eccf6717bed97c99d891ad085
-..|..|..|..|..|program files|quartus-90|quartus|libraries|megafunctions|altdpram.inc
+..|..|..|quartus|libraries|megafunctions|altdpram.inc
 99d442b5b66c88db4daf94d99c6e4e77
-}
-# hierarchies {
-VGA_Display:u3|VGA_Image:u2|R:u1|altsyncram:altsyncram_component
+..|..|..|quartus|libraries|megafunctions|stratix_ram_block.inc
+2263a3bdfffeb150af977ee13902f70
+..|..|..|quartus|libraries|megafunctions|a_rdenreg.inc
+60d229340bc3c24acb0a137b4849830
+..|..|..|quartus|libraries|megafunctions|lpm_decode.inc
+bd0e2f5e01c1bd360461dceb53d48
+..|..|..|quartus|libraries|megafunctions|lpm_mux.inc
+c22bfd353214c01495b560fc34e47d79
+..|..|..|quartus|libraries|megafunctions|altqpram.inc
+74e08939f96a7ea8e7a4d59a5b01fe7
+..|..|..|quartus|libraries|megafunctions|altram.inc
+e66a83eccf6717bed97c99d891ad085
+..|..|..|quartus|libraries|megafunctions|altrom.inc
+d4e3a69a331d3a99d3281790d99a1ebd
+..|..|..|quartus|libraries|megafunctions|aglobal90.inc
+99832fdf63412df51d7531202d74e75
 }
 # macro_sequence
 
 # end
 # entity
-altsyncram_sba1
+decode_57a
 # storage
-db|DE0_VGA.(10).cnf
-db|DE0_VGA.(10).cnf
+db|DE0_VGA.(11).cnf
+db|DE0_VGA.(11).cnf
 # case_insensitive
 # source_file
-db|altsyncram_sba1.tdf
-8a8440738d698544a61fdf2a5124a3e
+db|decode_57a.tdf
+f553c2c370e56b9bc96c49fb5b1e4b5
 7
 # used_port {
-q_a3
+eq2
 -1
 3
-q_a2
+eq1
 -1
 3
-q_a1
+eq0
 -1
 3
-q_a0
+data1
 -1
 3
-clock0
--1
-3
-address_a9
--1
-3
-address_a8
--1
-3
-address_a7
--1
-3
-address_a6
--1
-3
-address_a5
--1
-3
-address_a4
--1
-3
-address_a3
--1
-3
-address_a2
--1
-3
-address_a14
--1
-3
-address_a13
--1
-3
-address_a12
--1
-3
-address_a11
--1
-3
-address_a10
--1
-3
-address_a1
--1
-3
-address_a0
+data0
 -1
 3
 }
-# memory_file {
-..|assets|BLOCKS_R.mif
-1ea8a4403eba22d1f429aaa3466e3e
-}
-# hierarchies {
-VGA_Display:u3|VGA_Image:u2|R:u1|altsyncram:altsyncram_component|altsyncram_sba1:auto_generated
+# macro_sequence
+
+# end
+# entity
+mux_olb
+# storage
+db|DE0_VGA.(12).cnf
+db|DE0_VGA.(12).cnf
+# case_insensitive
+# source_file
+db|mux_olb.tdf
+f76bc24566eac7a7f34af2a8adce472
+7
+# used_port {
+sel1
+-1
+3
+sel0
+-1
+3
+result3
+-1
+3
+result2
+-1
+3
+result1
+-1
+3
+result0
+-1
+3
+data9
+-1
+3
+data8
+-1
+3
+data7
+-1
+3
+data6
+-1
+3
+data5
+-1
+3
+data4
+-1
+3
+data3
+-1
+3
+data2
+-1
+3
+data11
+-1
+3
+data10
+-1
+3
+data1
+-1
+3
+data0
+-1
+3
 }
 # macro_sequence
 
@@ -2996,8 +2198,8 @@ ON
 }
 # case_sensitive
 # source_file
-images|G.v
-efca54a4e6d4bd8965a834e8dbb866
+G.v
+7cdc91ff728c53613828a4efc873ea25
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -3015,9 +2217,6 @@ VERILOG_CONSTANT_LOOP_LIMIT
 VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
 }
-# hierarchies {
-VGA_Display:u3|VGA_Image:u2|G:u2
-}
 # macro_sequence
 
 # end
@@ -3028,7 +2227,7 @@ db|DE0_VGA.(14).cnf
 db|DE0_VGA.(14).cnf
 # case_insensitive
 # source_file
-..|..|..|..|..|program files|quartus-90|quartus|libraries|megafunctions|altsyncram.tdf
+..|..|..|quartus|libraries|megafunctions|altsyncram.tdf
 3514e215aa7b20abd3414f7dd9c98ab7
 7
 # user_parameter {
@@ -3185,7 +2384,7 @@ NEW_DATA_NO_NBE_READ
 PARAMETER_UNKNOWN
 DEF
 INIT_FILE
-../assets/BLOCKS_G.mif
+./assets/FPGA_G.mif
 PARAMETER_UNKNOWN
 USR
 INIT_FILE_LAYOUT
@@ -3229,7 +2428,7 @@ Cyclone III
 PARAMETER_UNKNOWN
 USR
 CBXI_PARAMETER
-altsyncram_hba1
+altsyncram_33a1
 PARAMETER_UNKNOWN
 USR
 }
@@ -3299,109 +2498,24 @@ address_b
 2
 }
 # include_file {
-..|..|..|..|..|program files|quartus-90|quartus|libraries|megafunctions|a_rdenreg.inc
-60d229340bc3c24acb0a137b4849830
-..|..|..|..|..|program files|quartus-90|quartus|libraries|megafunctions|stratix_ram_block.inc
-2263a3bdfffeb150af977ee13902f70
-..|..|..|..|..|program files|quartus-90|quartus|libraries|megafunctions|lpm_decode.inc
-bd0e2f5e01c1bd360461dceb53d48
-..|..|..|..|..|program files|quartus-90|quartus|libraries|megafunctions|lpm_mux.inc
-c22bfd353214c01495b560fc34e47d79
-..|..|..|..|..|program files|quartus-90|quartus|libraries|megafunctions|altrom.inc
-d4e3a69a331d3a99d3281790d99a1ebd
-..|..|..|..|..|program files|quartus-90|quartus|libraries|megafunctions|aglobal90.inc
-99832fdf63412df51d7531202d74e75
-..|..|..|..|..|program files|quartus-90|quartus|libraries|megafunctions|altqpram.inc
-74e08939f96a7ea8e7a4d59a5b01fe7
-..|..|..|..|..|program files|quartus-90|quartus|libraries|megafunctions|altram.inc
-e66a83eccf6717bed97c99d891ad085
-..|..|..|..|..|program files|quartus-90|quartus|libraries|megafunctions|altdpram.inc
+..|..|..|quartus|libraries|megafunctions|altdpram.inc
 99d442b5b66c88db4daf94d99c6e4e77
-}
-# hierarchies {
-VGA_Display:u3|VGA_Image:u2|G:u2|altsyncram:altsyncram_component
-}
-# macro_sequence
-
-# end
-# entity
-altsyncram_hba1
-# storage
-db|DE0_VGA.(15).cnf
-db|DE0_VGA.(15).cnf
-# case_insensitive
-# source_file
-db|altsyncram_hba1.tdf
-3898d518c7d2e9e360f8cb47f9a45d77
-7
-# used_port {
-q_a3
--1
-3
-q_a2
--1
-3
-q_a1
--1
-3
-q_a0
--1
-3
-clock0
--1
-3
-address_a9
--1
-3
-address_a8
--1
-3
-address_a7
--1
-3
-address_a6
--1
-3
-address_a5
--1
-3
-address_a4
--1
-3
-address_a3
--1
-3
-address_a2
--1
-3
-address_a14
--1
-3
-address_a13
--1
-3
-address_a12
--1
-3
-address_a11
--1
-3
-address_a10
--1
-3
-address_a1
--1
-3
-address_a0
--1
-3
-}
-# memory_file {
-..|assets|BLOCKS_G.mif
-3b3720886f8546e8c3bb8b7388e2a6ba
-}
-# hierarchies {
-VGA_Display:u3|VGA_Image:u2|G:u2|altsyncram:altsyncram_component|altsyncram_hba1:auto_generated
+..|..|..|quartus|libraries|megafunctions|stratix_ram_block.inc
+2263a3bdfffeb150af977ee13902f70
+..|..|..|quartus|libraries|megafunctions|a_rdenreg.inc
+60d229340bc3c24acb0a137b4849830
+..|..|..|quartus|libraries|megafunctions|lpm_decode.inc
+bd0e2f5e01c1bd360461dceb53d48
+..|..|..|quartus|libraries|megafunctions|lpm_mux.inc
+c22bfd353214c01495b560fc34e47d79
+..|..|..|quartus|libraries|megafunctions|altqpram.inc
+74e08939f96a7ea8e7a4d59a5b01fe7
+..|..|..|quartus|libraries|megafunctions|altram.inc
+e66a83eccf6717bed97c99d891ad085
+..|..|..|quartus|libraries|megafunctions|altrom.inc
+d4e3a69a331d3a99d3281790d99a1ebd
+..|..|..|quartus|libraries|megafunctions|aglobal90.inc
+99832fdf63412df51d7531202d74e75
 }
 # macro_sequence
 
@@ -3417,8 +2531,8 @@ ON
 }
 # case_sensitive
 # source_file
-images|B.v
-c56d6b8e456a701fd52add4dee5684b6
+B.v
+371edff78e18483d60d12c4af374a59
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -3436,9 +2550,6 @@ VERILOG_CONSTANT_LOOP_LIMIT
 VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
 }
-# hierarchies {
-VGA_Display:u3|VGA_Image:u2|B:u3
-}
 # macro_sequence
 
 # end
@@ -3449,7 +2560,7 @@ db|DE0_VGA.(17).cnf
 db|DE0_VGA.(17).cnf
 # case_insensitive
 # source_file
-..|..|..|..|..|program files|quartus-90|quartus|libraries|megafunctions|altsyncram.tdf
+..|..|..|quartus|libraries|megafunctions|altsyncram.tdf
 3514e215aa7b20abd3414f7dd9c98ab7
 7
 # user_parameter {
@@ -3606,7 +2717,7 @@ NEW_DATA_NO_NBE_READ
 PARAMETER_UNKNOWN
 DEF
 INIT_FILE
-../assets/BLOCKS_B.mif
+./assets/FPGA_B.mif
 PARAMETER_UNKNOWN
 USR
 INIT_FILE_LAYOUT
@@ -3650,7 +2761,7 @@ Cyclone III
 PARAMETER_UNKNOWN
 USR
 CBXI_PARAMETER
-altsyncram_cba1
+altsyncram_u2a1
 PARAMETER_UNKNOWN
 USR
 }
@@ -3720,51 +2831,576 @@ address_b
 2
 }
 # include_file {
-..|..|..|..|..|program files|quartus-90|quartus|libraries|megafunctions|a_rdenreg.inc
-60d229340bc3c24acb0a137b4849830
-..|..|..|..|..|program files|quartus-90|quartus|libraries|megafunctions|stratix_ram_block.inc
-2263a3bdfffeb150af977ee13902f70
-..|..|..|..|..|program files|quartus-90|quartus|libraries|megafunctions|lpm_decode.inc
-bd0e2f5e01c1bd360461dceb53d48
-..|..|..|..|..|program files|quartus-90|quartus|libraries|megafunctions|lpm_mux.inc
-c22bfd353214c01495b560fc34e47d79
-..|..|..|..|..|program files|quartus-90|quartus|libraries|megafunctions|altrom.inc
-d4e3a69a331d3a99d3281790d99a1ebd
-..|..|..|..|..|program files|quartus-90|quartus|libraries|megafunctions|aglobal90.inc
-99832fdf63412df51d7531202d74e75
-..|..|..|..|..|program files|quartus-90|quartus|libraries|megafunctions|altqpram.inc
-74e08939f96a7ea8e7a4d59a5b01fe7
-..|..|..|..|..|program files|quartus-90|quartus|libraries|megafunctions|altram.inc
-e66a83eccf6717bed97c99d891ad085
-..|..|..|..|..|program files|quartus-90|quartus|libraries|megafunctions|altdpram.inc
+..|..|..|quartus|libraries|megafunctions|altdpram.inc
 99d442b5b66c88db4daf94d99c6e4e77
-}
-# hierarchies {
-VGA_Display:u3|VGA_Image:u2|B:u3|altsyncram:altsyncram_component
+..|..|..|quartus|libraries|megafunctions|stratix_ram_block.inc
+2263a3bdfffeb150af977ee13902f70
+..|..|..|quartus|libraries|megafunctions|a_rdenreg.inc
+60d229340bc3c24acb0a137b4849830
+..|..|..|quartus|libraries|megafunctions|lpm_decode.inc
+bd0e2f5e01c1bd360461dceb53d48
+..|..|..|quartus|libraries|megafunctions|lpm_mux.inc
+c22bfd353214c01495b560fc34e47d79
+..|..|..|quartus|libraries|megafunctions|altqpram.inc
+74e08939f96a7ea8e7a4d59a5b01fe7
+..|..|..|quartus|libraries|megafunctions|altram.inc
+e66a83eccf6717bed97c99d891ad085
+..|..|..|quartus|libraries|megafunctions|altrom.inc
+d4e3a69a331d3a99d3281790d99a1ebd
+..|..|..|quartus|libraries|megafunctions|aglobal90.inc
+99832fdf63412df51d7531202d74e75
 }
 # macro_sequence
 
 # end
 # entity
-altsyncram_cba1
+KeyBoard
+# storage
+db|DE0_VGA.(19).cnf
+db|DE0_VGA.(19).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+V|KeyBoard.v
+43b0197cffd8e958738e255797cefec
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+KeyBoard:u4
+}
+# macro_sequence
+
+# end
+# entity
+LED
+# storage
+db|DE0_VGA.(24).cnf
+db|DE0_VGA.(24).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+V|LED.v
+9fce6152884d760f26b442891dcd3d
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+LED:u9
+}
+# macro_sequence
+
+# end
+# entity
+iic
+# storage
+db|DE0_VGA.(25).cnf
+db|DE0_VGA.(25).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+V|iic.v
+c175feefbcd16c4fd9406d67f7fb0
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+IDLE
+0000
+PARAMETER_UNSIGNED_BIN
+DEF
+START1
+0001
+PARAMETER_UNSIGNED_BIN
+DEF
+ADD1
+0010
+PARAMETER_UNSIGNED_BIN
+DEF
+ACK1
+0011
+PARAMETER_UNSIGNED_BIN
+DEF
+ADD2
+0100
+PARAMETER_UNSIGNED_BIN
+DEF
+ACK2
+0101
+PARAMETER_UNSIGNED_BIN
+DEF
+START2
+0110
+PARAMETER_UNSIGNED_BIN
+DEF
+ADD3
+0111
+PARAMETER_UNSIGNED_BIN
+DEF
+ACK3
+1000
+PARAMETER_UNSIGNED_BIN
+DEF
+DATA
+1001
+PARAMETER_UNSIGNED_BIN
+DEF
+ACK4
+1010
+PARAMETER_UNSIGNED_BIN
+DEF
+STOP1
+1011
+PARAMETER_UNSIGNED_BIN
+DEF
+STOP2
+1100
+PARAMETER_UNSIGNED_BIN
+DEF
+}
+# hierarchies {
+iic:u10
+}
+# macro_sequence
+DEVICE_WRITE8'b1010_0110	SCL_HIG(cnt==3'd1)		SCL_LOW(cnt==3'd3)		SCL_NEG(cnt==3'd2)		SCL_LOW(cnt==3'd3)		SCL_NEG(cnt==3'd2)		DEVICE_READ8'b1010_0111	SCL_LOW(cnt==3'd3)		SCL_HIG(cnt==3'd1)		SCL_LOW(cnt==3'd3)		SCL_NEG(cnt==3'd2)		SCL_HIG(cnt==3'd1)		SCL_LOW(cnt==3'd3)		SCL_NEG(cnt==3'd2)		SCL_LOW(cnt==3'd3)		SCL_HIG(cnt==3'd1)		SCL_LOW(cnt==3'd3)		
+# end
+# entity
+VGA_Image
+# storage
+db|DE0_VGA.(7).cnf
+db|DE0_VGA.(7).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+V|VGA_Image.v
+8d33273c2ae3d8ebf1709c763c65e55f
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+VGA_Display:u3|VGA_Image:u2
+}
+# macro_sequence
+
+# end
+# entity
+block
+# storage
+db|DE0_VGA.(10).cnf
+db|DE0_VGA.(10).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+block.v
+8bffcaf09e3b5ea2cbed6cc75c1be728
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+VGA_Display:u3|VGA_Image:u2|block:u1
+}
+# macro_sequence
+
+# end
+# entity
+altsyncram
+# storage
+db|DE0_VGA.(15).cnf
+db|DE0_VGA.(15).cnf
+# case_insensitive
+# source_file
+..|..|..|quartus|libraries|megafunctions|altsyncram.tdf
+3514e215aa7b20abd3414f7dd9c98ab7
+7
+# user_parameter {
+BYTE_SIZE_BLOCK
+8
+PARAMETER_UNKNOWN
+DEF
+AUTO_CARRY_CHAINS
+ON
+AUTO_CARRY
+USR
+IGNORE_CARRY_BUFFERS
+OFF
+IGNORE_CARRY
+USR
+AUTO_CASCADE_CHAINS
+ON
+AUTO_CASCADE
+USR
+IGNORE_CASCADE_BUFFERS
+OFF
+IGNORE_CASCADE
+USR
+WIDTH_BYTEENA
+1
+PARAMETER_UNKNOWN
+DEF
+OPERATION_MODE
+ROM
+PARAMETER_UNKNOWN
+USR
+WIDTH_A
+1
+PARAMETER_SIGNED_DEC
+USR
+WIDTHAD_A
+16
+PARAMETER_SIGNED_DEC
+USR
+NUMWORDS_A
+65536
+PARAMETER_SIGNED_DEC
+USR
+OUTDATA_REG_A
+CLOCK0
+PARAMETER_UNKNOWN
+USR
+ADDRESS_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+USR
+OUTDATA_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+USR
+WRCONTROL_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+DEF
+INDATA_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+DEF
+BYTEENA_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+DEF
+WIDTH_B
+1
+PARAMETER_UNKNOWN
+DEF
+WIDTHAD_B
+1
+PARAMETER_UNKNOWN
+DEF
+NUMWORDS_B
+1
+PARAMETER_UNKNOWN
+DEF
+INDATA_REG_B
+CLOCK1
+PARAMETER_UNKNOWN
+DEF
+WRCONTROL_WRADDRESS_REG_B
+CLOCK1
+PARAMETER_UNKNOWN
+DEF
+RDCONTROL_REG_B
+CLOCK1
+PARAMETER_UNKNOWN
+DEF
+ADDRESS_REG_B
+CLOCK1
+PARAMETER_UNKNOWN
+DEF
+OUTDATA_REG_B
+UNREGISTERED
+PARAMETER_UNKNOWN
+DEF
+BYTEENA_REG_B
+CLOCK1
+PARAMETER_UNKNOWN
+DEF
+INDATA_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+WRCONTROL_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+ADDRESS_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+OUTDATA_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+RDCONTROL_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+BYTEENA_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+WIDTH_BYTEENA_A
+1
+PARAMETER_SIGNED_DEC
+USR
+WIDTH_BYTEENA_B
+1
+PARAMETER_UNKNOWN
+DEF
+RAM_BLOCK_TYPE
+AUTO
+PARAMETER_UNKNOWN
+DEF
+BYTE_SIZE
+8
+PARAMETER_UNKNOWN
+DEF
+READ_DURING_WRITE_MODE_MIXED_PORTS
+DONT_CARE
+PARAMETER_UNKNOWN
+DEF
+READ_DURING_WRITE_MODE_PORT_A
+NEW_DATA_NO_NBE_READ
+PARAMETER_UNKNOWN
+DEF
+READ_DURING_WRITE_MODE_PORT_B
+NEW_DATA_NO_NBE_READ
+PARAMETER_UNKNOWN
+DEF
+INIT_FILE
+./assets/blocks.mif
+PARAMETER_UNKNOWN
+USR
+INIT_FILE_LAYOUT
+PORT_A
+PARAMETER_UNKNOWN
+DEF
+MAXIMUM_DEPTH
+0
+PARAMETER_UNKNOWN
+DEF
+CLOCK_ENABLE_INPUT_A
+BYPASS
+PARAMETER_UNKNOWN
+USR
+CLOCK_ENABLE_INPUT_B
+NORMAL
+PARAMETER_UNKNOWN
+DEF
+CLOCK_ENABLE_OUTPUT_A
+BYPASS
+PARAMETER_UNKNOWN
+USR
+CLOCK_ENABLE_OUTPUT_B
+NORMAL
+PARAMETER_UNKNOWN
+DEF
+CLOCK_ENABLE_CORE_A
+USE_INPUT_CLKEN
+PARAMETER_UNKNOWN
+DEF
+CLOCK_ENABLE_CORE_B
+USE_INPUT_CLKEN
+PARAMETER_UNKNOWN
+DEF
+ENABLE_ECC
+FALSE
+PARAMETER_UNKNOWN
+DEF
+DEVICE_FAMILY
+Cyclone III
+PARAMETER_UNKNOWN
+USR
+CBXI_PARAMETER
+altsyncram_84a1
+PARAMETER_UNKNOWN
+USR
+}
+# used_port {
+q_a
+-1
+3
+clock0
+-1
+3
+address_a
+-1
+3
+wren_b
+-1
+1
+wren_a
+-1
+1
+addressstall_b
+-1
+1
+addressstall_a
+-1
+1
+aclr1
+-1
+1
+aclr0
+-1
+1
+rden_b
+-1
+2
+rden_a
+-1
+2
+data_b
+-1
+2
+data_a
+-1
+2
+clocken3
+-1
+2
+clocken2
+-1
+2
+clocken1
+-1
+2
+clocken0
+-1
+2
+clock1
+-1
+2
+byteena_b
+-1
+2
+byteena_a
+-1
+2
+address_b
+-1
+2
+}
+# include_file {
+..|..|..|quartus|libraries|megafunctions|altram.inc
+e66a83eccf6717bed97c99d891ad085
+..|..|..|quartus|libraries|megafunctions|a_rdenreg.inc
+60d229340bc3c24acb0a137b4849830
+..|..|..|quartus|libraries|megafunctions|altqpram.inc
+74e08939f96a7ea8e7a4d59a5b01fe7
+..|..|..|quartus|libraries|megafunctions|stratix_ram_block.inc
+2263a3bdfffeb150af977ee13902f70
+..|..|..|quartus|libraries|megafunctions|aglobal90.inc
+99832fdf63412df51d7531202d74e75
+..|..|..|quartus|libraries|megafunctions|lpm_mux.inc
+c22bfd353214c01495b560fc34e47d79
+..|..|..|quartus|libraries|megafunctions|altdpram.inc
+99d442b5b66c88db4daf94d99c6e4e77
+..|..|..|quartus|libraries|megafunctions|altrom.inc
+d4e3a69a331d3a99d3281790d99a1ebd
+..|..|..|quartus|libraries|megafunctions|lpm_decode.inc
+bd0e2f5e01c1bd360461dceb53d48
+}
+# hierarchies {
+VGA_Display:u3|VGA_Image:u2|block:u1|altsyncram:altsyncram_component
+}
+# macro_sequence
+
+# end
+# entity
+altsyncram_84a1
 # storage
 db|DE0_VGA.(18).cnf
 db|DE0_VGA.(18).cnf
 # case_insensitive
 # source_file
-db|altsyncram_cba1.tdf
-9daedeb74d482956f72c6df45f419b8
+db|altsyncram_84a1.tdf
+7b57737a47e1f9b4dbd751cfe02421
 7
 # used_port {
-q_a3
--1
-3
-q_a2
--1
-3
-q_a1
--1
-3
 q_a0
 -1
 3
@@ -3795,6 +3431,9 @@ address_a3
 address_a2
 -1
 3
+address_a15
+-1
+3
 address_a14
 -1
 3
@@ -3818,11 +3457,708 @@ address_a0
 3
 }
 # memory_file {
-..|assets|BLOCKS_B.mif
-afce9098f5bde1a8527c2a761a73b17e
+.|assets|blocks.mif
+a0bf7e2a98886d6ba2ba58a9d7219bd
 }
 # hierarchies {
-VGA_Display:u3|VGA_Image:u2|B:u3|altsyncram:altsyncram_component|altsyncram_cba1:auto_generated
+VGA_Display:u3|VGA_Image:u2|block:u1|altsyncram:altsyncram_component|altsyncram_84a1:auto_generated
+}
+# macro_sequence
+
+# end
+# entity
+decode_b7a
+# storage
+db|DE0_VGA.(20).cnf
+db|DE0_VGA.(20).cnf
+# case_insensitive
+# source_file
+db|decode_b7a.tdf
+ecefe223a7755cca897148eec565da
+7
+# used_port {
+eq7
+-1
+3
+eq6
+-1
+3
+eq5
+-1
+3
+eq4
+-1
+3
+eq3
+-1
+3
+eq2
+-1
+3
+eq1
+-1
+3
+eq0
+-1
+3
+data2
+-1
+3
+data1
+-1
+3
+data0
+-1
+3
+}
+# hierarchies {
+VGA_Display:u3|VGA_Image:u2|block:u1|altsyncram:altsyncram_component|altsyncram_84a1:auto_generated|decode_b7a:rden_decode
+}
+# macro_sequence
+
+# end
+# entity
+mux_rlb
+# storage
+db|DE0_VGA.(21).cnf
+db|DE0_VGA.(21).cnf
+# case_insensitive
+# source_file
+db|mux_rlb.tdf
+46c1a497cc6739b2f5f05dccb887798
+7
+# used_port {
+sel2
+-1
+3
+sel1
+-1
+3
+sel0
+-1
+3
+result0
+-1
+3
+data7
+-1
+3
+data6
+-1
+3
+data5
+-1
+3
+data4
+-1
+3
+data3
+-1
+3
+data2
+-1
+3
+data1
+-1
+3
+data0
+-1
+3
+}
+# hierarchies {
+VGA_Display:u3|VGA_Image:u2|block:u1|altsyncram:altsyncram_component|altsyncram_84a1:auto_generated|mux_rlb:mux2
+}
+# macro_sequence
+
+# end
+# entity
+DE0_VGA
+# storage
+db|DE0_VGA.(0).cnf
+db|DE0_VGA.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+DE0_VGA.v
+5f136da7d547424b63d59b104dea78a1
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# entity
+Level_CTRL
+# storage
+db|DE0_VGA.(23).cnf
+db|DE0_VGA.(23).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+V|Level_CTRL.v
+d3c4ef6be0c5be7852cbe58ae8c08e
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+Level_CTRL:u8
+}
+# macro_sequence
+
+# end
+# entity
+VGA_Pattern
+# storage
+db|DE0_VGA.(6).cnf
+db|DE0_VGA.(6).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+V|VGA_Pattern.v
+e18053d1c3c087f4bf2f6226afa88fde
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+SLIDER_LENGTH
+100
+PARAMETER_SIGNED_DEC
+DEF
+SLIDER_WIDTH
+10
+PARAMETER_SIGNED_DEC
+DEF
+SLIDER_LEFT_BOUNDARY
+50
+PARAMETER_SIGNED_DEC
+DEF
+SLIDER_RIGHT_BOUNDARY
+590
+PARAMETER_SIGNED_DEC
+DEF
+SLIDER_UP_BOUNDARY
+400
+PARAMETER_SIGNED_DEC
+DEF
+SLIDER_DOWN_BOUNDARY
+475
+PARAMETER_SIGNED_DEC
+DEF
+SLIDER_X_INIT_LOCATION
+320
+PARAMETER_SIGNED_DEC
+DEF
+SLIDER_Y_INIT_LOCATION
+475
+PARAMETER_SIGNED_DEC
+DEF
+SLIDER_LOW_SPEED
+2
+PARAMETER_SIGNED_DEC
+DEF
+SLIDER_MEDIUM_SPEED
+2
+PARAMETER_SIGNED_DEC
+DEF
+SLIDER_HIGH_SPEED
+3
+PARAMETER_SIGNED_DEC
+DEF
+BALL_X_INIT_LOCATION
+320
+PARAMETER_SIGNED_DEC
+DEF
+BALL_Y_INIT_LOCATION
+420
+PARAMETER_SIGNED_DEC
+DEF
+BALL_RADIUS
+10
+PARAMETER_SIGNED_DEC
+DEF
+BALL_TOWARD_RIGHT
+0
+PARAMETER_SIGNED_DEC
+DEF
+BALL_TOWARD_LEFT
+1
+PARAMETER_SIGNED_DEC
+DEF
+BALL_TOWARD_UP
+1
+PARAMETER_SIGNED_DEC
+DEF
+BALL_TOWARD_DOWN
+0
+PARAMETER_SIGNED_DEC
+DEF
+BLOCK_SIZE
+32
+PARAMETER_SIGNED_DEC
+DEF
+BLOCK_RST_1
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000111111111111000000000000000000000000
+PARAMETER_UNSIGNED_BIN
+DEF
+BLOCK_RST_2
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111111111110000000111111111111110000011111111111111110000000000000000000000
+PARAMETER_UNSIGNED_BIN
+DEF
+BLOCK_RST_3
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000101010111111010101000001111111111110000011111111111111111100000111111111111000000001111000011110000
+PARAMETER_UNSIGNED_BIN
+DEF
+}
+# include_file {
+V|Setting.v
+2a568458e5c4599db3842295ba749e
+}
+# hierarchies {
+VGA_Display:u3|VGA_Pattern:u1
+}
+# macro_sequence
+
+# end
+# entity
+Slider
+# storage
+db|DE0_VGA.(22).cnf
+db|DE0_VGA.(22).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+V|Slider.v
+5692bd24af7b57916c64419b7dfc247c
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+SLIDER_LENGTH
+100
+PARAMETER_SIGNED_DEC
+DEF
+SLIDER_WIDTH
+10
+PARAMETER_SIGNED_DEC
+DEF
+SLIDER_LEFT_BOUNDARY
+50
+PARAMETER_SIGNED_DEC
+DEF
+SLIDER_RIGHT_BOUNDARY
+590
+PARAMETER_SIGNED_DEC
+DEF
+SLIDER_UP_BOUNDARY
+400
+PARAMETER_SIGNED_DEC
+DEF
+SLIDER_DOWN_BOUNDARY
+475
+PARAMETER_SIGNED_DEC
+DEF
+SLIDER_X_INIT_LOCATION
+320
+PARAMETER_SIGNED_DEC
+DEF
+SLIDER_Y_INIT_LOCATION
+475
+PARAMETER_SIGNED_DEC
+DEF
+SLIDER_LOW_SPEED
+2
+PARAMETER_SIGNED_DEC
+DEF
+SLIDER_MEDIUM_SPEED
+2
+PARAMETER_SIGNED_DEC
+DEF
+SLIDER_HIGH_SPEED
+3
+PARAMETER_SIGNED_DEC
+DEF
+BALL_X_INIT_LOCATION
+320
+PARAMETER_SIGNED_DEC
+DEF
+BALL_Y_INIT_LOCATION
+420
+PARAMETER_SIGNED_DEC
+DEF
+BALL_RADIUS
+10
+PARAMETER_SIGNED_DEC
+DEF
+BALL_TOWARD_RIGHT
+0
+PARAMETER_SIGNED_DEC
+DEF
+BALL_TOWARD_LEFT
+1
+PARAMETER_SIGNED_DEC
+DEF
+BALL_TOWARD_UP
+1
+PARAMETER_SIGNED_DEC
+DEF
+BALL_TOWARD_DOWN
+0
+PARAMETER_SIGNED_DEC
+DEF
+BLOCK_SIZE
+32
+PARAMETER_SIGNED_DEC
+DEF
+BLOCK_RST_1
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000111111111111000000000000000000000000
+PARAMETER_UNSIGNED_BIN
+DEF
+BLOCK_RST_2
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111111111110000000111111111111110000011111111111111110000000000000000000000
+PARAMETER_UNSIGNED_BIN
+DEF
+BLOCK_RST_3
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000101010111111010101000001111111111110000011111111111111111100000111111111111000000001111000011110000
+PARAMETER_UNSIGNED_BIN
+DEF
+}
+# include_file {
+V|Setting.v
+2a568458e5c4599db3842295ba749e
+}
+# hierarchies {
+Slider:u5
+}
+# macro_sequence
+
+# end
+# entity
+Ball
+# storage
+db|DE0_VGA.(26).cnf
+db|DE0_VGA.(26).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+V|Ball.v
+65f9921164a0c1a98c88bd7c67b5c1b
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+SLIDER_LENGTH
+100
+PARAMETER_SIGNED_DEC
+DEF
+SLIDER_WIDTH
+10
+PARAMETER_SIGNED_DEC
+DEF
+SLIDER_LEFT_BOUNDARY
+50
+PARAMETER_SIGNED_DEC
+DEF
+SLIDER_RIGHT_BOUNDARY
+590
+PARAMETER_SIGNED_DEC
+DEF
+SLIDER_UP_BOUNDARY
+400
+PARAMETER_SIGNED_DEC
+DEF
+SLIDER_DOWN_BOUNDARY
+475
+PARAMETER_SIGNED_DEC
+DEF
+SLIDER_X_INIT_LOCATION
+320
+PARAMETER_SIGNED_DEC
+DEF
+SLIDER_Y_INIT_LOCATION
+475
+PARAMETER_SIGNED_DEC
+DEF
+SLIDER_LOW_SPEED
+2
+PARAMETER_SIGNED_DEC
+DEF
+SLIDER_MEDIUM_SPEED
+2
+PARAMETER_SIGNED_DEC
+DEF
+SLIDER_HIGH_SPEED
+3
+PARAMETER_SIGNED_DEC
+DEF
+BALL_X_INIT_LOCATION
+320
+PARAMETER_SIGNED_DEC
+DEF
+BALL_Y_INIT_LOCATION
+420
+PARAMETER_SIGNED_DEC
+DEF
+BALL_RADIUS
+10
+PARAMETER_SIGNED_DEC
+DEF
+BALL_TOWARD_RIGHT
+0
+PARAMETER_SIGNED_DEC
+DEF
+BALL_TOWARD_LEFT
+1
+PARAMETER_SIGNED_DEC
+DEF
+BALL_TOWARD_UP
+1
+PARAMETER_SIGNED_DEC
+DEF
+BALL_TOWARD_DOWN
+0
+PARAMETER_SIGNED_DEC
+DEF
+BLOCK_SIZE
+32
+PARAMETER_SIGNED_DEC
+DEF
+BLOCK_RST_1
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000111111111111000000000000000000000000
+PARAMETER_UNSIGNED_BIN
+DEF
+BLOCK_RST_2
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111111111110000000111111111111110000011111111111111110000000000000000000000
+PARAMETER_UNSIGNED_BIN
+DEF
+BLOCK_RST_3
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000101010111111010101000001111111111110000011111111111111111100000111111111111000000001111000011110000
+PARAMETER_UNSIGNED_BIN
+DEF
+}
+# include_file {
+V|Setting.v
+2a568458e5c4599db3842295ba749e
+}
+# hierarchies {
+Ball:u6
+}
+# macro_sequence
+
+# end
+# entity
+Crash
+# storage
+db|DE0_VGA.(27).cnf
+db|DE0_VGA.(27).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+V|Crash.v
+2798377933159ebbbf641949b493d0d7
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+SLIDER_LENGTH
+100
+PARAMETER_SIGNED_DEC
+DEF
+SLIDER_WIDTH
+10
+PARAMETER_SIGNED_DEC
+DEF
+SLIDER_LEFT_BOUNDARY
+50
+PARAMETER_SIGNED_DEC
+DEF
+SLIDER_RIGHT_BOUNDARY
+590
+PARAMETER_SIGNED_DEC
+DEF
+SLIDER_UP_BOUNDARY
+400
+PARAMETER_SIGNED_DEC
+DEF
+SLIDER_DOWN_BOUNDARY
+475
+PARAMETER_SIGNED_DEC
+DEF
+SLIDER_X_INIT_LOCATION
+320
+PARAMETER_SIGNED_DEC
+DEF
+SLIDER_Y_INIT_LOCATION
+475
+PARAMETER_SIGNED_DEC
+DEF
+SLIDER_LOW_SPEED
+2
+PARAMETER_SIGNED_DEC
+DEF
+SLIDER_MEDIUM_SPEED
+2
+PARAMETER_SIGNED_DEC
+DEF
+SLIDER_HIGH_SPEED
+3
+PARAMETER_SIGNED_DEC
+DEF
+BALL_X_INIT_LOCATION
+320
+PARAMETER_SIGNED_DEC
+DEF
+BALL_Y_INIT_LOCATION
+420
+PARAMETER_SIGNED_DEC
+DEF
+BALL_RADIUS
+10
+PARAMETER_SIGNED_DEC
+DEF
+BALL_TOWARD_RIGHT
+0
+PARAMETER_SIGNED_DEC
+DEF
+BALL_TOWARD_LEFT
+1
+PARAMETER_SIGNED_DEC
+DEF
+BALL_TOWARD_UP
+1
+PARAMETER_SIGNED_DEC
+DEF
+BALL_TOWARD_DOWN
+0
+PARAMETER_SIGNED_DEC
+DEF
+BLOCK_SIZE
+32
+PARAMETER_SIGNED_DEC
+DEF
+BLOCK_RST_1
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000111111111111000000000000000000000000
+PARAMETER_UNSIGNED_BIN
+DEF
+BLOCK_RST_2
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111111111110000000111111111111110000011111111111111110000000000000000000000
+PARAMETER_UNSIGNED_BIN
+DEF
+BLOCK_RST_3
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000101010111111010101000001111111111110000011111111111111111100000111111111111000000001111000011110000
+PARAMETER_UNSIGNED_BIN
+DEF
+}
+# include_file {
+V|Setting.v
+2a568458e5c4599db3842295ba749e
+}
+# hierarchies {
+Crash:u7
 }
 # macro_sequence
 

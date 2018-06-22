@@ -1,16 +1,16 @@
-Fitter Status : Successful - Fri Jun 15 09:51:03 2018
+Fitter Status : Successful - Tue Jun 19 22:34:38 2018
 Quartus II Version : 9.0 Build 132 02/25/2009 SJ Full Version
 Revision Name : DE0_VGA
 Top-level Entity Name : DE0_VGA
 Family : Cyclone III
 Device : EP3C16F484C6
 Timing Models : Final
-Total logic elements : 1,685 / 15,408 ( 11 % )
-    Total combinational functions : 1,683 / 15,408 ( 11 % )
-    Dedicated logic registers : 234 / 15,408 ( 2 % )
-Total registers : 234
+Total logic elements : 1,746 / 15,408 ( 11 % )
+    Total combinational functions : 1,730 / 15,408 ( 11 % )
+    Dedicated logic registers : 347 / 15,408 ( 2 % )
+Total registers : 347
 Total pins : 252 / 347 ( 73 % )
 Total virtual pins : 0
-Total memory bits : 230,400 / 516,096 ( 45 % )
+Total memory bits : 65,536 / 516,096 ( 13 % )
 Embedded Multiplier 9-bit elements : 0 / 112 ( 0 % )
 Total PLLs : 1 / 4 ( 25 % )
